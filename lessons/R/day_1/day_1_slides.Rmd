@@ -16,10 +16,15 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<!--
-SECTION 01: Introduction to R and RStudio
-https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
---!>
+## Etherpad
+
+<div class="attention">
+Please do take notes on the course `etherpad`:
+</div>
+
+
+[http://pad.software-carpentry.org/2017-12-04-standrews](http://pad.software-carpentry.org/2017-12-04-standrews)
+
 
 # 01. Introduction to R and <br /> RStudio
 
@@ -41,10 +46,10 @@ https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
 * **Have you used `R` before?**
 </div>
 
-* `R` is free (commercial support can be bought)
-* `R` is widely-used and *interdisciplinary* (sciences, humanities, engineering, etc.)
-* `R` has many excellent packages for statistics and data analysis, visualisation and graphics
-* `R` has an international, friendly user community
+> * `R` is free (commercial support can be bought)
+> * `R` is widely-used and *interdisciplinary* (sciences, humanities, engineering, etc.)
+> * `R` has many excellent packages for statistics and data analysis, visualisation and graphics
+> * `R` has an international, friendly user community
 
 <div class="references">
 <p>RStudio community support: [https://community.rstudio.com/](https://community.rstudio.com/)</p>
@@ -54,19 +59,19 @@ https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
 
 ## "But I already know `Excel`…"
 
-* `Excel` is great for many things, but…
+<div class="highlight">
+* `Excel` is great for many things, but `R` is great for reproducibility
+</div>
 
 <center>
 <img src="images/dt160107.gif" width="80%" />
 </center>
 
-<div class="highlight">
-* `R` is great for reproducibility
-    * *Separates data from analysis*
-    * Not point-and-click: *every step is explicit*
-    * Easy to share, adapt, reuse analyses with new/modified data
-    * `R` can be run on supercomputers…
-</div>
+> * *Separates data from analysis*
+> * Not point-and-click: *every step is explicit*
+> * Easy to share, adapt, reuse analyses with new/modified data
+> * `R` can be run on supercomputers…
+
     
 <div class="references">
 * Mike Croucher's MLPM talk: [https://mikecroucher.github.io/MLPM_talk/](https://mikecroucher.github.io/MLPM_talk/)
