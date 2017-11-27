@@ -23,12 +23,14 @@ https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
 
 # 01. Introduction to R and <br /> RStudio
 
+
 ## Learning Objectives
 
 * Familiarity with the `RStudio` IDE
 * Set up a working directory with version control
 * Introduce `R` syntax
 * (Introduce package management)
+
 
 ## What is `R`?
 
@@ -47,4 +49,25 @@ https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
 <div class="references">
 <p>RStudio community support: [https://community.rstudio.com/](https://community.rstudio.com/)</p>
 <p>Stack Overflow: [https://stackoverflow.com/](https://stackoverflow.com/)</p>
+</div>
+
+
+## "But I already know `Excel`…"
+
+* `Excel` is great for many things, but…
+
+<center>
+<img src="images/dt160107.gif" width="80%" />
+</center>
+
+<div class="highlight">
+* `R` is great for reproducibility
+    * *Separates data from analysis*
+    * Not point-and-click: *every step is explicit*
+    * Easy to share, adapt, reuse analyses with new/modified data
+    * `R` can be run on supercomputers…
+</div>
+    
+<div class="references">
+* Mike Croucher's MLPM talk: [https://mikecroucher.github.io/MLPM_talk/](https://mikecroucher.github.io/MLPM_talk/)
 </div>
