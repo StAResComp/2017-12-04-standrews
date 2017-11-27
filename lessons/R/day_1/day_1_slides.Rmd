@@ -23,6 +23,13 @@ https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
 
 # 01. Introduction to R and <br /> RStudio
 
+## Learning Objectives
+
+* Familiarity with the `RStudio` IDE
+* Set up a working directory with version control
+* Introduce `R` syntax
+* (Introduce package management)
+
 ## What is `R`?
 
 * `R` is a programming language
@@ -32,9 +39,9 @@ https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
 * **Have you used `R` before?**
 </div>
 
-* `R` is free, and widely-used (*interdisciplinary*: sciences, humanities, engineering, etc.)
-* `R` has many useful packages for statistics and data analysis
-* `R` has excellent packages for visualisation and graphics
+* `R` is free (commercial support can be bought)
+* `R` is widely-used and *interdisciplinary* (sciences, humanities, engineering, etc.)
+* `R` has many excellent packages for statistics and data analysis, visualisation and graphics
 * `R` has an international, friendly user community
 
 <div class="references">

@@ -17,11 +17,19 @@ rm(list=ls())
 
 ## SECTION 01: Introduction to `R` and `RStudio`
 
+**SLIDE: Learning Objectives**
+
+* We need to get some **FAMILIARITY WITH OUR WORKING ENVIRONMENT**: the `RStudio` IDE
+* We'll **BUILD UPON THE `GIT` LESSON** because `RStudio` integrates naturally with `git` to keep all your analysis and code under version control.
+* We'll introduce `R` syntax, and **SEE HOW `R` REPRESENTS DATA** and how to **PROGRAM IN `R`**
+* If we have time we'll deal with **MANAGING SOME OF THE MANY USEFUL PACKAGES** available in `R`
+
 ----
 
 **SLIDE: What is `R`?**
 
 * `R` is a **PROGRAMMING LANGUAGE**, and the **SOFTWARE** that runs programs written in that language.
+* `R` is **AVAILABLE ON ALL PLATFORMS**
 * This can sometimes be confusing - **IF AT ANY POINT I AM UNCLEAR, PLEASE ASK!**
 
 * **HAS ANYONE IN THE ROOM USED `R` BEFORE? - GREEN STICKY**
@@ -32,3 +40,7 @@ rm(list=ls())
     * There are **MANY USEFUL PACKAGES** or data analysis and statistics
     * It has excellent **GRAPHICS CAPABILITIES**
     * There is an international, friendly **COMMUNITY** across a range of disciplines, so it's easy to find local and online support
+
+----
+
+**SLIDE: But I already know `Excel`**
