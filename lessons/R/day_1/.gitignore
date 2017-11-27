@@ -1,0 +1,5 @@
+# Exclude R history
+.Rhistory
+
+# Exclude files used in building .html
+day_1_slides_files/
