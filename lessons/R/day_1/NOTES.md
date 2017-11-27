@@ -57,3 +57,17 @@ rm(list=ls())
 
 * `R` code is **EASY TO SHARE AND ADAPT**, and to apply again to a different or a modified input dataset.
 * `R` code can also be **RUN ON EXTREMELY LARGE DATASETS**, quickly. That's much harder in `Excel`.
+
+----
+
+**SLIDE: What is `RStudio`?**
+
+* `RStudio` is an **INTEGRATED DEVELOPMENT ENVIRONMENT** - which is to say it's a very powerful tool for writing and using `R` and programs in the `R` language.
+
+* On the left is the `RStudio` IDE **WHILE I WAS WRITING THIS PRESENTATION IN IT** on a Mac
+* On the right is the Windows version, with an example analysis and visualisation
+
+* You can use it to **INTERACT WITH `R` DIRECTLY TO EXPERIMENT WITH DATA**
+* It has a **CODE/SCRIPT EDITOR FOR WRITING PROGRAMS**
+* It has tools for **VISUALISING DATA**
+* It has built-in **GIT INTEGRATION FOR MANAGING YOUR PROJECTS**

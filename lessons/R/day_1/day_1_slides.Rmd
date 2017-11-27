@@ -60,7 +60,7 @@ Please do take notes on the course `etherpad`:
 ## "But I already know `Excel`…"
 
 <div class="highlight">
-* `Excel` is great for many things, but `R` is great for reproducibility
+* `Excel` is great for many things, but `R` is great for reproducibility…
 </div>
 
 <center>
@@ -75,4 +75,21 @@ Please do take notes on the course `etherpad`:
     
 <div class="references">
 * Mike Croucher's MLPM talk: [https://mikecroucher.github.io/MLPM_talk/](https://mikecroucher.github.io/MLPM_talk/)
+</div>
+
+
+## What is `RStudio`?
+
+* `RStudio` is an *integrated development environment* (IDE)
+
+<center>
+<img src="images/rstudio_window.png" width="50%" />
+<img src="images/RStudio-Screenshot.png" width="40%" />
+</center>
+
+<div class="highlight">
+* Interaction with `R` (console/'scratchpad')
+* Script/code editor
+* Graphics/visualisation
+* Project management (`git` integration)
 </div>
