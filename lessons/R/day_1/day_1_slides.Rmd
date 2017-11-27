@@ -1,0 +1,43 @@
+---
+title: 'Programming in R: Part One'
+author: "Leighton Pritchard"
+date: "5/12/2017"
+output:
+  ioslides_presentation:
+    css: ./includes/custom.css
+    font-family: 'Helvetica'
+    widescreen: True
+    mathjax: local
+    self_contained: false
+# runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!--
+SECTION 01: Introduction to R and RStudio
+https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/
+--!>
+
+# 01. Introduction to R and <br /> RStudio
+
+## What is `R`?
+
+* `R` is a programming language
+* `R` is the software that interprets programs written in the `R` programming language
+
+<div class="highlight">
+* **Have you used `R` before?**
+</div>
+
+* `R` is free, and widely-used (*interdisciplinary*: sciences, humanities, engineering, etc.)
+* `R` has many useful packages for statistics and data analysis
+* `R` has excellent packages for visualisation and graphics
+* `R` has an international, friendly user community
+
+<div class="references">
+<p>RStudio community support: [https://community.rstudio.com/](https://community.rstudio.com/)</p>
+<p>Stack Overflow: [https://stackoverflow.com/](https://stackoverflow.com/)</p>
+</div>
