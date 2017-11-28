@@ -111,4 +111,8 @@ Please do take notes on the course `etherpad`:
 * Introduce package management
 
 
-## `RStudio` Overview - Live Demo
+## `RStudio` overview - Interactive Demo
+
+<center>
+<img src="images/rstudio-start-view.png" width="75%" />
+</center>

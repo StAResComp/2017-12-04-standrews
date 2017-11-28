@@ -88,4 +88,135 @@ rm(list=ls())
 
 ----
 
-**SLIDE: `RStudio` Overview - Live Demo**
+**SLIDE: `RStudio` overview - Interactive Demo**
+
+* **START `RStudio`** (click icon/go into start menu and select RStudio/etc.)
+    * **CHECK EVERYONE CAN START `RSTUDIO`**
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+* **REMIND PEOPLE THEY CAN USE RED/GREEN STICKIES AT ANY TIME**
+* You should see **THREE PANELS**
+    * Interactive `R` console: **you can type here and get instant feedback**
+    * Environment/History window
+    * Files/Plots/Packages/Help/Viewer: **interacting with files on the computer, and viewing help and some output**
+
+* We're going to use `R` in the interactive console to get used to some of the features of the language, and `RStudio`. **DEMO CODE: ASK PEOPLE TO TYPE ALONG**
+    * **THE RIGHT ANGLED BRACKET IS A PROMPT: `R` EXPECTS INPUT**
+    * **TYPE THE CALCULATION, THEN PRESS RETURN**
+
+```R
+> 1 + 100
+[1] 101
+> 30 / 3
+[1] 10
+```
+
+* **RESULT IS INDICATED WITH A NUMBER `[1]`** this indicates the line with output in it
+* If you type an **INCOMPLETE COMMAND**, `R` will wait for you to complete it
+    * **DEMO CODE**
+
+```R
+> 1 +
++ 
+```
+
+* The **PROMPT CHANGES TO `+` WHEN `R` EXPECTS MORE INPUT**
+* You can either complete the line, or use `Esc` (`Ctrl-C`) to exit
+
+```R
+> 1 +
++ 6
+[1] 7
+> 1 + 
++ 
+
+> 
+```
+
+* `R` obeys the usual **PRECEDENCE OPERATIONS** ( `(`, `**`/`^`, `/`, `*`, `+`, `-`)
+    * **DEMO CODE: NOTE SPACES AROUND OPERATORS**
+
+```R
+> 3 + 5 * 2
+[1] 13
+> (3 + 5) * 2
+[1] 16
+> 3 + 5 * 2 ^ 2
+[1] 23
+> 3 + 5 * (2 ^ 2)
+[1] 23
+```
+
+* **ARROW KEYS RECOVER OLD COMMANDS**
+* **THE `HISTORY` TAB SHOWS ALL COMMANDS USED**
+* `R` will report in **SCIENTIFIC NOTATION**
+    * **CHECK THAT EVERYONE KNOWS WHAT SCIENTIFIC NOTATION IS**
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+```R
+> 2 / 1000
+[1] 0.002
+> 2 / 10000
+[1] 2e-04
+> 5e3
+[1] 5000
+```
+
+* `R` has many **STANDARD MATHEMATICAL FUNCTIONS**
+* **FUNCTION SYNTAX**
+     * type the function name
+     * open parentheses
+     * type input value
+     * close parentheses
+     * press return
+     * **DEMO CODE**
+
+```R
+> sin(1)
+[1] 0.841471
+> log(1)
+[1] 0
+> log10(10)
+[1] 1
+> log(10)
+[1] 2.302585
+```
+
+* How do we learn more about a function, or the difference between `log()` and `log10()`?
+* **USE `R` BUILT-IN HELP**
+    * Type `?` then the function name
+    * Scroll to the bottom of the page to find example code
+
+```R
+> ?log
+```
+
+* This brings up help in the **HELP WINDOW**
+* You can also use the **SEARCH BOX** at the top of the help window (try `sin()`)
+* If you're not sure about spelling, the editor has **AUTOCOMPLETION** which will suggest all possible endings for something you type (try `log`) - **USE TAB TO SEE AUTOCOMPLETIONS**
+
+* We can do **COMPARISONS** in `R`
+    * Comparisons return `TRUE` or `FALSE`. **DEMO CODE**
+    * **NOTE:** when comparing numbers, it's better to use `all.equal()` (*machine numeric tolerance*)
+
+```R
+> 1 == 1
+[1] TRUE
+> 1 != 2
+[1] TRUE
+> 1 < 2
+[1] TRUE
+> 1 <= 1
+[1] TRUE
+> 1 > 0
+[1] TRUE
+> 1 >= -9
+[1] TRUE
+> all.equal(1.0, 1.0)
+[1] TRUE
+> all.equal(1.0, 1.1)
+[1] "Mean relative difference: 0.1"
+```
+
