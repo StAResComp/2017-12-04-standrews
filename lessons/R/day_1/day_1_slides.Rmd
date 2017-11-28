@@ -99,13 +99,16 @@ Please do take notes on the course `etherpad`:
 </div>
 
 
-## 02. Getting to know `RStudio`
+# 02. Getting to know `RStudio`
 
 
 ## Learning Objectives
 
 * Familiarity with the `RStudio` IDE
 * Introduce `R` syntax
-* Set up a working directory with version control
+* Set up a working directory with version control (`git`)
 * Learn good project management practices
 * Introduce package management
+
+
+## `RStudio` Overview - Live Demo

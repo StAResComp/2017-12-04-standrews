@@ -23,10 +23,8 @@ rm(list=ls())
 
 **SLIDE: Learning Objectives**
 
-* We need to get some **FAMILIARITY WITH OUR WORKING ENVIRONMENT**: the `RStudio` IDE
-* We'll **BUILD UPON THE `GIT` LESSON** because `RStudio` integrates naturally with `git` to keep all your analysis and code under version control.
-* We'll introduce `R` syntax, and **SEE HOW `R` REPRESENTS DATA** and how to **PROGRAM IN `R`**
-* If we have time we'll deal with **MANAGING SOME OF THE MANY USEFUL PACKAGES** available in `R`
+* We're going to talk in general terms about **WHAT `R` and `RSTUDIO` are**.
+* We're also going to discuss **WHAT MAKES THEM DIFFERENT FROM SOME OTHER TOOLS** you might already use for similar tasks, like `Excel`
 
 ----
 
@@ -78,3 +76,16 @@ rm(list=ls())
 * It has a **CODE/SCRIPT EDITOR FOR WRITING PROGRAMS**
 * It has tools for **VISUALISING DATA**
 * It has built-in **GIT INTEGRATION FOR MANAGING YOUR PROJECTS**
+
+## SECTION 02: Getting To Know `RStudio`
+
+**SLIDE: Learning Objectives**
+
+* We need to get some **FAMILIARITY WITH OUR WORKING ENVIRONMENT**: the `RStudio` IDE
+* We'll **BUILD UPON THE `GIT` LESSON** because `RStudio` integrates naturally with `git` to keep all your analysis and code under version control.
+* We'll introduce `R` syntax, and **SEE HOW `R` REPRESENTS DATA** and how to **PROGRAM IN `R`**
+* If we have time we'll deal with **MANAGING SOME OF THE MANY USEFUL PACKAGES** available in `R`
+
+----
+
+**SLIDE: `RStudio` Overview - Live Demo**
