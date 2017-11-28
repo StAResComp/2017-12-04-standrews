@@ -220,3 +220,10 @@ rm(list=ls())
 [1] "Mean relative difference: 0.1"
 ```
 
+----
+
+**SLIDE: EXERCISE 01**
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+

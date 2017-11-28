@@ -116,3 +116,15 @@ Please do take notes on the course `etherpad`:
 <center>
 <img src="images/rstudio-start-view.png" width="75%" />
 </center>
+
+## Exercise 01 (5min)
+
+* **Try out some of your own calculations in the interactive console**
+
+```{r}
+2 ** 16
+15 %% 4
+15 %/% 4
+```
+
+<img src="images/red_green_sticky.png" width="100%" />
