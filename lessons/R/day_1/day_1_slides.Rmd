@@ -22,8 +22,13 @@ knitr::opts_chunk$set(echo = TRUE)
 Please do take notes on the course `etherpad`:
 </div>
 
-
 [http://pad.software-carpentry.org/2017-12-04-standrews](http://pad.software-carpentry.org/2017-12-04-standrews)
+
+<div class="highlight">
+* **Communal notes**: share your understanding, and benefit from others
+* **Ask questions**: get detailed answers with links and examples
+* **A record/reference for after the course**
+</div>
 
 
 # 01. Introduction to R and <br /> RStudio
@@ -31,10 +36,9 @@ Please do take notes on the course `etherpad`:
 
 ## Learning Objectives
 
-* Familiarity with the `RStudio` IDE
-* Set up a working directory with version control
-* Introduce `R` syntax
-* (Introduce package management)
+* Understand what `R` is
+* Understand what `RStudio` is
+* Understand why `R` is different from something like `Excel`
 
 
 ## What is `R`?
@@ -67,9 +71,9 @@ Please do take notes on the course `etherpad`:
 <img src="images/dt160107.gif" width="80%" />
 </center>
 
-> * *Separates data from analysis*
-> * Not point-and-click: *every step is explicit*
-> * Easy to share, adapt, reuse analyses with new/modified data
+> * ***Separates data from analysis***
+> * Not point-and-click: *every step is explicit and transparent*
+> * Easy to share, adapt, reuse, publish analyses with new/modified data (GitHub)
 > * `R` can be run on supercomputers…
 
     
@@ -80,7 +84,7 @@ Please do take notes on the course `etherpad`:
 
 ## What is `RStudio`?
 
-* `RStudio` is an *integrated development environment* (IDE)
+* `RStudio` is an *integrated development environment* (IDE) - all platforms
 
 <center>
 <img src="images/rstudio_window.png" width="50%" />
@@ -93,3 +97,15 @@ Please do take notes on the course `etherpad`:
 * Graphics/visualisation
 * Project management (`git` integration)
 </div>
+
+
+## 02. Getting to know `RStudio`
+
+
+## Learning Objectives
+
+* Familiarity with the `RStudio` IDE
+* Introduce `R` syntax
+* Set up a working directory with version control
+* Learn good project management practices
+* Introduce package management

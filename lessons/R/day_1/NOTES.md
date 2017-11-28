@@ -15,6 +15,10 @@ rm(list=ls())
 
 * Programming in `R`: Part One
 
+## ETHERPAD
+
+* Please use the Etherpad for the course
+
 ## SECTION 01: Introduction to `R` and `RStudio`
 
 **SLIDE: Learning Objectives**
@@ -46,16 +50,17 @@ rm(list=ls())
 **SLIDE: But I already know `Excel`**
 
 * I'm **NOT HERE TO CRITICISE `EXCEL`**. `Excel` is brilliant at what it's meant to do. It's **POWERFUL** and **INTUITIVE**.
-* But **`R` HAS ADVANTAGES FOR REPRODUCIBLE ANALYSIS**
+* But **`R` HAS MANY ADVANTAGES FOR REPRODUCIBLE AND COMPLEX ANALYSIS**
 
-* Perhaps the key thing is that it **SEPARATES DATA FROM ANALYSIS**.
-    * In `R`, when you do things to the original data, unless you overwrite the file, that original data remains unmodified.
-    * In `Excel`, it's easy to overwrite data with copy-and-paste (and many bad things have happened as a result)
+* A key thing for reproducibility is that it **SEPARATES DATA FROM ANALYSIS**.
+    * In `R`, when you do anything to the original data, that original data remains unmodified (unless you overwrite the file).
+    * **POINT OF GOOD PRACTICE: RAW DATA SHOULD BE READ-ONLY**
+    * In `Excel` however it's easy to overwrite data with copy-and-paste (and many bad things have happened as a result) - see Mike Croucher's talk for examples.
 
-* Because **YOUR ANALYSIS IN `R` IS A PROGRAM**, every step is written down explicitly, and understandable.
+* Because **YOUR ANALYSIS IN `R` IS A PROGRAM**, every step is written down explicitly, and is transparent and understandable by someone else.
     * In `Excel`, there is no clear record of where you moved your mouse, or what you copied and pasted, and it's not immediately obvious how your formulas work.
 
-* `R` code is **EASY TO SHARE AND ADAPT**, and to apply again to a different or a modified input dataset.
+* `R` code is **EASY TO SHARE AND ADAPT**, and to apply again to a different or a modified input dataset. It's easy to publish the analyses via online resources, such as GitHub.
 * `R` code can also be **RUN ON EXTREMELY LARGE DATASETS**, quickly. That's much harder in `Excel`.
 
 ----
@@ -63,9 +68,11 @@ rm(list=ls())
 **SLIDE: What is `RStudio`?**
 
 * `RStudio` is an **INTEGRATED DEVELOPMENT ENVIRONMENT** - which is to say it's a very powerful tool for writing and using `R` and programs in the `R` language.
+    * It's available on **ALL PLATFORMS**
+    * It's available as a webserver, too.
 
-* On the left is the `RStudio` IDE **WHILE I WAS WRITING THIS PRESENTATION IN IT** on a Mac
-* On the right is the Windows version, with an example analysis and visualisation
+* On the left is a screenshot **WHILE I WAS WRITING THIS PRESENTATION IN RSTUDIO** on a Mac
+* On the right is the Windows version, with an **EXAMPLE ANALYSIS AND VISUALISATION**
 
 * You can use it to **INTERACT WITH `R` DIRECTLY TO EXPERIMENT WITH DATA**
 * It has a **CODE/SCRIPT EDITOR FOR WRITING PROGRAMS**
