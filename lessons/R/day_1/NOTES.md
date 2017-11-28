@@ -226,4 +226,100 @@ rm(list=ls())
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
 
+----
 
+**SLIDE: Variables**
+
+* **VARIABLES** are critical to programming in general, and also to working in `R`
+* Variables are like **NAMED BOXES**
+    * Like a box, they **HOLD THINGS**
+    * When we make reference to a box's name, we **MEAN THE THING THE BOX CONTAINS**
+* Here, the box is called `Name`, and it contains the word `Samia`
+* When we refer to the box, we call it `Name`, and we might ask questions like:
+    * "What is the length of `Name`?", meaning "What is the length of the word in the box called `Name`?" (answer: 5)
+
+----
+
+**SLIDE: Variables - Interactive Demo**
+
+* This is a very important concept, so we're going to go through some practical examples, to reinforce it
+    * In `R`, variables are assigned with the **ASSIGNMENT OPERATOR** `<-`
+    * We will assign the value `1/40` to the variable `x`
+    * **DEMO CODE**
+
+```R
+> x <- 1 / 40
+```
+
+* At first, nothing seems to happen, but we can see that the variable `x` now exists, and contains the value `0.025` - a **DECIMAL APPROXMATION** of the fraction `1/40`
+
+```R
+> x
+[1] 0.025
+```
+
+* **CLICK ON THE ENVIRONMENT WINDOW**
+    * You should see that `x` is defined, there
+* The *Environment* window in `RStudio` tells you the name and content of every variable currently active in your `R` session.
+
+* This **VARIABLE CAN BE USED ANYWHERE THAT EXPECTS A NUMBER**
+    * such as an argument to a function
+
+```R
+> log(x)
+[1] -3.688879
+> sin(x)
+[1] 0.0249974
+> x + x
+[1] 0.05
+> 2 * x
+[1] 0.05
+> x ^ 2
+[1] 0.000625
+```
+
+* We can **REASSIGN VALUES TO VARIABLES**
+    * **MONITOR THE VALUE OF `x` IN THE ENVIRONMENT WINDOW**
+    * We can also assign a variable to itself, to modify the variable
+
+```R
+> x <- 100
+> x <- x + 5
+```
+
+* We can assign **ANY KIND OF VALUE** to a variable
+    * Including **STRINGS** - i.e. sets of characters
+
+```R
+> name <- "Samia"
+> name
+[1] "Samia"
+```
+
+* But **BE CAREFUL** - `R` is not always intuitive
+    * Strings in particular may not work the way you expect
+
+```R
+> length(name)
+[1] 1
+> nchar(name)
+[1] 5
+```
+
+----
+
+**SLIDE: EXERCISE 02**
+
+Solution:
+
+`mass <- 47.5`
+This will give a value of 47.5 for the variable mass
+
+`age <- 122`
+This will give a value of 122 for the variable age
+
+`mass <- mass * 2.3`
+This will multiply the existing value of 47.5 by 2.3 to give a new value of 109.25 to the variable mass.
+
+`age <- age - 20`
+This will subtract 20 from the existing value of 122 to give a new value of 102 to the variable age.

@@ -128,3 +128,42 @@ Please do take notes on the course `etherpad`:
 ```
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+## Variables
+
+<div class="highlight">
+**Variables** are like *named boxes*
+</div>
+
+* An item of data goes in the box (called `Name`)
+* When we refer the box (*variable*) with a name, we really mean *what's in the box*
+
+<center>
+<img src="images/boxes_variables_arrow.png" width="45%" />
+</center>
+
+
+## Variables - Interactive Demo
+
+```{r}
+name <- "Samia"
+name
+x <- 1 / 40
+x
+x ^ 2
+log(x)
+```
+
+
+## Exercise 02 (5min)
+
+What will be the value of each variable after each statement in the following program?
+
+```{r, echo=TRUE}
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+<img src="images/red_green_sticky.png" width="100%" />
