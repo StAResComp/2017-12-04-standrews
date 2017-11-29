@@ -324,3 +324,19 @@ What examples of data types can you think of from your own experience?
 **INTERACTIVE DEMO**
 </div>
 </center>
+
+
+## Exercise 03 (5min)
+
+Create examples of data with the following characteristics:
+
+<div class="highlight">
+* name: `answer`, type: `logical`
+* name: `height`, type: `numeric`
+* name: `dog_name`, type: `character`
+</div>
+
+For each variable, test that it has the data type you intended
+
+
+<img src="images/red_green_sticky.png" width="100%" />

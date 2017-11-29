@@ -669,6 +669,10 @@ txt <- "TRUE"
 [1] TRUE
 > is.numeric(d)
 [1] TRUE
+> is.double(i)
+[1] FALSE
+> is.integer(d)
+[1] FALSE
 > is.numeric(txt)
 [1] FALSE
 > is.character(txt)
