@@ -240,3 +240,26 @@ Using `git` for version control.
 <div class="references">
 `RStudio` projects: [https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 </div>
+
+
+## Working in `RStudio`
+
+<div class="highlight">
+We can write code in several ways in `RStudio`
+</div>
+
+* At the console (you've done this)
+* In a script
+* As an interactive notebook
+* As a markdown file
+* As a Shiny app
+
+We're going to create a new dataset and `R` script.
+
+* Putting code in a script makes it easier to modify, share and run
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>

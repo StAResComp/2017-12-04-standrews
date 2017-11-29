@@ -429,3 +429,87 @@ This will subtract 20 from the existing value of 122 to give a new value of 102 
 * **FILES** shows
     * **CURRENT WORKING DIRECTORY** (see breadcrumb trail)
     * **TWO FILES**: `*.Rproj` - information about your project; `.gitignore` - your project's `.gitignore` file (remember the `git` lesson?)
+* **CLICK ON `GIT` TAB**
+    * We see that the files are not yet added to the project (status is `?`)
+    * **CHECK BOXES TO STAGE FILES**
+    * **CLICK ON `DIFF` TO SEE CHANGES** (note colours, lines, etc.)
+    * **CLICK ON `COMMIT` TO COMMIT CHANGES**
+    * **WRITE COMMIT MESSAGE** (add .gitignore and R project files to repo)
+    * **CLICK `COMMIT`** (explain message)
+
+* **CREATE DIRECTORIES IN PROJECT**
+* **Create directoris called `scripts` and `data`**
+    * Click on `New Folder`
+    * Enter directory name (`scripts`)
+    * Note that the directory now exists in the `Files` tab (but not in the `git` tab, as the directory is empty)
+    * Do the same for `data/`
+* **NOTE THAT WE WILL NOW POPULATE THE DIRECTORY**
+
+----
+
+**SLIDE: Working in RStudio**
+
+* `RStudio` offers **SEVERAL WAYS TO WRITE CODE**
+    * We'll not see all of them today
+    * You've seen **DIRECT INTERACTION IN THE CONSOLE** (entering variables)
+    * `RStudio` also has an editor for writing scripts, notebooks, markdown documents, and Shiny applications (**EXPLAIN BRIEFLY**)
+    * It can also be used to write plain text
+
+* **INTERACTIVE DEMO OF `R` SCRIPT**
+
+* Click on `File` -> `New File` -> `Text File`. **NOTE THAT THE EDITOR WINDOW OPENS**
+* Enter the following text, and **EXPLAIN CSV**
+    * plain text file
+    * one row per line
+    * column entries separated by commas
+    * first row is header data
+    * **NEEDS A BLANK LINE AT THE END**
+    * **DATA DESCRIBES CATS**
+
+```
+coat,weight,likes_string
+calico,2.1,1
+black,5.0,0
+tabby,3.2,1
+
+```
+
+* **SAVE THE FILE AS `data/feline_data.csv`**
+    * Click on disk icon
+    * Navigate to `data/` subdirectory
+    * Enter filename `feline_data.csv`
+* **NOTE CHANGES IN `GIT` TAB**
+    * The `data` directory appears!
+    * Click on `Staged` and **THE FILE APPEARS**
+    * Click `Commit` and add a commit string, e.g. "add cat dataset"
+* **CLOSE THE EDITOR FOR THAT FILE**
+
+* Click on `File` -> `New File` -> `R Script`.
+* **EXPLAIN COMMENTS** while entering the code below
+    * **COMMENTS ANNOTATE YOUR CODE**: reminders for you, and information for others
+* **EXPLAIN `read.csv()`**
+    * `read.csv()` is a **FUNCTION** that reads data from a **CSV-FORMAT FILE** into a variable in `R`
+ 
+```R
+# Script for exploring data structures
+cats <- read.csv(file = "data/feline_data.csv")
+```
+
+* **SAVE THE SCRIPT**
+   * Click on `File` -> `Save`
+   * Navigate to the `scripts/` subdirectory
+   * Enter filename `data_structures` (**EXTENSION IS AUTOMATICALLY APPLIED**)
+**NOTE CHANGES IN `GIT` TAB**
+   * The `scripts` directory appears!
+   * Click on `Staged` and the file appears
+   * Click on `Commit` and add a commit string, e.g. "add data structures script"
+* **DO YOU SEE THE VARIABLE IN THE ENVIRONMENT?**
+   * **NO** - because the code hasn't been executed, only written.
+
+* **RUN THE SCRIPT**
+   * Click on `Source` and **NOTE THIS RUNS THE WHOLE SCRIPT**
+* Go to the `Environment` tab
+   * **NOTE THE DATA WAS LOADED IN THE VARIABLE `cats`**
+   * Note that there is a description of the data (3 obs. of 3 variables)
+   * **CLICK ON THE VARIABLE AND NOTE THAT THE TABLE IS NOW VISIBLE** - this is helpful
+   * **YOU CANNOT EDIT THE DATA IN THIS TABLE** - you can sort and filter, but not modify
