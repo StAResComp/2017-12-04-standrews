@@ -355,6 +355,7 @@ For each variable, test that it has the data type you intended
 </div>
 </center>
 
+
 ## Challenge 04 (5min)
 
 Vectors are *atomic*: they can contain only a single data *type*
@@ -372,3 +373,27 @@ Options: `logical`, `integer`, `numeric`, `character`
 </div>
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+## Coercion
+
+* *Coercion* means changing data from one type to another
+* `R` will perform *implicit coercion* on vectors to make them atomic
+
+<div class="highlight">
+`logical` $\rightarrow$ `integer` $\rightarrow$ `double` $\rightarrow$ `complex` $\rightarrow$ `character`
+</div>
+
+<center>
+<div class="attention">
+**If there are formatting problems with your data, you might not have the type you expect when you import into `R`**
+</div>
+</center>
+
+* Manual coercion with `as.<type_name>()`
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>

@@ -520,7 +520,35 @@ xx &lt;- c(&quot;a&quot;, TRUE)</pre>
 <div class="highlight">
 <p>Options: <code>logical</code>, <code>integer</code>, <code>numeric</code>, <code>character</code></p></div>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Coercion</h2></hgroup><article  id="coercion">
+
+<ul>
+<li><em>Coercion</em> means changing data from one type to another</li>
+<li><code>R</code> will perform <em>implicit coercion</em> on vectors to make them atomic</li>
+</ul>
+
+<div class="highlight">
+<p><code>logical</code> \(\rightarrow\) <code>integer</code> \(\rightarrow\) <code>double</code> \(\rightarrow\) <code>complex</code> \(\rightarrow\) <code>character</code></p></div>
+
+<center>
+
+<div class="attention">
+<p><strong>If there are formatting problems with your data, you might not have the type you expect when you import into <code>R</code></strong></p></div>
+
+</center>
+
+<ul>
+<li>Manual coercion with <code>as.&lt;type_name&gt;()</code></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center></article></slide>
 
 
   <slide class="backdrop"></slide>

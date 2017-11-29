@@ -772,3 +772,97 @@ xx <- c(1, 2, 'a')
 **SLIDE: Challenge 04**
 
 * Let the students work for a couple of minutes, then demonstrate.
+
+----
+
+**SLIDE: Coercion**
+
+* *Coercion* is what happens when you **COVERT ONE DATA TYPE INTO ANOTHER**
+* If `R` thinks it needs to, it will **COERCE DATA IMPLICITLY** without telling you
+* There is a set order for coercion
+    * `logical` can be coerced to `integer`, but `integer` cannot be coerced to `logical`
+    * That's because `integer` can describe all `logical` values, but not *vice versa*
+    * Everything can be represented as a `character`, so that's the fallback position for `R`
+* **IF THERE'S A FORMATTING PROBLEM IN YOUR DATA, `R` MIGHT CONVERT THE TYPE TO COPE**
+    * `R` will choose the simplest data type that can represent all items in the vector
+
+* **INTERACTIVE DEMO IN CONSOLE** More useful things to do with vectors
+* You can (usually) **COERCE VECTORS MANUALLY** with `as.<type>()`
+
+```R
+> as.character(x)
+[1] "10" "12" "45" "33"
+> as.complex(x)
+[1] 10+0i 12+0i 45+0i 33+0i
+> as.logical(x)
+[1] TRUE TRUE TRUE TRUE
+> xx
+[1] "1" "2" "a"
+> as.numeric(xx)
+[1]  1  2 NA
+Warning message:
+NAs introduced by coercion 
+> as.logical(xx)
+[1] NA NA NA
+```
+
+* You can generate **NUMBER SEQUENCES** as vectors
+    * The `seq()` function returns a vector
+    * As does the `:` operator
+
+```R
+> seq(10)
+ [1]  1  2  3  4  5  6  7  8  9 10
+> seq(1, 10)
+ [1]  1  2  3  4  5  6  7  8  9 10
+> seq(35, 40, by=0.5)
+ [1] 35.0 35.5 36.0 36.5 37.0 37.5 38.0 38.5 39.0 39.5 40.0
+> 1:10
+ [1]  1  2  3  4  5  6  7  8  9 10
+> 5:8
+[1] 5 6 7 8 
+```
+
+* You can **APPEND ELEMENTS TO A VECTOR WITH `c()`**
+
+```R
+> x
+[1] 10 12 45 33
+> c(x, 57)
+[1] 10 12 45 33 57
+> x
+[1] 10 12 45 33
+> x <- c(x, 57)
+> x
+[1] 10 12 45 33 57
+```
+
+* There are useful **FUNCTIONS TO GET INFORMATION ABOUT A VECTOR**
+
+```R
+> x <- 0:10
+> tail(x)
+[1]  5  6  7  8  9 10
+> head(x)
+[1] 0 1 2 3 4 5
+> head(x, n=2)
+[1] 0 1
+```
+
+* You can **GIVE VECTOR ELEMENTS NAMES**
+    * They're then referred to as *named vectors*
+
+```R
+> x <- 1:4
+> names(x)
+NULL
+> str(x)
+ int [1:4] 1 2 3 4
+> names(x) <- c("a", "b", "c", "d")
+> x
+a b c d 
+1 2 3 4 
+> str(x)
+ Named int [1:4] 1 2 3 4
+ - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
+```
