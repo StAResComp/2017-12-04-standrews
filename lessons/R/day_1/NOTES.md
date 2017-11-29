@@ -512,4 +512,78 @@ cats <- read.csv(file = "data/feline_data.csv")
    * **NOTE THE DATA WAS LOADED IN THE VARIABLE `cats`**
    * Note that there is a description of the data (3 obs. of 3 variables)
    * **CLICK ON THE VARIABLE AND NOTE THAT THE TABLE IS NOW VISIBLE** - this is helpful
-   * **YOU CANNOT EDIT THE DATA IN THIS TABLE** - you can sort and filter, but not modify
+   * **YOU CANNOT EDIT THE DATA IN THIS TABLE** - you can sort and filter, but not modify the data. This **ENFORCES GOOD PRACTICE** (compare to Excel).
+
+----
+
+**SLIDE: Data Types and Structures in `R`**
+
+* `R` is **MOSTLY USED FOR DATA ANALYSIS**
+* `R` is set up with key, core data types designed to help you work with your own data
+* A lot of the time, `R` focuses on tabular data (like our cat example)
+* **INTERACTIVE DEMO**
+
+* **SWITCH TO THE CONSOLE** (Establish that `cats` is available as a variable)
+* If you type `cats`, you get a nice tabular representation of your data 
+
+```R
+> cats
+    coat weight likes_string
+1 calico    2.1            1
+2  black    5.0            0
+3  tabby    3.2            1
+```
+
+* **THINK ABOUT THE DATA TYPES** Are they all the same?
+    * **NO** `coat` is text; `weight` is some real value (in kg or pounds, maybe), and `likes_string` looks like it should be `TRUE`/`FALSE`
+    * **DOES IT MAKE SENSE TO WORK WITH THEM AS IF THEY'RE THE SAME THING?** (No)
+
+* **EXTRACT A COLUMN FROM A TABLE**
+   * Use `$` notation in the console
+   * **NOTE THE AUTOCOMPLETION**
+
+```R
+> cats$weight
+[1] 2.1 5.0 3.2
+```
+
+* **WHAT DID `R` RETURN?**
+    * A *vector* (1D ordered collection) of numbers
+* **WE CAN OPERATE ON THESE *VECTORS* **
+    * *Vectors* are an important concept, and `R` is largely built so that operations on vectors are central to data analysis.
+
+```R
+> cats$weight + 2
+[1] 4.1 7.0 5.2
+```
+
+* **WHAT ABOUT OTHER COLUMNS?**
+
+```R
+> cats$coat
+[1] calico black  tabby 
+Levels: black calico tabby
+```
+
+* **WHAT DID `R` RETURN?**
+    * A *vector* of *levels*
+    * We'll talk about these in more detail shortly, but the key point is that `R` **DOESN'T THINK THEY'RE ONLY WORDS** - it **THINKS THEY'RE NAMED CATEGORIES OF OBJECT**. `R` is assuming that you mean to import *data*
+    * We can operate on this vector, too (**EXPLAIN `paste()`**)
+
+```R
+> paste("My cat is", cats$coat)
+[1] "My cat is calico" "My cat is black"  "My cat is tabby" 
+```
+
+* **WHAT HAPPENS NEXT?**
+
+```R
+> cats$weight + cats$coat
+[1] NA NA NA
+Warning message:
+In Ops.factor(cats$weight, cats$coat) : ‘+’ not meaningful for factors
+```
+
+* **THE DATA TYPES ARE NOT COMPATIBLE** for addition
+* **UNDERSTANDING HOW YOUR DATA MAP TO `R`'s DATA TYPES IS KEY**
+

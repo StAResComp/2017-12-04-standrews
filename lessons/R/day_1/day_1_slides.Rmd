@@ -263,3 +263,21 @@ We're going to create a new dataset and `R` script.
 **INTERACTIVE DEMO**
 </div>
 </center>
+
+## Data Types and Structures in `R`
+
+* `R` is mostly used for data analysis
+* `R` has special *types* and *structures* to help you work with data
+* Much of the focus is on tabular data (*data frames*) 
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+<div class="highlight">
+Understanding data types, their uses, and how they relate to your own data is key to successful analysis with `R`
+
+(it's not just about programming)
+</div>
