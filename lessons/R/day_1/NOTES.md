@@ -359,7 +359,8 @@ This will subtract 20 from the existing value of 122 to give a new value of 102 
     * Some **PRINCIPLES MAKE THINGS EASIER FOR EVERYONE**
 
 * Using a **SINGLE WORKING DIRECTORY PER PROJECT/ANALYSIS**
-    * **EASY TO PACKAGE UP** the whole directory and move it around, or share it
+    * **NAME IT AFTER THE PROJECT**
+    * **EASY TO PACKAGE UP** the whole directory and move it around, or share it - **OR PUBLISH ALONGSIDE YOUR PAPER**
     * **NO NEED TO HUNT AROUND THE WHOLE DISK** to find relevant or important files.
     * You can use **RELATIVE PATHS** that will always work, so long as you work within the project directory
 * Treat your **RAW DATA AS READ-ONLY**
