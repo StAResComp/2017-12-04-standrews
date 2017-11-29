@@ -518,6 +518,10 @@ cats <- read.csv(file = "data/feline_data.csv")
 
 ----
 
+**SLIDE: 03. Data Structures in `R`**
+
+----
+
 **SLIDE: Data Types and Structures in `R`**
 
 * `R` is **MOSTLY USED FOR DATA ANALYSIS**
