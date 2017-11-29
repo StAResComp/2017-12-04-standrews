@@ -229,7 +229,7 @@ rm(list=ls())
 
 ----
 
-**SLIDE: EXERCISE 01**
+**SLIDE: Challenge 01**
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
 
@@ -339,7 +339,7 @@ character(0)
 
 ----
 
-**SLIDE: EXERCISE 02**
+**SLIDE: Challenge 02**
 
 Solution:
 
@@ -703,3 +703,72 @@ txt <- "TRUE"
 > is.numeric(c)
 [1] FALSE
 ```
+
+----
+
+**SLIDE: Challenge 03**
+
+* Let the students work for a couple of minutes, then demonstrate.
+
+----
+
+**SLIDE: FIVE COMMON `R` DATA STRUCTURES**
+
+* These are perhaps the five data types you'll come across most often in `R`
+* We'll deal with them through examples
+* **INTERACTIVE DEMO IN SCRIPT**
+
+* **VECTORS**
+    * These are the **MOST COMMON DATA STRUCTURE**
+    * Vectors can contain **ONLY A SINGLE DATA TYPE** (*atomic vectors*)
+    * **ADD CODE TO SCRIPT** then use `Run` to run in console
+    * To create a vector **USE THE `c()` FUNCTION** (`c()` is `combine`; use `?c`)
+    * First we define an **ATOMIC VECTOR OF NUMBERS** - each element is an integer
+
+```R
+# Define an integer vector
+x <- c(10, 12, 45, 33)
+```
+
+* We can use some `R` functions to find out more about this variable
+    * **RUN CODE IN CONSOLE**
+
+```R
+> length(x)
+[1] 4
+> typeof(x)
+[1] "double"
+> str(x)
+ num [1:4] 10 12 45 33
+``` 
+
+* The `str()` function **REPORTS THE STRUCTURE OF A VARIABLE**
+    * Here, `num` means 'numeric'; `[1:4]` means there are four elements; the elements are listed
+    * **NOTE THAT THIS INFORMATION IS IN THE ENVIRONMENT TAB**
+    
+* **DEFINE A SECOND VECTOR IN THE SCRIPT**
+
+```R
+# Define a vector
+xx <- c(1, 2, 'a')
+```
+
+* In the Environment tab, you can see **THIS IS A CHARACTER VECTOR**
+
+```R
+> length(xx)
+[1] 3
+> typeof(xx)
+[1] "character"
+> str(xx)
+ chr [1:3] "1" "2" "a"
+``` 
+
+* **IS THE TYPE OF THE VECTOR WHAT YOU EXPECTED?**
+    * This is one of the things that trips people up with `R` - they think their data is of one type, but `R` thinks it makes more sense to have it as another type
+
+----
+
+**SLIDE: Challenge 04**
+
+* Let the students work for a couple of minutes, then demonstrate.
