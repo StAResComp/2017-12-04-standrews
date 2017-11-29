@@ -302,3 +302,25 @@ Understanding data types, their uses, and how they relate to your own data is ke
 What examples of data types can you think of from your own experience?
 </div>
 </center>
+
+## Data Types in `R`
+
+* Data *types* in `R` are *atomic*
+    * All data is one of these types
+    * All data *structures* are built from these
+    
+<div class="highlight">
+1. **logical**: `TRUE`, `FALSE`
+2. **numeric**:
+    * **integer**: `3`, `2L`, `123456`
+    * **double** (*decimal*): `3.0`, `-23.45`, `pi`
+3. **complex**: `3+0i`, `1+4i`
+4. **character** (*text*): `"a"`, `'SWC'`, `"This is not a string"`
+5. **raw**: binary data
+</div>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>

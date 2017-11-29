@@ -603,6 +603,8 @@ In Ops.factor(cats$weight, cats$coat) : ‘+’ not meaningful for factors
 * **THESE DATA TYPES ARE NOT COMPATIBLE** for addition
 * `R`'s data types reflect the ways in which data is expected to interact
 * **UNDERSTANDING HOW YOUR DATA MAP TO `R`'s DATA TYPES IS KEY**
+   * It's very important to understand how `R` sees your data (you want `R` to see your data the same way you do)
+   * Many problems in `R` come down to incompatibilities between data and data types.
 
 ----
 
@@ -611,3 +613,89 @@ In Ops.factor(cats$weight, cats$coat) : ‘+’ not meaningful for factors
 * **ASK THE STUDENTS**
     * What data types would you expect to see?
     * What data types do you think you would **WANT OR NEED**, from your own experience?
+* **SPEND A COUPLE OF MINUTES ON THIS**
+    * The difference between a *data type* and a *data structure*
+
+----
+
+**SLIDE: Data Types in `R`**
+
+* `R`'s data *types* are *atomic*: they are **FUNDAMENTAL AND EVERYTHING ELSE IS BUILT UP FROM THEM**, like matter is built up from atoms
+    * In particular, all the data *structures* are built up from data *types*
+* There are only **FIVE DATA TYPES** in `R` (though one is split into two…)
+    * **logical**: Boolean, True/False (also `1`/`0`)
+    * **numeric**: anything that's a number on the number line; two types of number are supported: `integer` and `double` (real)
+    * **complex**: complex numbers, defined on the 2D plane
+    * **character**: text data - readable symbols
+    * **raw**: binary data (we'll not be dealing with this)
+
+* **LET'S LEARN A BIT MORE ABOUT THEM IN THE DEMO**
+* **ENTER DEFINITIONS INTO THE SCRIPT**
+    * Covering the major data types
+
+```R
+# Some variables of several data types
+truth <- TRUE
+lie <- FALSE
+i <- 3L
+d <- 3.0
+c <- 3 + 0i
+txt <- "TRUE"
+```
+
+* **EXECUTE THE VARIABLE DEFINITIONS**
+    * Select the definition lines
+    * Click on `Run`
+    * **OBSERVE THAT THE LINES ARE RUN IN THE CONSOLE**
+    * **OBSERVE THAT THE VALUES ARE DEFINED IN THE ENVIRONMENT**
+    * Note the difference between `Data` and `Values` in the environment
+    * Note that the script is updated in the `Git` tab: commit the change
+
+* **USE `typeof()` TO FIND THE TYPE OF A VARIABLE**
+
+```R
+> typeof(i)
+[1] "integer"
+> typeof(c)
+[1] "complex"
+> typeof(d)
+[1] "double"
+```
+
+* **TO TEST IF A DATA ITEM HAS A TYPE, USE `is.<type>()`**
+
+```R
+> is.numeric(3)
+[1] TRUE
+> is.numeric(d)
+[1] TRUE
+> is.numeric(txt)
+[1] FALSE
+> is.character(txt)
+[1] TRUE
+> is.character(truth)
+[1] FALSE
+> is.logical(truth)
+[1] TRUE
+```
+
+* **THE INTEGER, COMPLEX, AND DOUBLE ARE EQUAL** even if they're not the same data type
+    * numbers are comparable, regardless of data type
+
+```R
+> i == c
+[1] TRUE
+> i == d
+[1] TRUE
+> d == c
+[1] TRUE
+```
+
+* **INTEGER, COMPLEX AND DOUBLE ARE NOT ALL `numeric`** though
+
+```R
+> is.numeric(i)
+[1] TRUE
+> is.numeric(c)
+[1] FALSE
+```
