@@ -264,7 +264,15 @@ We're going to create a new dataset and `R` script.
 </center>
 
 
-# 03. Data Structures in `R`
+# 03. Data Types and <br />Structures in `R`
+
+
+## Learning Objectives
+
+* Basic data types in `R`
+* Common data structures in `R`
+* How to find out the type/structure of `R` data
+* Understand how `R`'s data types and structures relate to your own data
 
 
 ## Data Types and Structures in `R`
@@ -284,3 +292,13 @@ Understanding data types, their uses, and how they relate to your own data is ke
 
 (it's not just about programming)
 </div>
+
+## What Data Types Do You Expect?
+
+<center>
+<div class="attention">
+**What data types would you expect to see?**
+
+What examples of data types can you think of from your own experience?
+</div>
+</center>

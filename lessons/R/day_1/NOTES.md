@@ -522,6 +522,15 @@ cats <- read.csv(file = "data/feline_data.csv")
 
 ----
 
+**SLIDE: Learning Objectives**
+
+* In this section, you'll be learning about the data types in `R`: **WHAT DATA IS**
+* You'll also be learning about the data *structures*: **WHAT DATA IS BUILT INTO - HOW IT IS ARRANGED**
+* And you'll also learn how to find out what type/structure a particular piece of data has
+* Putting it together, you'll see how `R`'s data types and structures relate to the types of data that you work with, yourself.
+
+----
+
 **SLIDE: Data Types and Structures in `R`**
 
 * `R` is **MOSTLY USED FOR DATA ANALYSIS**
@@ -590,6 +599,15 @@ Warning message:
 In Ops.factor(cats$weight, cats$coat) : ‘+’ not meaningful for factors
 ```
 
-* **THE DATA TYPES ARE NOT COMPATIBLE** for addition
+* You probably already realised that wasn't going to work, because adding "calico" to "2.1" is nonsense.
+* **THESE DATA TYPES ARE NOT COMPATIBLE** for addition
+* `R`'s data types reflect the ways in which data is expected to interact
 * **UNDERSTANDING HOW YOUR DATA MAP TO `R`'s DATA TYPES IS KEY**
 
+----
+
+**SLIDE: What Data Types Do You Expect?**
+
+* **ASK THE STUDENTS**
+    * What data types would you expect to see?
+    * What data types do you think you would **WANT OR NEED**, from your own experience?
