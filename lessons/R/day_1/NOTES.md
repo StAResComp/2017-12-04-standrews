@@ -309,6 +309,30 @@ rm(list=ls())
 
 ----
 
+**SLIDE: Removing Variables**
+
+* To remove **ONE OR MORE SPECIFIED VARIABLES**, use `rm()`
+    * **`ls()` IS A FUNCTION THAT LISTS VARIABLES** (like the Environment tab) 
+    * **DEMO CODE**
+
+```R
+> x <- 1
+> y <- 2
+> z <- 3
+> ls()
+[1] "x" "y" "z"
+> rm(x)
+> ls()
+[1] "y" "z"
+> rm(y, z)
+> ls()
+character(0)
+```
+
+
+
+----
+
 **SLIDE: EXERCISE 02**
 
 Solution:

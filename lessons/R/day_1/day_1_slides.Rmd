@@ -155,6 +155,24 @@ log(x)
 ```
 
 
+## Removing Variables
+
+To remove variables, use `rm()`
+
+```{r}
+x <- 1
+ls()
+rm(x, name)
+ls()
+```
+
+To remove all variables use the broom in the `Environment` tab (`Rstudio`), or:
+
+```{r}
+rm(list=ls())
+```
+
+
 ## Exercise 02 (5min)
 
 What will be the value of each variable after each statement in the following program?
