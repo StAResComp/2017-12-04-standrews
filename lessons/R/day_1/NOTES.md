@@ -391,3 +391,35 @@ This will subtract 20 from the existing value of 122 to give a new value of 102 
 * **`scripts`** might be where you would choose to keep executable code that automates your analysis
 
 * The important thing is that the structure is **SELF-EXPLANATORY WHERE POSSIBLE**
+
+----
+
+**SLIDE: Project Management in `RStudio`**
+
+* `RStudio` **TRIES TO BE HELPFUL** and provides the 'Project' concept
+    * Keeps **ALL PROJECT FILES IN A SINGLE DIRECTORY**
+    * **INTEGRATES WITH `GIT`**
+    * Enables switching between projects within `RStudio`
+    * Keeps project histories
+
+* **INTERACTIVE DEMO**
+
+* **CREATE PROJECT**
+* Click `File` -> `New Project`
+    * Options for how we want to create a project: brand new in a new working directory; turn an existing directory into a project; or checkout a project from `GitHub` or some other repository
+* Click `New Directory`
+    * Options for various things we can do in `RStudio`. Here we want `New Project`
+* Click `New Project`
+    * We are asked for a directory name. **ENTER `swc-r-lesson`**
+    * We are asked for a parent directory. **PUT YOURS ON THE DESKTOP; STUDENTS CAN CHOOSE ANYWHERE SENSIBLE**
+    * **SELECT `Create a git repository`** - this will create and initialise a `git` repository, just for this project
+* Click `Create Project`
+* **YOU SHOULD SEE AN EMPTY-ISH `RSTUDIO` WINDOW**
+
+* **INSPECT PROJECT ENVIRONMENT**
+* First, **NOTE THE WINDOWS**: editor; environment; files
+* **EDITOR** is empty
+* **ENVIRONMENT** is empty
+* **FILES** shows
+    * **CURRENT WORKING DIRECTORY** (see breadcrumb trail)
+    * **TWO FILES**: `*.Rproj` - information about your project; `.gitignore` - your project's `.gitignore` file (remember the `git` lesson?)

@@ -213,3 +213,30 @@ Good Enough Practices in Scientific Computing (2017) Wilson *et al.* [http://jou
 <center>
 <img src="images/working-directory-structure.png" width="100%" />
 </center>
+
+
+## Project Management in `RStudio`
+
+* `RStudio` tries to help you manage your projects
+    * `R Project` concept - files and subdirectory structure
+    * `git` integration
+    * switching between multiple projects within `RStudio`
+    * stores project history
+    
+<div class="highlight">
+**Let's create a project in `RStudio`**
+
+Using `git` for version control.
+</div>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+<img src="images/red_green_sticky.png" width="100%" />
+
+<div class="references">
+`RStudio` projects: [https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+</div>
