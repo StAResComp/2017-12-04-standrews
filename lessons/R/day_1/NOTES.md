@@ -200,7 +200,7 @@ rm(list=ls())
 
 * We can do **COMPARISONS** in `R`
     * Comparisons return `TRUE` or `FALSE`. **DEMO CODE**
-    * **NOTE:** when comparing numbers, it's better to use `all.equal()` (*machine numeric tolerance*)
+    * **NOTE:** when comparing numbers, it's better to use `all.equal()` (*machine numeric tolerance*) **ASK IF THERE'S ANYONE FROM MATHS/PHYSICS**
 
 ```R
 > 1 == 1
@@ -219,6 +219,12 @@ rm(list=ls())
 [1] TRUE
 > all.equal(1.0, 1.1)
 [1] "Mean relative difference: 0.1"
+> all.equal(pi-1e-7, pi)
+[1] "Mean relative difference: 3.183099e-08"
+> all.equal(pi-1e-8, pi)
+[1] TRUE
+> pi-1e-8 == pi
+[1] FALSE
 ```
 
 ----
