@@ -1325,6 +1325,7 @@ m2 <- matrix(c(1, 2), ncol = 3, nrow = 4)
 
 * **PROVIDING TWO VALUES TO THE FIRST ARGUMENT** fills the matrix, too
     * So long as the **LENGTH OF THE MATRIX IS A MULTIPLE OF THE INPUT LENGTH**
+    * We can **INDEX AND SLICE** just like before
 
 ```R
 > m2
@@ -1332,6 +1333,12 @@ m2 <- matrix(c(1, 2), ncol = 3, nrow = 4)
 [1,]    1    2    1    2
 [2,]    2    1    2    1
 [3,]    1    2    1    2
+> m2[1, ]
+[1] 1 2 1 2
+> m2[2:3, 3:4]
+     [,1] [,2]
+[1,]    2    1
+[2,]    1    2
 ```
 
 ----
@@ -1359,3 +1366,84 @@ m2 <- matrix(c(1, 2), ncol = 3, nrow = 4)
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Lists**
+
+* `list`s are like *vectors*, **EXCEPT THEY CAN HOLD ANY DATA TYPE**
+
+* **CREATE NEW LIST IN SCRIPT**
+    * `Run` from script
+    * Commit to repo
+
+```R
+# Create a list
+l <- list(1, 'a', TRUE, matrix(0, nrow = 2, ncol = 2), f)
+
+# Create a named list
+l_named <- list(a = "SWC", b = 1:4)
+```
+
+* **INSPECT THE LISTS IN THE CONSOLE**
+   * The elements are identified with **DOUBLE SQUARE BRACKETS** `[[n]]`
+   * We use this **LIKE ANY OTHER INDEX**
+
+```R
+> class(l)
+[1] "list"
+> class(l_named)
+[1] "list"
+> str(l)
+List of 5
+ $ : num 1
+ $ : chr "a"
+ $ : logi TRUE
+ $ : num [1:2, 1:2] 0 0 0 0
+ $ : Factor w/ 2 levels "no","yes": 1 2 1
+> str(l_named)
+List of 2
+ $ a: chr "SWC"
+ $ b: int [1:4] 1 2 3 4
+> l
+[[1]]
+[1] 1
+
+[[2]]
+[1] "a"
+
+[[3]]
+[1] TRUE
+
+[[4]]
+     [,1] [,2]
+[1,]    0    0
+[2,]    0    0
+
+[[5]]
+[1] no  yes no 
+Levels: no yes
+> l[[4]][1,1]
+[1] 0
+```
+
+* **THE NAMED LIST IS SLIGHTLY DIFFERENT**
+    * **CAN STILL INDEX**
+    * But can also **NOW NAME**
+
+```R
+> l_named
+$a
+[1] "SWC"
+
+$b
+[1] 1 2 3 4
+> l_named[[1]]
+[1] "SWC"
+> l_named[[2]]
+[1] 1 2 3 4
+> l_named$a
+[1] "SWC"
+> l_named$b
+[1] 1 2 3 4
+```

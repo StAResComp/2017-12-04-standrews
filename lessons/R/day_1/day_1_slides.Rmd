@@ -669,3 +669,21 @@ Can you create a matrix with:
 </div>
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+## Lists
+
+* `list`s are like *vectors*, but can hold *any combination of datatype*
+    * *elements* in a `list` are denoted by `[[]]` and can be named
+    
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r}
+# create a list
+l <- list(1, 'a', TRUE, matrix(0, nrow = 2, ncol = 2), f)
+l_named <- list(a = "SWC", b = 1:4)
+```

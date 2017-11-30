@@ -814,7 +814,48 @@ str(f)</pre>
 m1 &lt;- matrix(0, ncol = 6, nrow = 3)
 
 # Create matrix of numbers 1 and 2
-m2 &lt;- matrix(c(1, 2), ncol = 3, nrow = 4)</pre></article></slide>
+m2 &lt;- matrix(c(1, 2), ncol = 4, nrow = 3)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 09 (5min)</h2></hgroup><article  id="challenge-09-5min">
+
+<p>Can you create a matrix with:</p>
+
+<ul>
+<li>5 columns</li>
+<li>10 rows</li>
+<li>Containing the numbers <code>1:50</code></li>
+</ul>
+
+<div class="highlight">
+<ul>
+<li>Did the <code>matrix()</code> function fill the matrix by column, or by row?</li>
+<li>If the matrix was filled by row, can you create a new matrix that fills by column (or <em>vice versa</em>)</li>
+</ul>
+
+<p><strong>Use the <code>Rstudio</code> documentation to help</strong></p></div>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Lists</h2></hgroup><article  id="lists">
+
+<ul>
+<li><code>list</code>s are like <em>vectors</em>, but can hold <em>any combination of datatype</em>
+
+<ul>
+<li><em>elements</em> in a <code>list</code> are denoted by <code>[[]]</code> and can be named</li>
+</ul></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># create a list
+l &lt;- list(1, &#39;a&#39;, TRUE, matrix(0, nrow = 2, ncol = 2), f)
+l_named &lt;- list(a = &quot;SWC&quot;, b = 1:4)</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
