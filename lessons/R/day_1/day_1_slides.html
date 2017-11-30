@@ -855,7 +855,88 @@ m2 &lt;- matrix(c(1, 2), ncol = 4, nrow = 3)</pre>
 
 <pre class = 'prettyprint lang-r'># create a list
 l &lt;- list(1, &#39;a&#39;, TRUE, matrix(0, nrow = 2, ncol = 2), f)
-l_named &lt;- list(a = &quot;SWC&quot;, b = 1:4)</pre></article></slide>
+l_named &lt;- list(a = &quot;SWC&quot;, b = 1:4)</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>05. Dataframes</h2></hgroup><article  id="dataframes">
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-4">
+
+<ul>
+<li>Understand the concept of a <code>data.frame</code></li>
+<li>Understand how a <code>data.frame</code> is built from <code>R</code> data structures</li>
+<li>Know how to access any element of a <code>data.frame</code></li>
+<li>Read data into a <code>data.frame</code></li>
+<li>Write data out from a <code>data.frame</code></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Let’s look at a <code>data.frame</code></h2></hgroup><article  id="lets-look-at-a-data.frame">
+
+<ul>
+<li>The <code>cats</code> data is a <code>data.frame</code></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>&gt; class(cats)
+[1] &quot;data.frame&quot;
+&gt; cats
+    coat weight likes_string
+1 calico    2.1            1
+2  black    5.0            0
+3  tabby    3.2            1</pre>
+
+</article></slide><slide class=""><hgroup><h2>What is a <code>data.frame</code>?</h2></hgroup><article  id="what-is-a-data.frame">
+
+<div class="highlight">
+<ul>
+<li>The standard <code>R</code> data structure for storing tabular, <em>rectangular</em> data</li>
+</ul></div>
+
+<ul>
+<li>A named <code>list</code> of <code>vector</code>s having identical lengths.
+
+<ul>
+<li>Each column is a <code>vector</code></li>
+<li>Each <code>vector</code> can be a different data type</li>
+</ul></li>
+</ul>
+
+<div class="attention">
+<ul>
+<li>This is very much <strong>LIKE</strong> a spreadsheet, but…
+
+<ul>
+<li>Columns are constrained to a type</li>
+<li>Columns are all the same length</li>
+</ul></li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>Creating a <code>data.frame</code></h2></hgroup><article  id="creating-a-data.frame">
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Create a data frame
+df &lt;- data.frame(a=c(1,2,3), b=c(&#39;eeny&#39;, &#39;meeny&#39;, &#39;miney&#39;),
+                 c=c(TRUE, FALSE, TRUE))
+summary(df)</pre>
+
+<pre >##        a           b         c          
+##  Min.   :1.0   eeny :1   Mode :logical  
+##  1st Qu.:1.5   meeny:1   FALSE:1        
+##  Median :2.0   miney:1   TRUE :2        
+##  Mean   :2.0                            
+##  3rd Qu.:2.5                            
+##  Max.   :3.0</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

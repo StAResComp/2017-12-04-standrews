@@ -687,3 +687,68 @@ Can you create a matrix with:
 l <- list(1, 'a', TRUE, matrix(0, nrow = 2, ncol = 2), f)
 l_named <- list(a = "SWC", b = 1:4)
 ```
+
+
+# 05. Dataframes
+
+
+## Learning Objectives
+
+* Understand the concept of a `data.frame`
+* Understand how a `data.frame` is built from `R` data structures
+* Know how to access any element of a `data.frame`
+* Read data into a `data.frame`
+* Write data out from a `data.frame`
+
+
+## Let's look at a `data.frame`
+
+* The `cats` data is a `data.frame`
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+> class(cats)
+[1] "data.frame"
+> cats
+    coat weight likes_string
+1 calico    2.1            1
+2  black    5.0            0
+3  tabby    3.2            1
+```
+
+## What is a `data.frame`?
+
+<div class="highlight">
+* The standard `R` data structure for storing tabular, *rectangular* data
+</div>
+
+* A named `list` of `vector`s having identical lengths.
+    * Each column is a `vector`
+    * Each `vector` can be a different data type
+    
+<div class="attention">
+* This is very much **LIKE** a spreadsheet, but…
+    * Columns are constrained to a type
+    * Columns are all the same length
+</div>
+
+
+## Creating a `data.frame`
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r}
+# Create a data frame
+df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
+                 c=c(TRUE, FALSE, TRUE))
+summary(df)
+```

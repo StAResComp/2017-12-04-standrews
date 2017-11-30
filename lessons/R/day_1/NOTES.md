@@ -1446,4 +1446,112 @@ $b
 [1] "SWC"
 > l_named$b
 [1] 1 2 3 4
+> names(l_named)
+[1] "a" "b"
+```
+
+----
+
+**SLIDE: 05. Dataframes**
+
+* Dataframes are probably the most important thing you will ever learn about, in `R`.
+* Almost everything in `R`, on a practical day-to-day basis, involves dataframes
+
+----
+
+**SLIDE: Learning Objectives**
+
+* After this section **YOU WILL UNDERSTAND WHAT A DATAFRAME IS AND HOW IT IS BUILT UP FROM `R` DATA STRUCTURES YOU ALREADY KNOW**
+* You'll also know **HOW TO ACCESS ANY PART OF A DATA FRAME, INCLUDING CONDITIONAL ACCESS**
+* We'll also see how to read data in to, and write it out from, a data frame.
+
+----
+
+**SLIDE: Let's look at a `data.frame`**
+
+* The `cats` data is a small `data.frame`
+* **DEMO IN CONSOLE**
+    * **NOTE: TABULAR**
+    * **NOTE: 9 elements but length 3?**
+    * Try list indexes… **IT'S A LIST**
+    * Try `names()`… **IT'S A NAMED LIST**
+    * What are the classes of each list element? **THEY'RE VECTORS**
+
+```R
+> class(cats)
+[1] "data.frame"
+> cats
+    coat weight likes_string
+1 calico    2.1            1
+2  black    5.0            0
+3  tabby    3.2            1
+> length(cats)
+[1] 3
+> cats[[1]]
+[1] calico black  tabby 
+Levels: black calico tabby
+> typeof(cats)
+[1] "list"
+> names(cats)
+[1] "coat"         "weight"       "likes_string"
+> class(cats$coat)
+[1] "factor"
+> class(cats$weight)
+[1] "numeric"
+> class(cats$likes_string)
+[1] "integer"
+```
+
+----
+
+**SLIDE: What is a `data.frame`**
+
+* This structure is **THE MOST IMPORTANT THING IN `R`**
+    * It's the standard structure for storing any king of tabular, 'rectangular' data
+* We've seen that it's a **NAMED LIST** where each element is a **VECTOR**
+    * All the vectors have the same length
+* This is **VERY SIMILAR TO A SPREADSHEET**, but it's more finicky:
+    * We require every element in a column to be the same data type
+    * We need all the columns to be the same length
+    * **In spreadsheets, neither of these conditions are enforced**
+    * **This makes `R` a bit more data-safe**
+
+----
+
+**SLIDE: Creating a `data.frame`**
+
+* **DEMO IN SCRIPT**
+    * `Run` when done
+    * Commit to repo
+
+```R
+# Create a data frame
+df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
+                 c=c(TRUE, FALSE, TRUE))
+```
+
+* **DEMO IN CONSOLE**
+    * The `summary()` function **SUMMARISES PROPERTIES OF EACH COLUMN**
+    * The **summary depends on the column type**
+
+```R
+> str(df)
+'data.frame':	3 obs. of  3 variables:
+ $ a: num  1 2 3
+ $ b: Factor w/ 3 levels "eeny","meeny",..: 1 2 3
+ $ c: logi  TRUE FALSE TRUE
+> df$c
+[1]  TRUE FALSE  TRUE
+> length(df)
+[1] 3
+> dim(df)
+[1] 3 3
+> summary(df)
+       a           b         c          
+ Min.   :1.0   eeny :1   Mode :logical  
+ 1st Qu.:1.5   meeny:1   FALSE:1        
+ Median :2.0   miney:1   TRUE :2        
+ Mean   :2.0                            
+ 3rd Qu.:2.5                            
+ Max.   :3.0  
 ```
