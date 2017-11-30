@@ -591,3 +591,25 @@ Options: `logical`, `integer`, `numeric`, `character`
 **INTERACTIVE DEMO**
 </div>
 </center>
+
+
+## Factors
+
+Data often comes in one of two types:
+
+* *quantitative*: e.g. integers or real numbers <br />(`weight <- 17.2`; `rooms <- 7`)
+* *categorical*:  e.g. ordered or unordered classes <br />(`grade <- "8"`, `coat <- "brindled"`)
+
+<div class="highlight">
+**This kind of distinction critical in many applications (e.g. statistical modelling)**
+</div>
+
+> * **Factors** are special vectors that represent *categorical* data
+    * Stored as vectors of *labelled integers*
+    * **Cannot be treated as strings/text**
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>

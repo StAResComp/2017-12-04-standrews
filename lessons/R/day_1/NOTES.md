@@ -1211,3 +1211,56 @@ a b c d
  Named int [1:4] 1 2 3 4
  - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
 ```
+
+----
+
+**SLIDE: Factors**
+
+* In general **DATA COMES AS ONE OF TWO TYPES**
+    * *Quantitative data* represents measurable values. These are usually either **CONTINUOUS** (real values like a height in centimetres) or a **COUNT**  (like number of beans in a tin).
+    * *Categorical* data representing **DISCRETE GROUPS**, which can be **UNORDERED** (like "types of computer"; "educational establishments") or **ORDERED** (like floors of a building, or grades in school)
+
+* **THIS DISTINCTION IS CRITICAL IN MANY STATISTICAL/ANALYTICAL METHODS**
+* `R` **WAS MADE FOR STATISTICS** so has a special way of dealing with the difference
+
+* **FACTORS ARE SPECIAL VECTORS REPRESENTING *CATEGORICAL* DATA**
+    * Factors are stored as **VECTORS OF LABELLED INTEGERS**
+    * Factors **CANNOT BE TREATED AS TEXT**
+
+* **DEMONSTRATE IN CONSOLE**
+* We create a **FACTOR WITH THREE ELEMENTS**
+   * When we look at the *structure* of the vector, it reports **TWO LEVELS**: `"yes"` and `"no"`
+   * It also reports a list of values: `1 2 1`
+   * There is a mapping `"no" -> 1` and `"yes" -> 2`
+   * The **VECTOR STORES INTEGERS `1` and `2`, BUT THESE ARE LABELLED `"no"` and `"yes"`**
+
+```R
+> f <- factor(c("no", "yes", "no"))
+> length(f)
+[1] 3
+> str(f)
+ Factor w/ 2 levels "no","yes": 1 2 1
+> levels(f)
+[1] "no"  "yes"
+> f
+[1] no  yes no 
+Levels: no yes
+```
+
+* **IN OUR `cats` DATA THE COAT WAS STORED AS A FACTOR**
+* **DEMO IN CONSOLE**
+    * The `class()` function **IDENTIFIES DATA STRUCTURES**
+    * **NOTE THAT BY DEFAULT FACTORS ARE NUMBERED IN ALPHABETICAL ORDER OF LABEL**
+
+```R
+> cats$coat
+[1] calico black  tabby 
+Levels: black calico tabby
+> class(cats$coat)
+[1] "factor"
+> str(cats$coat)
+ Factor w/ 3 levels "black","calico",..: 2 1 3
+```
+
+----
+
