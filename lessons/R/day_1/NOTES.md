@@ -1531,6 +1531,7 @@ df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
 ```
 
 * **DEMO IN CONSOLE**
+    * **!!!!STRINGS ARE INTERPRETED AS FACTORS!!!!**
     * The `summary()` function **SUMMARISES PROPERTIES OF EACH COLUMN**
     * The **summary depends on the column type**
 
@@ -1555,3 +1556,57 @@ df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
  3rd Qu.:2.5                            
  Max.   :3.0  
 ```
+
+----
+
+**SLIDE: Challenge 10**
+
+```R
+author_book <- data.frame(author_first = c('Charles', 'Ernst', "Theodosius"),
+                          author_last = c("Darwin", "Mayr", "Dobzhansky"),
+                          year = c(1859, 1942, 1970))
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Challenge 11**
+
+```R
+> country_climate <- data.frame(country=c("Canada", "Panama", 
++                                         "South Africa", "Australia"),
++                               climate=c("cold", "hot", 
++                                         "temperate", "hot/temperate"),
++                               temperature=c(10, 30, 18, "15"),
++                               northern_hemisphere=c(TRUE, TRUE, 
++                                                     FALSE, "FALSE"),
++                               has_kangaroo=c(FALSE, FALSE, 
++                                              FALSE, 1))
+> str(country_climate)
+'data.frame':	4 obs. of  5 variables:
+ $ country            : Factor w/ 4 levels "Australia","Canada",..: 2 3 4 1
+ $ climate            : Factor w/ 4 levels "cold","hot","hot/temperate",..: 1 2 4 3
+ $ temperature        : Factor w/ 4 levels "10","15","18",..: 1 4 3 2
+ $ northern_hemisphere: Factor w/ 2 levels "FALSE","TRUE": 2 2 1 1
+ $ has_kangaroo       : num  0 0 0 1
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Challenge 12**
+
+```R
+> df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
++                  c=c(TRUE, FALSE, TRUE),
++                  stringsAsFactors = FALSE)
+> str(df)
+'data.frame':	3 obs. of  3 variables:
+ $ a: num  1 2 3
+ $ b: chr  "eeny" "meeny" "miney"
+ $ c: logi  TRUE FALSE TRUE
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

@@ -936,7 +936,50 @@ summary(df)</pre>
 ##  Median :2.0   miney:1   TRUE :2        
 ##  Mean   :2.0                            
 ##  3rd Qu.:2.5                            
-##  Max.   :3.0</pre></article></slide>
+##  Max.   :3.0</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 10 (5min)</h2></hgroup><article  id="challenge-10-5min">
+
+<p>I made some mistakes when defining this <code>data.frame</code>.</p>
+
+<p>Can you spot and fix them?</p>
+
+<pre class = 'prettyprint lang-r'>author_book &lt;- data.frame(author_first = c(&#39;Charles&#39;, &#39;Ernst&#39;, &quot;Theodosius&quot;),
+                          author_last = c(Darwin, Mayr, Dobzhansky),
+                          year = c(1942, 1970))</pre>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 11 (5min)</h2></hgroup><article  id="challenge-11-5min">
+
+<p>Can you predict the class for each column in the following example?</p>
+
+<pre class = 'prettyprint lang-r'>country_climate &lt;- data.frame(country=c(&quot;Canada&quot;, &quot;Panama&quot;,
+                                        &quot;South Africa&quot;, &quot;Australia&quot;),
+                               climate=c(&quot;cold&quot;, &quot;hot&quot;, &quot;temperate&quot;,
+                                         &quot;hot/temperate&quot;),
+                               temperature=c(10, 30, 18, &quot;15&quot;),
+                               northern_hemisphere=c(TRUE, TRUE, FALSE,
+                                                     &quot;FALSE&quot;),
+                               has_kangaroo=c(FALSE, FALSE, FALSE, 1))</pre>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 12 (5min)</h2></hgroup><article  id="challenge-12-5min">
+
+<p>Can you create the following data frame, but make <code>b</code> a vector of <code>character</code> elements, rather than a <code>factor</code>?</p>
+
+<pre class = 'prettyprint lang-r'>df &lt;- data.frame(a=c(1,2,3), b=c(&#39;eeny&#39;, &#39;meeny&#39;, &#39;miney&#39;),
+                 c=c(TRUE, FALSE, TRUE))</pre>
+
+<center>
+
+<div class="attention">
+<p><strong>Use the <code>RStudio</code> help</strong></p></div>
+
+</center>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 
   <slide class="backdrop"></slide>
