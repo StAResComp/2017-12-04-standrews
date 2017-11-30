@@ -503,6 +503,94 @@ min(data[, 7])      # smallest value on day 7
 mean(data[, 7])     # mean value on day 7
 sd(data[, 7])       # standard deviation of values on day 7</pre>
 
+</article></slide><slide class=""><hgroup><h2>Challenge 04 (5min)</h2></hgroup><article  id="challenge-04-5min">
+
+<p>Given the <em>vector</em> in <code>R</code>:</p>
+
+<pre class = 'prettyprint lang-r'>animal &lt;- c(&quot;m&quot;, &quot;o&quot;, &quot;n&quot;, &quot;k&quot;, &quot;e&quot;, &quot;y&quot;)</pre>
+
+<p>Can you generate slices that do the following:</p>
+
+<ul>
+<li>return the first three characters</li>
+<li>return the last three characters</li>
+<li><p>return the first three characters <em>in reverse order</em></p></li>
+<li>What do <code>animal[-1]</code> and <code>animal[-4]</code> do?</li>
+<li><p>Can you explain what <code>animal[-1:-4]</code> does?</p></li>
+</ul>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Repetitive Calculations - Interactive Demo</h2></hgroup><article  id="repetitive-calculations---interactive-demo">
+
+<ul>
+<li>We could calculate mean inflammation for every patient (or day) this way, but it’s tedious</li>
+</ul>
+
+<div class="highlight">
+<p><strong>Computers exist to do tedious things for us</strong></p></div>
+
+<ul>
+<li><code>R</code> has several ways to automate this process</li>
+<li>We’d like to <code>apply</code> a <em>function</em> (<code>mean</code>) to each row in the <code>data</code>:</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>apply(X = data, MARGIN = 1, FUN = mean)</pre>
+
+<div class="attention">
+<ul>
+<li><code>MARGIN = 1</code>: rows</li>
+<li><code>MARGIN = 2</code>: columns</li>
+</ul></div>
+
+<pre class = 'prettyprint lang-r'>rowMeans(data)
+colMeans(data)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Base Graphics</h2></hgroup><article  id="base-graphics">
+
+<blockquote>
+<p>&ldquo;The purpose of computing is insight, not numbers.&rdquo; - Richard Hamming</p>
+</blockquote>
+
+<div class="highlight">
+<ul>
+<li><code>R</code> has many available graphics packages
+
+<ul>
+<li>graphically beautiful</li>
+<li>specific problem domains</li>
+</ul></li>
+<li>&lsquo;built-in&rsquo; graphics are known as <em>base graphics</em></li>
+</ul></div>
+
+<ul>
+<li>Base graphics are powerful tools for visualisation and understanding</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Plotting - Interactive Demo</h2></hgroup><article  id="plotting---interactive-demo">
+
+<pre class = 'prettyprint lang-r'>plot(avg_inflammation_patient)
+
+max_day_inflammation &lt;- apply(dat, 2, max)
+plot(max_day_inflammation)
+
+plot(apply(dat,2,min))       # 3 functions in one!</pre>
+
+<center>
+
+<img src="images/plot1.png" width="30%" /> <img src="images/plot2.png" width="30%" /> <img src="images/plot3.png" width="30%" />
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 05 (5min)</h2></hgroup><article  id="challenge-05-5min">
+
+<p>Can you add a plot of standard deviation of the data, by day, to your script?</p>
+
+<div class="attention">
+<p><strong>(don’t forget to commit changes)</strong></p></div>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>04. Data Types and <br />Structures in <code>R</code></h2></hgroup><article  id="data-types-and-structures-in-r">
 
 </article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-3">

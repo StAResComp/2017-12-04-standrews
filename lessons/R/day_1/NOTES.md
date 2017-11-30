@@ -355,6 +355,8 @@ This will multiply the existing value of 47.5 by 2.3 to give a new value of 109.
 `age <- age - 20`
 This will subtract 20 from the existing value of 122 to give a new value of 102 to the variable age.
 
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
 ----
 
 **SLIDE: Good Project Management Practices**
@@ -613,6 +615,8 @@ data <- read.csv(file = "data/inflammation-01.csv", header = FALSE)
 read.csv(file='file.csv', sep=';', dec=',')
 ```
 
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
 ----
 
 **SLIDE: Indexing Data**
@@ -685,6 +689,136 @@ read.csv(file='file.csv', sep=';', dec=',')
 > sd(data[,7])
 [1] 1.725187
 ```
+
+----
+
+**SLIDE: Challenge 04**
+
+```R
+> animal <- c('m', 'o', 'n', 'k', 'e', 'y')
+> animal[1:3]
+[1] "m" "o" "n"
+> animal[4:6]
+[1] "k" "e" "y"
+> animal[3:1]
+[1] "n" "o" "m"
+> animal[-1]
+[1] "o" "n" "k" "e" "y"
+> animal[-4]
+[1] "m" "o" "n" "e" "y"
+> animal[-1:-4]
+[1] "e" "y"
+> animal[-1:4]
+Error in animal[-1:4] : only 0's may be mixed with negative subscripts
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Repetitive Calculations - Interactive Demo**
+
+* We might want to **CALCULATE MEAN INFLAMMATION FOR EACH PATIENT**, but doing it the way we've just seen is tedious and slow.
+* Happily **COMPUTERS WERE INVENTED TO SAVE US THE HASSLE**
+* We could automate this task in any of several ways available in `R`
+    * What we'd like to do is **APPLY A FUNCTION TO EACH ROW**
+    * `R` has an `apply()` function exactly for this
+    * **IN THE CONSOLE**
+
+```R
+> apply(X = data, MARGIN = 1, FUN = mean)
+ [1] 5.450 5.425 6.100 5.900 5.550 6.225 5.975 6.650 6.625 6.525 6.775 5.800 6.225 5.750 5.225
+[16] 6.300 6.550 5.700 5.850 6.550 5.775 5.825 6.175 6.100 5.800 6.425 6.050 6.025 6.175 6.550
+[31] 6.175 6.350 6.725 6.125 7.075 5.725 5.925 6.150 6.075 5.750 5.975 5.725 6.300 5.900 6.750
+[46] 5.925 7.225 6.150 5.950 6.275 5.700 6.100 6.825 5.975 6.725 5.700 6.250 6.400 7.050 5.900
+```
+
+* **IN OUR ANALYSIS SCRIPT** we want to assign these values to a variable, and **ALSO CALCULATE AVERAGE BY DAY**
+    * So long as we provide arguments in the correct order, **WE DON'T NEED TO PROVIDE ARGUMENT NAMES** - true for most `R` functions
+
+```R
+# Calculate average inflammation by patient and day
+avg_inflammation_patient <- apply(X = data, MARGIN = 1, FUN = mean)
+avg_inflammation_day <- apply(data, 2, mean)
+```
+
+* **RUN THE LINES**
+    * Note that the values appear in the Environment tab
+* Like many common operations, there's an `R` function that's a shortcut
+    * **IN THE CONSOLE**
+
+```R
+> rowMeans(data)
+ [1] 5.450 5.425 6.100 5.900 5.550 6.225 5.975 6.650 6.625 6.525 6.775 5.800 6.225 5.750 5.225
+[16] 6.300 6.550 5.700 5.850 6.550 5.775 5.825 6.175 6.100 5.800 6.425 6.050 6.025 6.175 6.550
+[31] 6.175 6.350 6.725 6.125 7.075 5.725 5.925 6.150 6.075 5.750 5.975 5.725 6.300 5.900 6.750
+[46] 5.925 7.225 6.150 5.950 6.275 5.700 6.100 6.825 5.975 6.725 5.700 6.250 6.400 7.050 5.900
+> colMeans(data)
+        V1         V2         V3         V4         V5         V6         V7         V8         V9 
+ 0.0000000  0.4500000  1.1166667  1.7500000  2.4333333  3.1500000  3.8000000  3.8833333  5.2333333 
+       V10        V11        V12        V13        V14        V15        V16        V17        V18 
+ 5.5166667  5.9500000  5.9000000  8.3500000  7.7333333  8.3666667  9.5000000  9.5833333 10.6333333 
+       V19        V20        V21        V22        V23        V24        V25        V26        V27 
+11.5666667 12.3500000 13.2500000 11.9666667 11.0333333 10.1666667 10.0000000  8.6666667  9.1500000 
+       V28        V29        V30        V31        V32        V33        V34        V35        V36 
+ 7.2500000  7.3333333  6.5833333  6.0666667  5.9500000  5.1166667  3.6000000  3.3000000  3.5666667 
+       V37        V38        V39        V40 
+ 2.4833333  1.5000000  1.1333333  0.5666667 
+```
+
+----
+
+**SLIDE: Base Graphics**
+
+* We're doing all this work to try to **GAIN INSIGHT INTO OUR DATA**
+* **VISUALISATION IS A KEY ROUTE TO INSIGHT**
+
+* `R` has many graphics packages - some of which produce extremely beautiful images, or are tailored to a specific problem domain
+* The built-in graphics are known as *base graphics*
+* They may not be as pretty, or as immediately suited for all circumstances as some other packages, but they are still very powerful
+
+----
+
+**SLIDE: Plotting - Interactive Demo**
+
+* **IN THE SCRIPT**
+    * `R`'s **`plot()` FUNCTION IS GENERAL AND WORKS FOR MANY KINDS OF DATA**
+    * **RUN EACH LINE IN TURN**
+    * **NOTE WHERE PLOTS SHOW** (Plot window)
+    * Opportunity to note: **VARIABLES HELP READABILITY**
+    * **USE ARROW BUTTONS** to cycle through plots
+    * **COMMIT CHANGES WHEN DONE**
+
+```R
+# Plot data summaries
+# Average inflammation by patient
+plot(avg_inflammation_patient)
+
+# Average inflammation per day
+plot(avg_inflammation_day)
+
+# Maximum inflammation per day
+max_inflammation_day <- apply(data, 2, max)
+plot(max_inflammation_day)
+
+# Minimum inflammation per day
+plot(apply(data, 2, min))
+```
+
+* **IN THE SCRIPT**
+   * Demonstrate changing the input file
+   * **CHANGING FILENAME IN A SCRIPT IS QUICKER THAN RETYPING ALL THE COMMANDS**
+
+----
+
+**SLIDE: Challenge 05**
+
+```R
+# Plot standard deviation by day
+plot(apply(data, 2, sd))
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
 
 ----
 
@@ -876,9 +1010,11 @@ txt <- "TRUE"
 
 ----
 
-**SLIDE: Challenge 03**
+**SLIDE: Challenge NN**
 
 * Let the students work for a couple of minutes, then demonstrate.
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
 
 ----
 
@@ -939,9 +1075,11 @@ xx <- c(1, 2, 'a')
 
 ----
 
-**SLIDE: Challenge 04**
+**SLIDE: Challenge NN**
 
 * Let the students work for a couple of minutes, then demonstrate.
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
 
 ----
 

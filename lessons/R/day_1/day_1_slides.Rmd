@@ -363,6 +363,94 @@ sd(data[, 7])       # standard deviation of values on day 7
 ```
 
 
+## Challenge 04 (5min)
+
+Given the *vector* in `R`:
+
+```{r}
+animal <- c("m", "o", "n", "k", "e", "y")
+```
+
+Can you generate slices that do the following:
+
+* return the first three characters
+* return the last three characters
+* return the first three characters *in reverse order*
+
+* What do `animal[-1]` and `animal[-4]` do?
+* Can you explain what `animal[-1:-4]` does?
+
+<img src="images/red_green_sticky.png" width="100%" />
+
+
+## Repetitive Calculations - Interactive Demo
+
+* We could calculate mean inflammation for every patient (or day) this way, but it's tedious
+
+<div class="highlight">
+**Computers exist to do tedious things for us**
+</div>
+
+* `R` has several ways to automate this process
+* We'd like to `apply` a *function* (`mean`) to each row in the `data`:
+
+```{r, eval=FALSE}
+apply(X = data, MARGIN = 1, FUN = mean)
+```
+
+<div class="attention">
+* `MARGIN = 1`: rows
+* `MARGIN = 2`: columns
+</div>
+
+```{r, eval=FALSE}
+rowMeans(data)
+colMeans(data)
+```
+
+
+## Base Graphics
+
+> "The purpose of computing is insight, not numbers.” - Richard Hamming
+
+<div class="highlight">
+* `R` has many available graphics packages
+    * graphically beautiful
+    * specific problem domains
+* 'built-in' graphics are known as *base graphics*
+</div>
+
+* Base graphics are powerful tools for visualisation and understanding
+
+
+## Plotting - Interactive Demo
+
+```{r, eval=FALSE}
+plot(avg_inflammation_patient)
+
+max_day_inflammation <- apply(dat, 2, max)
+plot(max_day_inflammation)
+
+plot(apply(dat,2,min))       # 3 functions in one!
+```
+
+<center>
+<img src="images/plot1.png" width="30%" />
+<img src="images/plot2.png" width="30%" />
+<img src="images/plot3.png" width="30%" />
+</center>
+
+
+## Challenge 05 (5min)
+
+Can you add a plot of standard deviation of the data, by day, to your script?
+
+<div class="attention">
+**(don't forget to commit changes)**
+</div>
+
+<img src="images/red_green_sticky.png" width="100%" />
+
 
 # 04. Data Types and <br />Structures in `R`
 
