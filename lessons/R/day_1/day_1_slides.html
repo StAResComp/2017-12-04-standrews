@@ -463,6 +463,46 @@ age &lt;- age - 20</pre>
 
 <p><img src="images/red_green_sticky.png" width="100%" /></p>
 
+</article></slide><slide class=""><hgroup><h2>Indexing Data - Interactive Demo</h2></hgroup><article  id="indexing-data---interactive-demo">
+
+<ul>
+<li>We use <em>indexing</em> to refer to elements of a dataset
+
+<ul>
+<li>square brackets: <code>[]</code></li>
+<li>row, then column: <code>[row, column]</code></li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>data[1, 1]     # First value in dataset
+data[30, 20]   # Middle value of dataset</pre>
+
+<ul>
+<li>To get a range of values, use the <code>:</code> separator (meaning &lsquo;to&rsquo;)</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>data[1:4, 1:4]   # rows 1 to 4; columns 1 to 4</pre>
+
+<ul>
+<li>To select a complete row or column, leave it blank</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>data[5, ]     # row 5
+data[, 16]    # column 16</pre>
+
+</article></slide><slide class=""><hgroup><h2>Summary Functions - Interactive Demo</h2></hgroup><article  id="summary-functions---interactive-demo">
+
+<ul>
+<li><code>R</code> provides useful functions to summarise data</li>
+<li>We can use <em>indexing</em> to get summary information on individual patients and days</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>max(data)           # largest value in dataset
+max(data[2, ])      # largest value for patient 2
+min(data[, 7])      # smallest value on day 7
+mean(data[, 7])     # mean value on day 7
+sd(data[, 7])       # standard deviation of values on day 7</pre>
+
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>04. Data Types and <br />Structures in <code>R</code></h2></hgroup><article  id="data-types-and-structures-in-r">
 
 </article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-3">

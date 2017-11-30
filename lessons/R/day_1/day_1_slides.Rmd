@@ -324,6 +324,46 @@ using `read.csv()`
 <img src="images/red_green_sticky.png" width="100%" />
 
 
+## Indexing Data - Interactive Demo
+
+* We use *indexing* to refer to elements of a dataset
+    * square brackets: `[]`
+    * row, then column: `[row, column]`
+
+```{r, eval=FALSE}
+data[1, 1]     # First value in dataset
+data[30, 20]   # Middle value of dataset
+```
+
+* To get a range of values, use the `:` separator (meaning 'to')
+
+```{r, eval=FALSE}
+data[1:4, 1:4]   # rows 1 to 4; columns 1 to 4
+```
+
+* To select a complete row or column, leave it blank
+
+```{r, eval=FALSE}
+data[5, ]     # row 5
+data[, 16]    # column 16
+```
+
+
+## Summary Functions - Interactive Demo
+
+* `R` provides useful functions to summarise data
+* We can use *indexing* to get summary information on individual patients and days
+
+```{r, eval=FALSE}
+max(data)           # largest value in dataset
+max(data[2, ])      # largest value for patient 2
+min(data[, 7])      # smallest value on day 7
+mean(data[, 7])     # mean value on day 7
+sd(data[, 7])       # standard deviation of values on day 7
+```
+
+
+
 # 04. Data Types and <br />Structures in `R`
 
 

@@ -580,6 +580,28 @@ data <- read.csv(file = "data/inflammation-01.csv", header = FALSE)
     * Check the `Environment` window: 60 observations (patients) of 40 variables (days)
     * **CLICK ON `data`**
     * **COLUMN HEADERS ARE PROVIDED: `Vn`** for *variable n*
+    * `dim()` - *dimensions* of data: rows X columns
+    * `length()` - number of columns in the table
+    * `ncol()` - number of columns in the table
+    * `nrow()` - number of rows in the table
+
+```R
+> head(data, n = 2)
+  V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15 V16 V17 V18 V19 V20 V21 V22 V23 V24 V25 V26
+1  0  0  1  3  1  2  4  7  8   3   3   3  10   5   7   4   7   7  12  18   6  13  11  11   7   7
+2  0  1  2  1  2  1  3  2  2   6  10  11   5   9   4   4   7  16   8   6  18   4  12   5  12   7
+  V27 V28 V29 V30 V31 V32 V33 V34 V35 V36 V37 V38 V39 V40
+1   4   6   8   8   4   4   5   7   3   4   2   3   0   0
+2  11   5  11   3   3   5   4   4   5   5   1   1   0   1
+> dim(data)
+[1] 60 40
+> length(data)
+[1] 40
+> ncol(data)
+[1] 40
+> nrow(data)
+[1] 60
+```
 	
 ----
 
@@ -590,7 +612,80 @@ data <- read.csv(file = "data/inflammation-01.csv", header = FALSE)
 ```R
 read.csv(file='file.csv', sep=';', dec=',')
 ```
-	
+
+----
+
+**SLIDE: Indexing Data**
+
+* We can refer to an element in our dataset by *indexing* it
+    * We **LOCATE A SINGLE ELEMENT as `[row, column]` in square brackets**
+
+```R
+> ncol(data)
+[1] 40
+> data[1,1]
+[1] 0
+> data[50,1]
+[1] 0
+> data[50,20]
+[1] 16
+> data[30,20]
+[1] 16
+```
+
+* To get a **RANGE OF VALUES**, use the `:` separator to mean 'to':
+
+```R
+> data[1:4, 1:4]   # rows 1 to 4; columns 1 to 4
+  V1 V2 V3 V4
+1  0  0  1  3
+2  0  1  2  1
+3  0  1  1  3
+4  0  0  2  0
+> data[30:32, 20:22]
+   V20 V21 V22
+30  16  14  15
+31  16  13   7
+32   9  19  15
+```
+
+* To get a **WHOLE ROW OR COLUMN**, leave that entry blank
+
+```R
+> data[5,]
+  V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15 V16 V17 V18 V19 V20 V21 V22 V23 V24 V25 V26
+5  0  1  1  3  3  1  3  5  2   4   4   7   6   5   3  10   8  10   6  17   9  14   9   7  13   9
+  V27 V28 V29 V30 V31 V32 V33 V34 V35 V36 V37 V38 V39 V40
+5  12   6   7   7   9   6   3   2   2   4   2   0   1   1
+> data[,16]
+ [1]  4  4 15  8 10 15 13  9 11  6  3  8 12  3  5 10 11  4 11 13 15  5 14 13  4  9 13  6  7  6 14
+[32]  3 15  4 15 11  7 10 15  6  5  6 15 11 15  6 11 15 14  4 10 15 11  6 13  8  4 13 12  9
+```
+
+----
+
+**SLIDE: Summary Functions - Interactive Demo**
+
+* **`R` was designed for data analysis**, so has many built-in functions for analysing and describing data
+    * **TALK THROUGH CODE IN CONSOLE**
+
+```R
+> max(data)
+[1] 20
+> max(data[2,])
+[1] 18
+> max(data[,7])
+[1] 6
+> min(data[,7])
+[1] 1
+> mean(data[,7])
+[1] 3.8
+> median(data[,7])
+[1] 4
+> sd(data[,7])
+[1] 1.725187
+```
+
 ----
 
 **SLIDE: 04. Data Structures in `R`**
