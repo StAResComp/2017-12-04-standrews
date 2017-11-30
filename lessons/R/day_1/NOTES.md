@@ -1227,15 +1227,23 @@ a b c d
     * Factors are stored as **VECTORS OF LABELLED INTEGERS**
     * Factors **CANNOT BE TREATED AS TEXT**
 
-* **DEMONSTRATE IN CONSOLE**
-* We create a **FACTOR WITH THREE ELEMENTS**
+* **CREATE FACTOR IN SCRIPT**
+    * We create a **FACTOR WITH THREE ELEMENTS**
+    * `Run` the line
+    * Commit the change
+
+```R
+# Create a factor with three elements
+> f <- factor(c("no", "yes", "no"))
+```
+
+* **INSPECT THE FACTOR IN THE CONSOLE**
    * When we look at the *structure* of the vector, it reports **TWO LEVELS**: `"yes"` and `"no"`
    * It also reports a list of values: `1 2 1`
    * There is a mapping `"no" -> 1` and `"yes" -> 2`
    * The **VECTOR STORES INTEGERS `1` and `2`, BUT THESE ARE LABELLED `"no"` and `"yes"`**
 
 ```R
-> f <- factor(c("no", "yes", "no"))
 > length(f)
 [1] 3
 > str(f)
@@ -1264,3 +1272,90 @@ Levels: black calico tabby
 
 ----
 
+**SLIDE: Challenge 08**
+
+```R
+> f <- factor(c("case", "control", "case", "control", "case"))
+> str(f)
+ Factor w/ 2 levels "case","control": 1 2 1 2 1
+> f <- factor(c("case", "control", "case", "control", "case"), levels=c("control", "case"))
+> str(f)
+ Factor w/ 2 levels "control","case": 2 1 2 1 2
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Matrices**
+
+* *Matrices* may be the **MOST IMPORTANT DATA STRUCTURE IN NUMERICAL ANALYSIS**, central to pretty much any statistical operation
+* **THEY GET THEIR OWN SPECIAL DATA STRUCTURE IN `R`**
+
+* **CREATE MATRICES IN SCRIPT**
+   * `Run` the lines when done
+   * Commit the changes
+
+```R
+# Create matrix of zeroes
+m1 <- matrix(0, ncol = 6, nrow = 3)
+
+# Create matrix of numbers 1 and 2
+m2 <- matrix(c(1, 2), ncol = 3, nrow = 4)
+```
+
+* **INSPECT THE RESULTS IN THE CONSOLE**
+    * `ncol` and `nrow` define the size of the matrix
+    * providing a single value as the first argument fills the matrix with that value
+    * The `length()` of a matrix **IS THE TOTAL NUMBER OF ELEMENTS**
+
+```R
+> class(m1)
+[1] "matrix"
+> m1
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    0    0    0    0    0
+[2,]    0    0    0    0    0    0
+[3,]    0    0    0    0    0    0
+> str(m1)
+ num [1:3, 1:6] 0 0 0 0 0 0 0 0 0 0 ...
+ > length(m1)
+[1] 18
+```
+
+* **PROVIDING TWO VALUES TO THE FIRST ARGUMENT** fills the matrix, too
+    * So long as the **LENGTH OF THE MATRIX IS A MULTIPLE OF THE INPUT LENGTH**
+
+```R
+> m2
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    1    2
+[2,]    2    1    2    1
+[3,]    1    2    1    2
+```
+
+----
+
+**SLIDE: Challenge 09 (5min)**
+
+```R
+> m <- matrix(1:50, nrow = 5, ncol = 10)
+> m
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+[1,]    1    6   11   16   21   26   31   36   41    46
+[2,]    2    7   12   17   22   27   32   37   42    47
+[3,]    3    8   13   18   23   28   33   38   43    48
+[4,]    4    9   14   19   24   29   34   39   44    49
+[5,]    5   10   15   20   25   30   35   40   45    50
+> ?matrix
+> m <- matrix(1:50, nrow = 5, ncol = 10, byrow = TRUE)
+> m
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+[1,]    1    2    3    4    5    6    7    8    9    10
+[2,]   11   12   13   14   15   16   17   18   19    20
+[3,]   21   22   23   24   25   26   27   28   29    30
+[4,]   31   32   33   34   35   36   37   38   39    40
+[5,]   41   42   43   44   45   46   47   48   49    50
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

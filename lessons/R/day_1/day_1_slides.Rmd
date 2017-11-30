@@ -613,3 +613,59 @@ Data often comes in one of two types:
 **INTERACTIVE DEMO**
 </div>
 </center>
+
+
+## Challenge 08 (5min)
+
+Create a new `factor`, defining `control` and `case` experiments, and inspect the result:
+
+```{r}
+f <- factor(c("case", "control", "case", "control", "case"))
+str(f)
+```
+
+<div class="attention">
+**In some statistical analyses in `R` it is important that the `control` level is numbered `1`**
+</div>
+
+* Using the help available to you in `RStudio`, can you create a factor with the same values, but where the `control` level is numbered `1`?
+
+<img src="images/red_green_sticky.png" width="100%" />
+
+
+## Matrices
+
+* *Matrices* are arrays of numeric values
+    * An extremely important data type in numerical analyses
+    
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r}
+# Create matrix of zeroes
+m1 <- matrix(0, ncol = 6, nrow = 3)
+
+# Create matrix of numbers 1 and 2
+m2 <- matrix(c(1, 2), ncol = 4, nrow = 3)
+```
+
+
+## Challenge 09 (5min)
+
+Can you create a matrix with:
+
+* 5 columns
+* 10 rows
+* Containing the numbers `1:50`
+
+<div class="highlight">
+* Did the `matrix()` function fill the matrix by column, or by row?
+* If the matrix was filled by row, can you create a new matrix that fills by column (or *vice versa*)
+
+**Use the `Rstudio` documentation to help**
+</div>
+
+<img src="images/red_green_sticky.png" width="100%" />

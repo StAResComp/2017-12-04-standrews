@@ -756,7 +756,7 @@ xx &lt;- c(&quot;a&quot;, TRUE)</pre>
 
 <ul>
 <li><em>quantitative</em>: e.g. integers or real numbers <br />(<code>weight &lt;- 17.2</code>; <code>rooms &lt;- 7</code>)</li>
-<li><em>categorical</em>: e.g. ordered or unordered classes <br />(<code>grade &lt;- &quot;A&quot;</code>, <code>coat &lt;- &quot;brindled&quot;</code>)</li>
+<li><em>categorical</em>: e.g. ordered or unordered classes <br />(<code>grade &lt;- &quot;8&quot;</code>, <code>coat &lt;- &quot;brindled&quot;</code>)</li>
 </ul>
 
 <div class="highlight">
@@ -764,7 +764,7 @@ xx &lt;- c(&quot;a&quot;, TRUE)</pre>
 
 <ul class = 'build'>
 <li><strong>Factors</strong> are special vectors that represent <em>categorical</em> data</li>
-<li>Stored as <em>labelled integers</em></li>
+<li>Stored as vectors of <em>labelled integers</em></li>
 <li><strong>Cannot be treated as strings/text</strong></li>
 </ul>
 
@@ -773,7 +773,48 @@ xx &lt;- c(&quot;a&quot;, TRUE)</pre>
 <div class="attention">
 <p><strong>INTERACTIVE DEMO</strong></p></div>
 
-</center></article></slide>
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 08 (5min)</h2></hgroup><article  id="challenge-08-5min">
+
+<p>Create a new <code>factor</code>, defining <code>control</code> and <code>case</code> experiments, and inspect the result:</p>
+
+<pre class = 'prettyprint lang-r'>f &lt;- factor(c(&quot;case&quot;, &quot;control&quot;, &quot;case&quot;, &quot;control&quot;, &quot;case&quot;))
+str(f)</pre>
+
+<pre >##  Factor w/ 2 levels &quot;case&quot;,&quot;control&quot;: 1 2 1 2 1</pre>
+
+<div class="attention">
+<p><strong>In some statistical analyses in <code>R</code> it is important that the <code>control</code> level is numbered <code>1</code></strong></p></div>
+
+<ul>
+<li>Using the help available to you in <code>RStudio</code>, can you create a factor with the same values, but where the <code>control</code> level is numbered <code>1</code>?</li>
+</ul>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Matrices</h2></hgroup><article  id="matrices">
+
+<ul>
+<li><em>Matrices</em> are arrays of numeric values
+
+<ul>
+<li>An extremely important data type in numerical analyses</li>
+</ul></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Create matrix of zeroes
+m1 &lt;- matrix(0, ncol = 6, nrow = 3)
+
+# Create matrix of numbers 1 and 2
+m2 &lt;- matrix(c(1, 2), ncol = 3, nrow = 4)</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
