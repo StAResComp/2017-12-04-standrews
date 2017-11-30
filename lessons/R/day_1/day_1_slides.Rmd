@@ -821,3 +821,50 @@ df <- rbind(df, list(4, 'mo', FALSE, 0))
 **INTERACTIVE DEMO**
 </div>
 </center>
+
+
+## Writing `data.frame` to file
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+write.table(df, "data/df_example.tab", sep="\t")
+```
+
+We need to provide
+
+* the `data.frame`
+* the path to the file being written
+* a column separator
+
+
+## Reading into a `data.frame`
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+<div class="highlight">
+* Download data from [https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv](https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv)
+* Put the file in the `data/` directory
+
+**The link is available on the course Etherpad**
+</div>
+
+```{r, eval=FALSE}
+gapminder <- read.table("data/gapminder-FiveYearData.csv", sep=",", header=TRUE)
+```
+
+* `R` can also read data direct from the internet
+
+```{r}
+url <- paste("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/",
+             "master/data/gapminder-FiveYearData.csv", sep = '')
+gapminder <- read.table(url, sep=",", header=TRUE)
+```

@@ -1618,7 +1618,7 @@ author_book <- data.frame(author_first = c('Charles', 'Ernst', "Theodosius"),
 * To add a row or column, we **BIND A VECTOR OR LIST** to the dataframe
 * **DEMO IN THE CONSOLE**
     * **CHECK THE STRUCTURE FIRST**
-	* If you try to **BIND A LIST WITH THE WRONG TYPES**, you'll get an error
+	* If you try to **BIND A LIST WITH THE WRONG TYPES** you'll get an error **BUT THE ROW WILL BE BOUND ANYWAY!**
 
 ```R
 > df
@@ -1642,4 +1642,61 @@ In `[<-.factor`(`*tmp*`, ri, value = "mo") :
 
 ----
 
-**SLIDE: Reading in data**
+**SLIDE: Writing `data.frame` to file**
+
+* **DEMO IN CONSOLE**
+    * The `write.table()` function **WRITES A DATAFRAME TO A FILE**
+    * We pass: the dataframe, the filename, the column separator, and whether the header should be written
+    * **`\t` means 'tab' - it puts a gap between columns**
+
+```R
+write.table(df, "data/df_example.tab", sep="\t")
+```
+
+* **INSPECT THE FILE**
+    * Navigate there in the `Files` tab
+    * View the file in `RStudio`
+    * **NOTE:** row and column names are written automatically
+    * Using `\t` has given spaces as column separators
+
+----
+
+**SLIDE: Reading into a `data.frame`**
+
+* **DEMO IN SCRIPT**
+* **DOWNLOAD DATA**
+    * Use the link from the Etherpad document
+    * Place the file in `data/`
+* **CREATE A NEW SCRIPT**
+    * Call it `gapminder`
+    * Add the code
+    * We need to provide a data source (**here, a file**), the separator character, and whether there's a header row
+
+```R
+# Load gapminder data from a URL
+gapminder <- read.table("data/gapminder-FiveYearData.csv", sep=",", header=TRUE)
+```
+
+* **ADD AND COMMIT TO REPO**
+* **CHECK THE DATA IN THE `Environment` TAB**
+    * **NOTE COLUMNS**
+    * **DEMO IN CONSOLE**
+
+```R
+> summary(gapminder)
+        country          year           pop               continent      lifeExp     
+ Afghanistan:  12   Min.   :1952   Min.   :6.001e+04   Africa  :624   Min.   :23.60  
+ Albania    :  12   1st Qu.:1966   1st Qu.:2.794e+06   Americas:300   1st Qu.:48.20  
+ Algeria    :  12   Median :1980   Median :7.024e+06   Asia    :396   Median :60.71  
+ Angola     :  12   Mean   :1980   Mean   :2.960e+07   Europe  :360   Mean   :59.47  
+ Argentina  :  12   3rd Qu.:1993   3rd Qu.:1.959e+07   Oceania : 24   3rd Qu.:70.85  
+ Australia  :  12   Max.   :2007   Max.   :1.319e+09                  Max.   :82.60  
+ (Other)    :1632                                                                    
+   gdpPercap       
+ Min.   :   241.2  
+ 1st Qu.:  1202.1  
+ Median :  3531.8  
+ Mean   :  7215.3  
+ 3rd Qu.:  9325.5  
+ Max.   :113523.1
+```

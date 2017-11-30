@@ -969,8 +969,8 @@ summary(df)</pre>
 
 <p>Can you create the following data frame, but make <code>b</code> a vector of <code>character</code> elements, rather than a <code>factor</code>?</p>
 
-<pre class = 'prettyprint lang-r'>df &lt;- data.frame(a=c(1,2,3), b=c(&#39;eeny&#39;, &#39;meeny&#39;, &#39;miney&#39;),
-                 c=c(TRUE, FALSE, TRUE))</pre>
+<pre class = 'prettyprint lang-r'>df_chr &lt;- data.frame(a=c(1,2,3), b=c(&#39;eeny&#39;, &#39;meeny&#39;, &#39;miney&#39;),
+                     c=c(TRUE, FALSE, TRUE))</pre>
 
 <center>
 
@@ -1000,7 +1000,53 @@ df &lt;- rbind(df, list(4, &#39;mo&#39;, FALSE, 0))</pre>
 <div class="attention">
 <p><strong>INTERACTIVE DEMO</strong></p></div>
 
-</center></article></slide>
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Writing <code>data.frame</code> to file</h2></hgroup><article  id="writing-data.frame-to-file">
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>write.table(df, &quot;data/df_example.tab&quot;, sep=&quot;\t&quot;)</pre>
+
+<p>We need to provide</p>
+
+<ul>
+<li>the <code>data.frame</code></li>
+<li>the path to the file being written</li>
+<li>a column separator</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Reading into a <code>data.frame</code></h2></hgroup><article  id="reading-into-a-data.frame">
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<div class="highlight">
+<ul>
+<li>Download data from <a href='https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv' title=''>https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv</a></li>
+<li>Put the file in the <code>data/</code> directory</li>
+</ul>
+
+<p><strong>The link is available on the course Etherpad</strong></p></div>
+
+<pre class = 'prettyprint lang-r'>gm_data &lt;- read.table(&quot;data/gapminder-FiveYearData.csv&quot;, sep=&quot;,&quot;, header=TRUE)</pre>
+
+<ul>
+<li><code>R</code> can also read data direct from the internet</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>url &lt;- paste(&quot;https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/&quot;,
+             &quot;master/data/gapminder-FiveYearData.csv&quot;, sep = &#39;&#39;)
+gm_data &lt;- read.table(url, sep=&quot;,&quot;, header=TRUE)</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
