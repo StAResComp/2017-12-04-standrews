@@ -792,8 +792,8 @@ country_climate <- data.frame(country=c("Canada", "Panama",
 Can you create the following data frame, but make `b` a vector of `character` elements, rather than a `factor`?
 
 ```{r}
-df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
-                 c=c(TRUE, FALSE, TRUE))
+df_chr <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
+                     c=c(TRUE, FALSE, TRUE))
 ```
 
 <center>
@@ -804,3 +804,20 @@ df <- data.frame(a=c(1,2,3), b=c('eeny', 'meeny', 'miney'),
 
 <img src="images/red_green_sticky.png" width="100%" />
 
+
+## Adding rows and columns
+
+* We *bind* `vector`s to add columns, and `list`s to add rows
+    * Adding a new `factor` level may be required
+
+```{r}
+df <- cbind(df, vals = 3:1)
+levels(df$b) <- c('eeny', 'meeny', 'miney', 'mo')
+df <- rbind(df, list(4, 'mo', FALSE, 0))
+```
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>

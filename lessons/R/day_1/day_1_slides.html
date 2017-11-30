@@ -979,7 +979,28 @@ summary(df)</pre>
 
 </center>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Adding rows and columns</h2></hgroup><article  id="adding-rows-and-columns">
+
+<ul>
+<li>We <em>bind</em> <code>vector</code>s to add columns, and <code>list</code>s to add rows
+
+<ul>
+<li>Adding a new <code>factor</code> level may be required</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>df &lt;- cbind(df, vals = 3:1)
+levels(df$b) &lt;- c(&#39;eeny&#39;, &#39;meeny&#39;, &#39;miney&#39;, &#39;mo&#39;)
+df &lt;- rbind(df, list(4, &#39;mo&#39;, FALSE, 0))</pre>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center></article></slide>
 
 
   <slide class="backdrop"></slide>

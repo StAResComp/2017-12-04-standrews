@@ -1610,3 +1610,36 @@ author_book <- data.frame(author_first = c('Charles', 'Ernst', "Theodosius"),
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Adding rows and columns**
+
+* To add a row or column, we **BIND A VECTOR OR LIST** to the dataframe
+* **DEMO IN THE CONSOLE**
+    * **CHECK THE STRUCTURE FIRST**
+	* If you try to **BIND A LIST WITH THE WRONG TYPES**, you'll get an error
+
+```R
+> df
+  a     b     c
+1 1  eeny  TRUE
+2 2 meeny FALSE
+3 3 miney  TRUE
+> df <- cbind(df, vals = 3:1)
+> df
+  a     b     c vals
+1 1  eeny  TRUE    3
+2 2 meeny FALSE    2
+3 3 miney  TRUE    1
+> df <- rbind(df, list(4, 'mo', FALSE, 0))
+Warning message:
+In `[<-.factor`(`*tmp*`, ri, value = "mo") :
+  invalid factor level, NA generated
+> levels(df$b) <- c('eeny', 'meeny', 'miney', 'mo')
+> df <- rbind(df, list(4, 'mo', FALSE, 0))
+```
+
+----
+
+**SLIDE: Reading in data**
