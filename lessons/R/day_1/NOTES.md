@@ -518,7 +518,20 @@ cats <- read.csv(file = "data/feline_data.csv")
 
 ----
 
-**SLIDE: 03. Data Structures in `R`**
+**SLIDE: 03. A First Analysis in `RStudio`**
+
+----
+
+**SLIDE: Learning Objectives**
+
+* We're going to cover some ways of loading data into an `R` project/analysis
+* We'll **EXPLORE SOME FUNCTIONS FOR SUMMARISING DATA**
+* Sometimes we want to use only a portion of our data, and we'll see some **WAYS OF INDEXING DATASETS**
+* We'll also look at some ways to **PLOT DATA IN R**, using the built-in *base graphics*
+
+----
+
+**SLIDE: 04. Data Structures in `R`**
 
 ----
 

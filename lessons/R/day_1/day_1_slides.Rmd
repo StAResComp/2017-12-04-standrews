@@ -31,7 +31,7 @@ Please do take notes on the course `etherpad`:
 </div>
 
 
-# 01. Introduction to `R` and <br /> `RStudio`
+# 01. Introduction to <br />`R` and `RStudio`
 
 
 ## Learning Objectives
@@ -264,7 +264,18 @@ We're going to create a new dataset and `R` script.
 </center>
 
 
-# 03. Data Types and <br />Structures in `R`
+# 03. A First Analysis in `RStudio`
+
+
+## Learning Objectives
+
+* Load data into an `R` project
+* Produce summary statistics of data
+* Extract subsets of data
+* Basic plotting in `R` (*base graphics*)
+
+
+# 04. Data Types and <br />Structures in `R`
 
 
 ## Learning Objectives
