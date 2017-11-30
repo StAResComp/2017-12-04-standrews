@@ -547,6 +547,50 @@ cats <- read.csv(file = "data/feline_data.csv")
 
 * **CHECK EVERYONE'S READY TO PROCEED**
 
+---- 
+
+**SLIDE: Loading Data - Interactive Demo**
+
+* We've already created some cat data manually, but **THIS IS UNUSUAL** - most data comes in the form of plain text files
+
+**START DEMO**
+* **INSPECT DATA IN FILES WINDOW**
+    * Click on filename, and select `View File`
+    * Note: **THERE IS NO HEADER** and **THERE ARE NO ROW NAMES**
+    * Ask: **IS THIS WELL-FORMATTED DATA?**
+    * I happen to know that there is **one row per patient, and the columns are days, in turn, post-treatment**, and **measurements are inflammation levels**
+* **WHAT IS THE DATA TYPE**
+    * Tabular, with **EACH COLUMN SEPARATED BY A COMMA**, so **CSV**
+    * **IN THE CONSOLE** use `read.csv()` to read the data in
+    * Note: **IF WE DON'T ASSIGN THE RESULT TO A VARIABLE WE JUST SEE THE DATA**
+* **CREATE A NEW SCRIPT**
+    * Click the **triangle next to the new document icon**
+    * Add the code and **SAVE AS `scripts/inflammation`** (`RStudio` adds the extension)
+    * See that the file appears in `Files` and `Git` windows
+
+```R
+# Preliminary analysis of inflammation in arthritis patients
+
+# Load data (no headers, CSV)
+data <- read.csv(file = "data/inflammation-01.csv", header = FALSE)
+```
+
+* **INSPECT THE DATA**
+    * `Source` the script
+    * Check the `Environment` window: 60 observations (patients) of 40 variables (days)
+    * **CLICK ON `data`**
+    * **COLUMN HEADERS ARE PROVIDED: `Vn`** for *variable n*
+	
+----
+
+**SLIDE: Challenge 03**
+
+**SOLUTION**
+
+```R
+read.csv(file='file.csv', sep=';', dec=',')
+```
+	
 ----
 
 **SLIDE: 04. Data Structures in `R`**
