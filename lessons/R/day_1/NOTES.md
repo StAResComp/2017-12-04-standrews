@@ -803,6 +803,43 @@ plot(max_inflammation_day)
 
 # Minimum inflammation per day
 plot(apply(data, 2, min))
+
+# Show a historgram of average patient inflammation
+hist(avg_inflammation_patient)
+```
+
+* **THE `hist()` FUNCTION PLOTS A HISTOGRAM OF INPUT DATA FREQUENCY/COUNT**
+    * The choice of bin sizes/*breaks* could be improved
+    * We need to **PROVIDE THE BOUNDARIES BETWEEN BINS**
+    * **IN THE CONSOLE**
+
+```R
+hist(avg_inflammation_patient, breaks=c(5, 6, 7, 8))
+```
+
+* We'd have to **TYPE IN A LOT OF NUMBERS** to get smaller breaks, which is **SLOW**
+    * The `seq()` function generates a sequence of numbers for us
+
+```R
+> seq(5, 8)
+[1] 5 6 7 8
+> hist(avg_inflammation_patient, breaks=seq(5, 8))
+```
+
+* We can **SET THE INTERVAL OF THE SEQUENCE**
+
+```R
+> seq(5, 8, by=0.2)
+ [1] 5.0 5.2 5.4 5.6 5.8 6.0 6.2 6.4 6.6 6.8 7.0 7.2 7.4 7.6 7.8 8.0
+> hist(avg_inflammation_patient, breaks=seq(5, 8, by=0.2))
+``` 
+
+* **IN THE SCRIPT**
+    * Add a line with the histogram for average patient inflammation
+
+```R
+# Show a historgram of average patient inflammation
+hist(avg_inflammation_patient, breaks=seq(5, 8, by=0.2))
 ```
 
 * **IN THE SCRIPT**

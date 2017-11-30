@@ -443,7 +443,10 @@ plot(apply(dat,2,min))       # 3 functions in one!
 
 ## Challenge 05 (5min)
 
-Can you add a plot of standard deviation of the data, by day, to your script?
+Can you add plot to your script showing:
+
+* standard deviation, by day
+* a histogram of inflammation by day
 
 <div class="attention">
 **(don't forget to commit changes)**
