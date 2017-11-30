@@ -531,6 +531,24 @@ cats <- read.csv(file = "data/feline_data.csv")
 
 ----
 
+**SLIDE: Our Task**
+
+* We've got some medical data relating to a new treatment for arthritis
+* There are some measurements of patient inflammation, taken over a period of days post-treatment for each patient
+* We've been **ASKED TO PRODUCE A SUMMARY AND SOME GRAPHS**
+
+* **DOWNLOAD THE FILE FROM THE LINK TO `data/`**
+* **EXPLAIN THE LINK IS ON THE ETHERPAD PAGE** (no need to type!)
+* **DEMO THIS**
+    * **NOTE:** A new directory is created *within* `data`, called `data`. **THIS IS UNTIDY, SO LET'S CLEAN**
+    * **COPY ALL FILES BEGINNING WITH `inflammation` TO THE PARENT FOLDER**
+    * **THEN DELETE THE SUBFOLDER AND ZIP FILE**
+    * **ADD THE DATA FILES TO THE REPO** (can shift-click, here)
+
+* **CHECK EVERYONE'S READY TO PROCEED**
+
+----
+
 **SLIDE: 04. Data Structures in `R`**
 
 ----

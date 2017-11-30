@@ -275,6 +275,22 @@ We're going to create a new dataset and `R` script.
 * Basic plotting in `R` (*base graphics*)
 
 
+## Our Task
+
+* Patients have been given a new treatment for arthritis
+* We have measurements of inflammation over a period of days for each patient
+* We want to produce a preliminary analysis and graphs for this data
+
+<div class="highlight">
+Download the file from the following link to your `data/` directory, and extract it
+</div>
+
+* [https://swcarpentry.github.io/r-novice-inflammation/files/r-novice-inflammation-data.zip](https://swcarpentry.github.io/r-novice-inflammation/files/r-novice-inflammation-data.zip)
+
+(the link is available on the course Etherpad page)
+
+<img src="images/red_green_sticky.png" width="100%" />
+
 # 04. Data Types and <br />Structures in `R`
 
 
