@@ -1194,7 +1194,7 @@ NAs introduced by coercion
 [1] 0 1
 ```
 
-* You can **GIVE VECTOR ELEMENTS NAMES**
+* You can **GIVE VECTOR ELEMENTS NAMES** 
     * They're then referred to as *named vectors*
 
 ```R

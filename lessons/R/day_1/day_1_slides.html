@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Programming in R: Part One</title>
+  <title>Programming in R</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,7 +20,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Programming in R: Part One',
+                title: 'Programming in R',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -94,7 +94,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">5/12/2017</p>
+            <p style="margin-top: 6px; margin-left: -2px;">5-6/12/2017</p>
           </hgroup>
   </slide>
 
@@ -158,7 +158,7 @@ Stack Overflow: <a href='https://stackoverflow.com/' title=''>https://stackoverf
 
 <div class="highlight">
 <ul>
-<li><code>Excel</code> is great for many things, but <code>R</code> is great for reproducibility…</li>
+<li><code>Excel</code> is fine for many things, but <code>R</code> is great for reproducibility…</li>
 </ul></div>
 
 <center>
@@ -245,7 +245,7 @@ Stack Overflow: <a href='https://stackoverflow.com/' title=''>https://stackoverf
 
 <ul>
 <li>An item of data goes in the box (called <code>Name</code>)</li>
-<li>When we refer the box (<em>variable</em>) with a name, we really mean <em>what’s in the box</em></li>
+<li>When we refer to the box (<em>variable</em>) by its name, we really mean <em>what’s in the box</em></li>
 </ul>
 
 <center>
@@ -276,7 +276,7 @@ x</pre>
 
 </article></slide><slide class=""><hgroup><h2>Removing Variables</h2></hgroup><article  id="removing-variables">
 
-<p>To remove variables, use <code>rm()</code></p>
+<p>To remove variables from your workspace, use <code>rm()</code></p>
 
 <pre class = 'prettyprint lang-r'>x &lt;- 1
 ls()</pre>
@@ -301,7 +301,12 @@ age &lt;- 122
 mass &lt;- mass * 2.3
 age &lt;- age - 20</pre>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p>
+<ul>
+<li><code>mass = 47.5, age = 102</code></li>
+<li><code>mass = 109.25, age = 102</code></li>
+<li><code>mass = 47.5, age = 122</code></li>
+<li><code>mass = 109.25, age = 122</code></li>
+</ul>
 
 </article></slide><slide class=""><hgroup><h2>Good Project Management Practices</h2></hgroup><article  id="good-project-management-practices">
 

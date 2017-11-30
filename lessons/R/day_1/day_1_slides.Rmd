@@ -1,7 +1,7 @@
 ---
-title: 'Programming in R: Part One'
+title: 'Programming in R'
 author: "Leighton Pritchard"
-date: "5/12/2017"
+date: "5-6/12/2017"
 output:
   ioslides_presentation:
     css: ./includes/custom.css
@@ -64,7 +64,7 @@ Please do take notes on the course `etherpad`:
 ## "But I already know `Excel`…"
 
 <div class="highlight">
-* `Excel` is great for many things, but `R` is great for reproducibility…
+* `Excel` is fine for many things, but `R` is great for reproducibility…
 </div>
 
 <center>
@@ -135,7 +135,7 @@ Please do take notes on the course `etherpad`:
 </div>
 
 * An item of data goes in the box (called `Name`)
-* When we refer the box (*variable*) with a name, we really mean *what's in the box*
+* When we refer to the box (*variable*) by its name, we really mean *what's in the box*
 
 <center>
 <img src="images/boxes_variables_arrow.png" width="45%" />
@@ -156,7 +156,7 @@ log(x)
 
 ## Removing Variables
 
-To remove variables, use `rm()`
+To remove variables from your workspace, use `rm()`
 
 ```{r}
 x <- 1
@@ -183,7 +183,10 @@ mass <- mass * 2.3
 age <- age - 20
 ```
 
-<img src="images/red_green_sticky.png" width="100%" />
+* `mass = 47.5, age = 102`
+* `mass = 109.25, age = 102`
+* `mass = 47.5, age = 122`
+* `mass = 109.25, age = 122`
 
 
 ## Good Project Management Practices
@@ -443,7 +446,7 @@ plot(apply(dat,2,min))       # 3 functions in one!
 
 ## Challenge 05 (5min)
 
-Can you add plot to your script showing:
+Can you add a plot to your script showing:
 
 * standard deviation, by day
 * a histogram of inflammation by day
