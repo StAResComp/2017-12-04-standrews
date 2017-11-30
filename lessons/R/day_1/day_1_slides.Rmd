@@ -517,7 +517,7 @@ What examples of data types can you think of from your own experience?
 </center>
 
 
-## Challenge NN (5min)
+## Challenge 06 (5min)
 
 Create examples of data with the following characteristics:
 
@@ -547,7 +547,7 @@ For each variable, test that it has the data type you intended
 </center>
 
 
-## Challenge NN (5min)
+## Challenge 07 (5min)
 
 Vectors are *atomic*: they can contain only a single data *type*
 

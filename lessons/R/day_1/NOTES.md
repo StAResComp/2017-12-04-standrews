@@ -1047,7 +1047,7 @@ txt <- "TRUE"
 
 ----
 
-**SLIDE: Challenge NN**
+**SLIDE: Challenge 06**
 
 * Let the students work for a couple of minutes, then demonstrate.
 
@@ -1112,7 +1112,7 @@ xx <- c(1, 2, 'a')
 
 ----
 
-**SLIDE: Challenge NN**
+**SLIDE: Challenge 07**
 
 * Let the students work for a couple of minutes, then demonstrate.
 
