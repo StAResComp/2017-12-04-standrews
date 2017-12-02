@@ -31,6 +31,15 @@ Please do take notes on the course `etherpad`:
 </div>
 
 
+## Learning Objectives
+
+* Fundamentals of `R`
+* Fundamentals of programming
+* Best practices for organising code
+* Best practices for reproducibility
+* Effective data analysis in `R`
+
+
 # 01. Introduction to <br />`R` and `RStudio`
 
 
