@@ -1488,7 +1488,7 @@ Levels: no yes
 
 * **THE NAMED LIST IS SLIGHTLY DIFFERENT**
     * **CAN STILL INDEX**
-    * But can also **NOW NAME**
+    * But can also **NOW USE NAMES** with `$`
 
 ```R
 > l_named
@@ -1697,6 +1697,41 @@ In `[<-.factor`(`*tmp*`, ri, value = "mo") :
   invalid factor level, NA generated
 > levels(df$b) <- c('eeny', 'meeny', 'miney', 'mo')
 > df <- rbind(df, list(4, 'mo', FALSE, 0))
+> > df
+  a     b     c vals
+1 1  eeny  TRUE    3
+2 2 meeny FALSE    2
+3 3 miney  TRUE    1
+4 4  <NA> FALSE    0
+5 4    mo FALSE    0
+```
+
+* **NOW WE HAVE A GARBAGE ROW!!**
+* We can **REMOVE THE ROW IN SEVERAL WAYS**
+     * Use the `-` syntax
+     * Remove all rows with `NA` values
+* We reassign `df` with one of these
+
+```R
+> df[-4,]
+  a     b     c vals
+1 1  eeny  TRUE    3
+2 2 meeny FALSE    2
+3 3 miney  TRUE    1
+5 4    mo FALSE    0
+> na.omit(df)
+  a     b     c vals
+1 1  eeny  TRUE    3
+2 2 meeny FALSE    2
+3 3 miney  TRUE    1
+5 4    mo FALSE    0
+> df <- na.omit(df)
+> df
+  a     b     c vals
+1 1  eeny  TRUE    3
+2 2 meeny FALSE    2
+3 3 miney  TRUE    1
+5 4    mo FALSE    0
 ```
 
 ----
