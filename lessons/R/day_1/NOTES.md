@@ -1349,6 +1349,7 @@ Levels: black calico tabby
 
 * *Matrices* may be the **MOST IMPORTANT DATA STRUCTURE IN NUMERICAL ANALYSIS**, central to pretty much any statistical operation
 * **THEY GET THEIR OWN SPECIAL DATA STRUCTURE IN `R`**
+* They are 2D `vector`s (so contain atomic values)
 
 * **CREATE MATRICES IN SCRIPT**
    * `Run` the lines when done

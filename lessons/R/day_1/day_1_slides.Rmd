@@ -389,7 +389,7 @@ using `read.csv()`
 
 ## Indexing Data - Interactive Demo
 
-* We use *indexing* to refer to elements of a dataset
+* We use *indexing* to refer to elements of a variable
     * square brackets: `[]`
     * row, then column: `[row, column]`
 
@@ -631,7 +631,7 @@ Options: `logical`, `integer`, `numeric`, `character`
 
 ## Coercion
 
-* *Coercion* means changing data from one type to another
+* *Coercion* means changing data from one *type* to another
 * `R` will perform *implicit coercion* on vectors to make them atomic
 
 <div class="highlight">
@@ -695,7 +695,7 @@ str(f)
 
 ## Matrices
 
-* *Matrices* are arrays of numeric values
+* *Matrices* are 2D *vectors* of atomic values
     * An extremely important data type in numerical analyses
     
 <center>
