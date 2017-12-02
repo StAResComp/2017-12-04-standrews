@@ -1,7 +1,7 @@
 # `NOTES.md` - `R` lesson day one
 These notes are for the tutor on day one of the two-day `R` Software Carpentry course, taught 5th December 2017 at the University of St Andrews.
 
-# Things to remember
+# **THINGS TO REMEMBER**
 
 To clear a console environment in `R`:
 
@@ -18,6 +18,14 @@ rm(list=ls())
 ## ETHERPAD
 
 * Please use the Etherpad for the course
+
+## LEARNING OBJECTIVES
+
+* We're being **QUITE AMBITIOUS**, and covering a few things, but we **HAVE TWO SESSIONS**, so should be OK
+* We'll be covering the fundamentals of `R` and `RStudio` - how to **GET AROUND `R` AND WHAT `RStudio` CAN DO**
+* You'll come away with fundamental knowledge applicable to **PROGRAMMING IN ANY LANGUAGE**
+* We'll be learning some of the best practices for writing and organising your code (**FOLLOWING ON FROM GIT**) and for reproducible computing
+* Finally, we'll be going through how to use these skills to be **MORE EFFECTIVE WITH DATA ANALYSIS** in `R`
 
 ## SECTION 01: Introduction to `R` and `RStudio`
 
