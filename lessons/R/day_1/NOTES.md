@@ -1563,6 +1563,8 @@ mask <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
 [1] 5.4 6.2 7.1 4.8 7.5
 ```
 
+* **COMMIT CHANGES**
+
 ----
 
 **SLIDE: 05. Dataframes**
@@ -1827,10 +1829,54 @@ gapminder <- read.table("data/gapminder-FiveYearData.csv", sep=",", header=TRUE)
 
 * **ADD AND COMMIT TO REPO**
 * **CHECK THE DATA IN THE `Environment` TAB**
+    * Click on `gapminder` in `Evironment` tab.
     * **NOTE COLUMNS**
     * **DEMO IN CONSOLE**
 
+----
+
+**SLIDE: Investigating `gapminder`**
+
+* Now we've loaded our data, let's take a look at it
+* **DEMO IN CONSOLE**
+     * 1704 rows, 6 columns
+     * Investigate types of columns
+     * **POINT OUT THAT THE TYPE OF A COLUMN IS INTEGER IF IT'S A FACTOR**
+     * **LENGTH OF A DATAFRAME IS THE NUMBER OF COLUMNS**
+
 ```R
+> str(gapminder)
+'data.frame':	1704 obs. of  6 variables:
+ $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+ $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
+ $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+ $ gdpPercap: num  779 821 853 836 740 ...
+> typeof(gapminder$year)
+[1] "integer"
+> typeof(gapminder$country)
+[1] "integer"
+> str(gapminder$country)
+ Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+> length(gapminder)
+[1] 6
+> nrow(gapminder)
+[1] 1704
+> ncol(gapminder)
+[1] 6
+> dim(gapminder)
+[1] 1704    6
+> colnames(gapminder)
+[1] "country"   "year"      "pop"       "continent" "lifeExp"   "gdpPercap"
+> head(gapminder)
+      country year      pop continent lifeExp gdpPercap
+1 Afghanistan 1952  8425333      Asia  28.801  779.4453
+2 Afghanistan 1957  9240934      Asia  30.332  820.8530
+3 Afghanistan 1962 10267083      Asia  31.997  853.1007
+4 Afghanistan 1967 11537966      Asia  34.020  836.1971
+5 Afghanistan 1972 13079460      Asia  36.088  739.9811
+6 Afghanistan 1977 14880372      Asia  38.438  786.1134
 > summary(gapminder)
         country          year           pop               continent      lifeExp     
  Afghanistan:  12   Min.   :1952   Min.   :6.001e+04   Africa  :624   Min.   :23.60  
@@ -1848,3 +1894,137 @@ gapminder <- read.table("data/gapminder-FiveYearData.csv", sep=",", header=TRUE)
  3rd Qu.:  9325.5  
  Max.   :113523.1
 ```
+
+----
+
+**SLIDE: Subsets of `data.frame`s**
+
+* **DATAFRAMES ARE LISTS** so subset like lists
+* **DATAFRAMES ARE ALSO 2D DATA** so subset like matrices
+* **DEMO IN CONSOLE**
+
+```R
+# Extract a single column, get a dataframe
+> head(gapminder[3])
+       pop
+1  8425333
+2  9240934
+3 10267083
+4 11537966
+5 13079460
+6 14880372
+> class(head(gapminder[3]))
+[1] "data.frame"
+
+# Extract a single named column, get a vector/factor
+> head(gapminder[["lifeExp"]])
+[1] 28.801 30.332 31.997 34.020 36.088 38.438
+> class(head(gapminder[["lifeExp"]]))
+[1] "numeric"
+> head(gapminder$year)
+[1] 1952 1957 1962 1967 1972 1977
+> class(head(gapminder$year))
+[1] "integer"
+
+# Slice rows like a matrix, get a dataframe
+> gapminder[1:3,]
+      country year      pop continent lifeExp gdpPercap
+1 Afghanistan 1952  8425333      Asia  28.801  779.4453
+2 Afghanistan 1957  9240934      Asia  30.332  820.8530
+3 Afghanistan 1962 10267083      Asia  31.997  853.1007
+> class(gapminder[1:3,])
+[1] "data.frame"
+> gapminder[3,]
+      country year      pop continent lifeExp gdpPercap
+3 Afghanistan 1962 10267083      Asia  31.997  853.1007
+> class(gapminder[3, ])
+[1] "data.frame"
+
+# Slice columns like a matrix, get vector/factor
+> head(gapminder[, 3])
+[1]  8425333  9240934 10267083 11537966 13079460 14880372
+> class(head(gapminder[, 3]))
+[1] "numeric"
+
+# Slice columns like a matrix get dataframe
+> head(gapminder[, 3, drop=FALSE])
+       pop
+1  8425333
+2  9240934
+3 10267083
+4 11537966
+5 13079460
+6 14880372
+> class(head(gapminder[, 3, drop=FALSE]))
+[1] "data.frame"
+``` 
+
+----
+
+**SLIDE: Challenge 13**
+
+```R
+# Extract observations collected for the year 1957
+> head(gapminder[gapminder$year == 1957,])
+       country year      pop continent lifeExp gdpPercap
+2  Afghanistan 1957  9240934      Asia  30.332   820.853
+14     Albania 1957  1476505    Europe  59.280  1942.284
+26     Algeria 1957 10270856    Africa  45.685  3013.976
+38      Angola 1957  4561361    Africa  31.999  3827.940
+50   Argentina 1957 19610538  Americas  64.399  6856.856
+62   Australia 1957  9712569   Oceania  70.330 10949.650
+
+# Extract all columns except 1 through 4
+> head(gapminder[, -(1:4)])
+  lifeExp gdpPercap
+1  28.801  779.4453
+2  30.332  820.8530
+3  31.997  853.1007
+4  34.020  836.1971
+5  36.088  739.9811
+6  38.438  786.1134
+> head(gapminder[, -1:-4])
+  lifeExp gdpPercap
+1  28.801  779.4453
+2  30.332  820.8530
+3  31.997  853.1007
+4  34.020  836.1971
+5  36.088  739.9811
+6  38.438  786.1134
+
+# Extract all rows where life expectancy is greater than 80 years
+> head(gapminder[gapminder$lifeExp > 80,])
+            country year      pop continent lifeExp gdpPercap
+71        Australia 2002 19546792   Oceania  80.370  30687.75
+72        Australia 2007 20434176   Oceania  81.235  34435.37
+252          Canada 2007 33390141  Americas  80.653  36319.24
+540          France 2007 61083916    Europe  80.657  30470.02
+671 Hong Kong China 2002  6762476      Asia  81.495  30209.02
+672 Hong Kong China 2007  6980412      Asia  82.208  39724.98
+
+# ADVANCED: Extract rows for years 2002 and 2007
+> head(gapminder[gapminder$year == 2002 | gapminder$year == 2007,])
+       country year      pop continent lifeExp gdpPercap
+11 Afghanistan 2002 25268405      Asia  42.129  726.7341
+12 Afghanistan 2007 31889923      Asia  43.828  974.5803
+23     Albania 2002  3508512    Europe  75.651 4604.2117
+24     Albania 2007  3600523    Europe  76.423 5937.0295
+35     Algeria 2002 31287142    Africa  70.994 5288.0404
+36     Algeria 2007 33333216    Africa  72.301 6223.3675
+> head(gapminder[gapminder$year %in% c(2002, 2007),])
+       country year      pop continent lifeExp gdpPercap
+11 Afghanistan 2002 25268405      Asia  42.129  726.7341
+12 Afghanistan 2007 31889923      Asia  43.828  974.5803
+23     Albania 2002  3508512    Europe  75.651 4604.2117
+24     Albania 2007  3600523    Europe  76.423 5937.0295
+35     Algeria 2002 31287142    Africa  70.994 5288.0404
+36     Algeria 2007 33333216    Africa  72.301 6223.3675
+
+# The %in% operator
+> 1 %in% c(1, 2, 3, 4, 5)
+[1] TRUE
+> 6 %in% c(1, 2, 3, 4, 5)
+[1] FALSE
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

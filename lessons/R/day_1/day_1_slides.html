@@ -1150,7 +1150,66 @@ df &lt;- rbind(df, list(4, &#39;mo&#39;, FALSE, 0))</pre>
 
 <pre class = 'prettyprint lang-r'>url &lt;- paste(&quot;https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/&quot;,
              &quot;master/data/gapminder-FiveYearData.csv&quot;, sep = &#39;&#39;)
-gapminder &lt;- read.table(url, sep=&quot;,&quot;, header=TRUE)</pre></article></slide>
+gapminder &lt;- read.table(url, sep=&quot;,&quot;, header=TRUE)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Investigating <code>gapminder</code></h2></hgroup><article  id="investigating-gapminder">
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>str(gapminder)              # structure of the data.frame
+typeof(gapminder$year)      # data type of a column
+length(gapminder)           # length of the data.frame
+nrow(gapminder)             # number of rows in data.frame
+ncol(gapminder)             # number of columns in data.frame
+dim(gapminder)              # number of rows and columns in data.frame
+colnames(gapminder)         # column names from data.frame
+head(gapminder)             # first few rows of dataframe
+summary(gapminder)          # summary of data in data.frame columns</pre>
+
+</article></slide><slide class=""><hgroup><h2>Subsets of <code>data.frame</code>s</h2></hgroup><article  id="subsets-of-data.frames">
+
+<ul>
+<li><code>data.frame</code>s are <code>list</code>s and subset in the same way</li>
+<li><code>data.frame</code>s are 2D data (tabular) and subset like <code>matrix</code>es</li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>gapminder[3]                  # single column (get dataframe)
+gapminder[[&quot;lifeExp&quot;]]        # single column (get vector/factor)
+gapminder$year                # single column (get vector/factor)
+gapminder[1:3,]               # row slice (get dataframe)
+gapminder[3,]                 # row slice (get dataframe)
+gapminder[, 3]                # column slice (get vector/factor)
+gapminder[, 3, drop=FALSE]    # column slice (get dataframe)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 13 (5min)</h2></hgroup><article  id="challenge-13-5min">
+
+<p>I made some mistakes when subsetting <code>gapminder</code>, can you fix them?</p>
+
+<pre class = 'prettyprint lang-r'># Extract observations collected for the year 1957
+gapminder[gapminder$year = 1957,]
+
+# Extract all columns except 1 through 4
+gapminder[, -1:4]
+
+# Extract all rows where life expectancy is greater than 80 years
+gapminder[gapminder$lifeExp &gt; 80]
+
+# ADVANCED: Extract rows for years 2002 and 2007
+gapminder[gapminder$year == 2002 | 2007]</pre>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 
   <slide class="backdrop"></slide>

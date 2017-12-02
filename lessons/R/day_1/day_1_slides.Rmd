@@ -959,3 +959,67 @@ url <- paste("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/
              "master/data/gapminder-FiveYearData.csv", sep = '')
 gapminder <- read.table(url, sep=",", header=TRUE)
 ```
+
+
+## Investigating `gapminder`
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+str(gapminder)              # structure of the data.frame
+typeof(gapminder$year)      # data type of a column
+length(gapminder)           # length of the data.frame
+nrow(gapminder)             # number of rows in data.frame
+ncol(gapminder)             # number of columns in data.frame
+dim(gapminder)              # number of rows and columns in data.frame
+colnames(gapminder)         # column names from data.frame
+head(gapminder)             # first few rows of dataframe
+summary(gapminder)          # summary of data in data.frame columns
+```
+
+
+## Subsets of `data.frame`s
+
+* `data.frame`s are `list`s and subset in the same way
+* `data.frame`s are 2D data (tabular) and subset like `matrix`es
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+gapminder[3]                  # single column (get dataframe)
+gapminder[["lifeExp"]]        # single column (get vector/factor)
+gapminder$year                # single column (get vector/factor)
+gapminder[1:3,]               # row slice (get dataframe)
+gapminder[3,]                 # row slice (get dataframe)
+gapminder[, 3]                # column slice (get vector/factor)
+gapminder[, 3, drop=FALSE]    # column slice (get dataframe)
+```
+
+
+## Challenge 13 (5min)
+
+I made some mistakes when subsetting `gapminder`, can you fix them?
+
+```{r, eval=FALSE}
+# Extract observations collected for the year 1957
+gapminder[gapminder$year = 1957,]
+
+# Extract all columns except 1 through 4
+gapminder[, -1:4]
+
+# Extract all rows where life expectancy is greater than 80 years
+gapminder[gapminder$lifeExp > 80]
+
+# ADVANCED: Extract rows for years 2002 and 2007
+gapminder[gapminder$year == 2002 | 2007]
+```
+
+<img src="images/red_green_sticky.png" width="100%" />
