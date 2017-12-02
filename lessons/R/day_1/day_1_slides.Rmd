@@ -212,6 +212,23 @@ rm(list=ls())
 ```
 
 
+## Challenge 02 (5min)
+
+What will be the value of each variable after each statement in the following program?
+
+```{r, echo=TRUE}
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+```
+
+* `mass = 47.5, age = 102`
+* `mass = 109.25, age = 102`
+* `mass = 47.5, age = 122`
+* `mass = 109.25, age = 122`
+
+
 ## Good Variable Names
 
 * Descriptive (but not *too* long)
@@ -230,23 +247,6 @@ rm(list=ls())
 > * letters, numbers, underscores, and periods (`[a-zA-z0-9_.]`)
 > * cannot start with a number
 > * whitespace is not allowed
-
-
-## Challenge 02 (5min)
-
-What will be the value of each variable after each statement in the following program?
-
-```{r, echo=TRUE}
-mass <- 47.5
-age <- 122
-mass <- mass * 2.3
-age <- age - 20
-```
-
-* `mass = 47.5, age = 102`
-* `mass = 109.25, age = 102`
-* `mass = 47.5, age = 122`
-* `mass = 109.25, age = 122`
 
 
 ## Good Project Management Practices

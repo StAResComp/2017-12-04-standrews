@@ -382,21 +382,6 @@ character(0)
 
 ----
 
-**SLIDE: Good Variable Names**
-
-* Good variable names **SHOULD HELP YOU DESCRIBE WHAT'S GOING ON**
-    * Helpful **FOR YOU AND FOR OTHERS**
-* It's better to **avoid using names that already exist**
-* Use a **CONSISTENT NAMING STYLE**
-
-* Rules for **VARIABLE NAMES DIFFER BETWEEN LANGUAGES**
-* **IN `R`**
-    * You can only use **LETTERS, NUMBERS, UNDERSCORES, AND PERIODS**
-    * You **can't start variable names with a number**
-    * You **can't use whitespace in a variable name**
-
-----
-
 **SLIDE: Challenge 02**
 
 Solution:
@@ -414,6 +399,21 @@ This will multiply the existing value of 47.5 by 2.3 to give a new value of 109.
 This will subtract 20 from the existing value of 122 to give a new value of 102 to the variable age.
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Good Variable Names**
+
+* Good variable names **SHOULD HELP YOU DESCRIBE WHAT'S GOING ON**
+    * Helpful **FOR YOU AND FOR OTHERS**
+* It's better to **avoid using names that already exist**
+* Use a **CONSISTENT NAMING STYLE**
+
+* Rules for **VARIABLE NAMES DIFFER BETWEEN LANGUAGES**
+* **IN `R`**
+    * You can only use **LETTERS, NUMBERS, UNDERSCORES, AND PERIODS**
+    * You **can't start variable names with a number**
+    * You **can't use whitespace in a variable name**
 
 ----
 
