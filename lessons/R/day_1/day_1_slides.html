@@ -1600,9 +1600,18 @@ p + geom_line(aes(group=country)) + geom_point(alpha=0.4)</pre>
 </center>
 
 <pre class = 'prettyprint lang-r'># Compare life expectancy over time by continent
-p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent, group=country))
+p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent,
+                                group=country))
 p &lt;- p + geom_line() + scale_y_log10()
-p + facet_wrap(~continent)</pre></article></slide>
+p + facet_wrap(~continent)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 17 (10min)</h2></hgroup><article  id="challenge-17-10min">
+
+<p>Can you create a scatterplot and contour densities of GDP per capita against population size, with colour filled by continent?</p>
+
+<p><strong>ADVANCED:</strong> Transform the <em>x</em> axis to better visualise data spread, and use facets to panel density plots by year.</p>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 
   <slide class="backdrop"></slide>
