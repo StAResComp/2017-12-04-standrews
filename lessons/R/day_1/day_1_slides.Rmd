@@ -1294,3 +1294,75 @@ Can you create another figure in your script showing how *life expectancy* chang
 (commit your changes to the `gapminder.R` script)
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+## Transformations and `scale`s
+
+* Data transformations are handled with `scale` layers
+
+<div class="highlight">
+* `scale` layers map data values to new aesthetics on the plot
+    - axis scaling (log scales)
+    - colour scaling (changing palettes)
+</div>
+
+<center>
+<img src="images/ggplot_layers_4.png" width=80% />
+</center>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+## Statistics layers
+
+* Some `geom` layers transform the dataset
+   * Usually this is a data summary (e.g. smoothing or binning)
+   
+<center>
+<img src="images/ggplot_layers_5.png" width=80% />
+</center>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+## Multi-panel figures
+
+* So far all our plots have all data in a single figure
+* Comparisons can be clearer with multiple panels:
+    - *facets*
+    - "small multiples plots"
+
+<div class="highlight">
+Use the `facet_wrap()` layer to generate grids of plots
+</div>
+    
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+# Compare life expectancy over time by continent
+p <- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent,
+                                group=country))
+p <- p + geom_line() + scale_y_log10()
+p + facet_wrap(~continent)
+```
+
+
+## Challenge 17 (10min)
+
+Can you create a scatterplot and contour densities of GDP per capita against population size, with colour filled by continent?
+
+**ADVANCED:** Transform the *x* axis to better visualise data spread, and use facets to panel density plots by year.
+
+<img src="images/red_green_sticky.png" width="100%" />

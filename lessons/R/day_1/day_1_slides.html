@@ -1450,7 +1450,7 @@ p + geom_line()</pre>
 </ul></li>
 </ul>
 
-<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent))
+<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, colour=continent))
 p + geom_point()</pre>
 
 <center>
@@ -1470,7 +1470,7 @@ p + geom_point()</pre>
 </ul></li>
 </ul>
 
-<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent))
+<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, colour=continent))
 p + geom_line(aes(group=country))</pre>
 
 <center>
@@ -1521,7 +1521,88 @@ p + geom_line(aes(group=country)) + geom_point(alpha=0.4)</pre>
 <li>a scatterplot showing each data point, with 35% opacity</li>
 </ul>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p>(commit your changes to the <code>gapminder.R</code> script)</p>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Transformations and <code>scale</code>s</h2></hgroup><article  id="transformations-and-scales">
+
+<ul>
+<li>Data transformations are handled with <code>scale</code> layers</li>
+</ul>
+
+<div class="highlight">
+<ul>
+<li><code>scale</code> layers map data values to new aesthetics on the plot
+
+<ul>
+<li>axis scaling (log scales)</li>
+<li>colour scaling (changing palettes)</li>
+</ul></li>
+</ul></div>
+
+<center>
+
+<img src="images/ggplot_layers_4.png" width=80% />
+
+</center>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Statistics layers</h2></hgroup><article  id="statistics-layers">
+
+<ul>
+<li>Some <code>geom</code> layers transform the dataset
+
+<ul>
+<li>Usually this is a data summary (e.g. smoothing or binning)</li>
+</ul></li>
+</ul>
+
+<center>
+
+<img src="images/ggplot_layers_5.png" width=80% />
+
+</center>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Multi-panel figures</h2></hgroup><article  id="multi-panel-figures">
+
+<ul>
+<li>So far all our plots have all data in a single figure</li>
+<li>Comparisons can be clearer with multiple panels:
+
+<ul>
+<li><em>facets</em></li>
+<li>&ldquo;small multiples plots&rdquo;</li>
+</ul></li>
+</ul>
+
+<div class="highlight">
+<p>Use the <code>facet_wrap()</code> layer to generate grids of plots</p></div>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Compare life expectancy over time by continent
+p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent, group=country))
+p &lt;- p + geom_line() + scale_y_log10()
+p + facet_wrap(~continent)</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

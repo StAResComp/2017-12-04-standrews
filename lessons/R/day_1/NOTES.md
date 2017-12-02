@@ -2291,3 +2291,116 @@ p + geom_line(aes(group=country)) + geom_point(alpha=0.35)
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Transformations and `scale`s**
+
+* Another kind of layer is a *transformation* - handled with `scale` layers
+* These map *data* to new aesthetics on the plot
+    * new axis scales, e.g. log scale, reverse scale, time scale
+    * colour scaling (changing palettes)
+    * shape and size scaling
+
+* **DEMO IN SCRIPT** (`gapminder.R`)
+   * Rescale the plot first
+   * Then change the colours
+
+```R
+# Generate plot of GDP per capita against life expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p <- p + geom_line(aes(group=country)) + geom_point(alpha=0.4)
+p + scale_y_log10() + scale_color_grey()
+```
+
+----
+
+**SLIDE: Statistics layers**
+
+* Some `geom` layers transform the dataset
+   * Usually this is a data summary (e.g. smoothing or binning)
+   * The layer **may provide a new summary visual object**
+
+* **DEMO IN SCRIPT**
+   *  This is working towards an informative figure
+   *  **Start with a new basic scatterplot**
+   *  **NOTE:** setting opacity helps see density in the data - **looks like two main points of density**
+   *  **NOTE:** looks like a general trend of GDP and life expectancy correlating
+
+```R
+# Generate summary plot of GDP per capita against life expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap))
+p + geom_point(alpha=0.4) + scale_y_log10()
+```
+
+* **ADD A SMOOTHED FIT**
+   * **NOTE:** The correlation is made quite clear
+
+```R
+# Generate summary plot of GDP per capita against life expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap))
+p <- p + geom_point(alpha=0.4) + scale_y_log10()
+p + geom_smooth()
+```
+
+* **ADD A CONTOUR PLOT OF DENSITY**
+    * **NOTE:** Two populations are clear
+    * **We might speculate that there is a difference in wealth/life expectancy across continents**
+
+```R
+# Generate summary plot of GDP per capita against life expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap))
+p <- p + geom_point(alpha=0.4) + scale_y_log10()
+p + geom_density_2d(color="purple")
+```
+
+* **ADD CONTINENT COLOURING**
+    * **NOTE:** It's now clear that the two populations are centred on Europe (wealthy, long-lived) and Africa (poor, short-lived), respectively.
+
+```R
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap))
+p <- p + geom_point(alpha=0.4, aes(color=continent)) + scale_y_log10()
+p + geom_density_2d(color="purple")
+```
+
+* **COMMIT CHANGES**
+
+----
+
+**SLIDE: Multi-panel figures**
+
+* All our plots so far have been single figures, but **multi-panel plots can give clearer comparisons**
+* The **`facet_wrap()` layer allows us to make grids of plots, SPLIT BY A FACTOR**
+* **DEMO IN THE SCRIPT**
+    * We set a **default aesthetic grouping by country**
+    * We generate a line plot, with log y axis
+    * **The result is a bit messy.**
+
+```R
+# Compare life expectancy over time by country
+p <- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent, group=country))
+p + geom_line() + scale_y_log10()
+```
+
+* **using `facet_wrap()` to split by continent is clearer**
+    * **NOTE:** the axes are consistent across facets
+
+```R
+p <- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent, group=country))
+p <- p + geom_line() + scale_y_log10()
+p + facet_wrap(~continent)
+```
+
+----
+
+**SLIDE: Challenge 17 (10min)**
+
+```R
+# Contrast GDP per capita against population
+p <- ggplot(data=gapminder, aes(x=pop, y=gdpPercap))
+p <- p + geom_point(alpha=0.8, aes(color=continent))
+p <- p + scale_y_log10() + scale_x_log10()
+p + geom_density_2d(alpha=0.5) + facet_wrap(~year)
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
