@@ -1295,9 +1295,13 @@ knitr</pre>
 </ul></li>
 </ul></div>
 
+<div class="attention">
 <ul>
-<li>It also produces very attractive graphics</li>
-</ul>
+<li><em>data</em></li>
+<li><em>aesthetics</em></li>
+<li><code>geom</code>s</li>
+<li><em>layers</em></li>
+</ul></div>
 
 <div class="references">
 <p>Tidyverse: <a href='https://www.tidyverse.org/' title=''>https://www.tidyverse.org/</a></p></div>
@@ -1327,7 +1331,80 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
 
 <img src="images/plot_scatterplot.png" width="40%" /> <img src="images/qplot_scatterplot.png" width="40%" />
 
-</center></article></slide>
+</center>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>aesthetics</em></h2></hgroup><article  id="what-is-a-scatterplot-aesthetics">
+
+<ul>
+<li>Each observation in the <em>data</em> is a point</li>
+<li>A point’s <em>aesthetics</em> determine how it is rendered
+
+<ul>
+<li>co-ordinates on the image; size; shape; colour</li>
+</ul></li>
+<li><em>aesthetics</em> can be constant or mapped to variables</li>
+<li>Many different plots can be generated from the same data by changing <em>aesthetics</em></li>
+</ul>
+
+<center>
+
+<img src="images/qplot_scatterplot.png" width="45%" />
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>aesthetics</em></h2></hgroup><article  id="what-is-a-scatterplot-aesthetics-1">
+
+<ul>
+<li><em>aesthetics</em> define datapoint representations as a <em>new dataset</em></li>
+</ul>
+
+<center>
+
+<img src="images/scatterplot_data_table.png" width="25%" />
+
+</center>
+
+<div class="highlight">
+<p><strong>This should remind you of a <code>data.frame</code></strong></p></div>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <code>geom</code>s</h2></hgroup><article  id="what-is-a-scatterplot-geoms">
+
+<div class="highlight">
+<p><code>geom</code> (short for <em>geometry</em>) defines the &ldquo;type&rdquo; of representation</p></div>
+
+<ul>
+<li>If data are drawn as points: <strong>scatterplot</strong></li>
+<li>If data are drawn as lines: <strong>line plot</strong></li>
+<li>If data are drawn as bars: <strong>bar chart</strong></li>
+</ul>
+
+<center>
+
+<img src="images/geom_types.png" width="60%" />
+
+</center>
+
+<div class="attention">
+<ul>
+<li><strong><code>ggplot2</code> provides several <code>geom</code> types</strong></li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <code>geom</code>s</h2></hgroup><article  id="what-is-a-scatterplot-geoms-1">
+
+<div class="highlight">
+<p><strong>The same <em>data</em> and <em>aesthetics</em> can be shown with different <code>geom</code></strong></p></div>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Generate plot of GDP per capita against life Expectancy
+p &lt;- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_point()
+p + geom_line()</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

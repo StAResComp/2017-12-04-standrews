@@ -1103,7 +1103,12 @@ knitr
     - Helps build complex, effective visualisations from simple elements
 </div>
 
-* It also produces very attractive graphics
+<div class="attention">
+* *data*
+* *aesthetics*
+* `geom`s
+* *layers*
+</div>
 
 <div class="references">
 Tidyverse: [https://www.tidyverse.org/](https://www.tidyverse.org/)
@@ -1131,3 +1136,68 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
 <img src="images/plot_scatterplot.png" width="40%" />
 <img src="images/qplot_scatterplot.png" width="40%" />
 </center>
+
+
+## What is a Scatterplot? *aesthetics*
+
+* Each observation in the *data* is a point
+* A point's *aesthetics* determine how it is rendered
+    - co-ordinates on the image; size; shape; colour
+* *aesthetics* can be constant or mapped to variables
+* Many different plots can be generated from the same data by changing *aesthetics*
+
+<center>
+<img src="images/qplot_scatterplot.png" width="45%" />
+</center>
+
+
+## What is a Scatterplot? *aesthetics*
+
+* *aesthetics* define datapoint representations as a *new dataset*
+
+<center>
+<img src="images/scatterplot_data_table.png" width="25%" />
+</center>
+
+<div class="highlight">
+**This should remind you of a `data.frame`**
+</div>
+
+
+## What is a Scatterplot? `geom`s
+
+<div class="highlight">
+`geom` (short for *geometry*) defines the "type" of representation
+</div>
+
+* If data are drawn as points: **scatterplot**
+* If data are drawn as lines: **line plot**
+* If data are drawn as bars: **bar chart** 
+
+<center>
+<img src="images/geom_types.png" width="60%" />
+</center>
+
+<div class="attention">
+* **`ggplot2` provides several `geom` types**
+</div>
+
+
+## What is a Scatterplot? `geom`s
+
+<div class="highlight">
+**The same *data* and *aesthetics* can be shown with different `geom`**
+</div>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+# Generate plot of GDP per capita against life Expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_point()
+p + geom_line()
+```

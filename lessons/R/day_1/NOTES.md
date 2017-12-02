@@ -2141,7 +2141,66 @@ also installing the dependencies ‘bindrcpp’, ‘glue’, ‘rlang’
 
 * **THIS ISN'T WHAT'S POWERFUL ABOUT `ggplot2`!**
 
+----
 
+**SLIDE: What is a Scatterplot? *aesthetics* **
 
+* **TALK THROUGH THE POINTS**
+* Each observation in the data is a *point*
+* The *aesthetics* of a point determine how it is rendered in the plot
+    * co-ordinates (x, y values) **ON THE IMAGE**
+    * size
+    * shape
+    * colour
+    * transparency
+* *aesthetics* can be
+    * *constant* (e.g. all points the same colour)
+    * *mapped to variables* (e.g. colour mapped to continent)
 
+----
 
+**SLIDE: What is a Scatterplot? *aesthetics* **
+
+* The *aesthetics* of a plot **define a new dataset** for each point
+* **THIS SHOULD REMIND YOU STRONGLY OF A `data.frame`**
+
+----
+
+**SLIDE: What is a Scatterplot? `geom`s**
+
+* So far **we've only defined the data and aesthetics**
+    * **THIS ONLY TELLS US HOW DATA POINTS ARE REPRESENTED, NOT THE TYPE OF PLOT**
+* `geom`s (short for *geometries*) **DEFINE THE KIND OF PLOT WE PRODUCE**
+    * Showing the data **as points** is a *scatterplot*
+    * Showing the data **as lines** is a *line plot*
+    * Showing the data **as bars** is a *barchart*
+* We can use **different `geom`s with the *same data and aesthetics* **
+
+----
+
+**SLIDE: What is a Scatterplot? `geom`s**
+
+* **DEMO IN SCRIPT** (`gapminder.R`)
+    * We **create a plot with the `ggplot()` function**.
+    * We define the *data* as `data`, and *aesthetics* with `aes`
+    * **WE PUT THE RESULT IN A VARIABLE FOR CONVENIENCE**
+    * *Data* and *aesthetics* aren't enough to define a plot. **WE NEED A `geom`**
+    * Use `geom_point()`
+
+```R
+# Generate plot of GDP per capita against life Expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_point()
+```
+
+* **WE'VE RECREATED THE SCATTERPLOT WE SAW EARLIER**
+* **COMMIT CHANGES TO SCRIPT**
+
+* **What happens if we change the `geom`?**
+* **DEMO IN THE SCRIPT**
+
+```R
+p + geom_line()
+```
+
+* This looks terrible. **CHANGE IT BACK**
