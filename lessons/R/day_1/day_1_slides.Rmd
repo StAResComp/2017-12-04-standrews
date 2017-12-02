@@ -1023,3 +1023,74 @@ gapminder[gapminder$year == 2002 | 2007]
 ```
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+# 06. Packages
+
+
+## Learning Objectives
+
+* Understand what packages are
+* How to install a desired package
+* How to use a package in your code
+
+
+## Packages
+
+In `R`:
+
+* a *package* is the basic unit of reusable code
+* many useful and specialist tools are distributed as packages
+* over 10,000 packages are available at `CRAN`
+* you can distribute your own code as a package
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r eval=FALSE}
+installed.packages()               # see installed packages
+install.packages("packagename")    # install a new package
+update.packages()                  # update installed packages
+library(packagename)               # import a package for use in your code
+```
+
+<div class="references">
+CRAN - the Comprehensive `R` Archive Network: [https://cran.r-project.org/](https://cran.r-project.org/)
+</div>
+
+
+## Challenge 14 (5min)
+
+Can you check if the following packages are installed on your system, and install them if necessary?
+
+```{r, eval=FALSE}
+dplyr
+ggplot2
+knitr
+```
+
+<img src="images/red_green_sticky.png" width="100%" />
+
+
+# 07. Creating Publication-<br />Quality Graphics
+
+
+## Visualisation is Critical!
+
+<center>
+<img src="images/how_scientists_see_data.jpg" width="100%" />
+</center>
+
+
+## Learning Objectives
+
+* Be able to use `ggplot2` to generate publication-quality graphics
+* Understand the grammar of graphics
+
+
+## The Grammar of Graphics
+
+* `ggplot2` 

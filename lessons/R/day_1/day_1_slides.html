@@ -1209,7 +1209,76 @@ gapminder[gapminder$lifeExp &gt; 80]
 # ADVANCED: Extract rows for years 2002 and 2007
 gapminder[gapminder$year == 2002 | 2007]</pre>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>06. Packages</h2></hgroup><article  id="packages">
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-6">
+
+<ul>
+<li>Understand what packages are</li>
+<li>How to install a desired package</li>
+<li>How to use a package in your code</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Packages</h2></hgroup><article  id="packages-1">
+
+<p>In <code>R</code>:</p>
+
+<ul>
+<li>a <em>package</em> is the basic unit of reusable code</li>
+<li>many useful and specialist tools are distributed as packages</li>
+<li>over 10,000 packages are available at <code>CRAN</code></li>
+<li>you can distribute your own code as a package</li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>installed.packages()               # see installed packages
+install.packages(&quot;packagename&quot;)    # install a new package
+update.packages()                  # update installed packages
+library(packagename)               # import a package for use in your code</pre>
+
+<div class="references">
+<p>CRAN - the Comprehensive <code>R</code> Archive Network: <a href='https://cran.r-project.org/' title=''>https://cran.r-project.org/</a></p></div>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 14 (5min)</h2></hgroup><article  id="challenge-14-5min">
+
+<p>Can you check if the following packages are installed on your system, and install them if necessary?</p>
+
+<pre class = 'prettyprint lang-r'>dplyr
+ggplot2
+knitr</pre>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>07. Creating Publication-<br />Quality Graphics</h2></hgroup><article  id="creating-publication--quality-graphics">
+
+</article></slide><slide class=""><hgroup><h2>Visualisation is Critical!</h2></hgroup><article  id="visualisation-is-critical">
+
+<center>
+
+<img src="images/how_scientists_see_data.jpg" width="100%" />
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-7">
+
+<ul>
+<li>Be able to use <code>ggplot2</code> to generate publication-quality graphics</li>
+<li>Understand the grammar of graphics</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>The Grammar of Graphics</h2></hgroup><article  id="the-grammar-of-graphics">
+
+<ul>
+<li><code>ggplot2</code></li>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>

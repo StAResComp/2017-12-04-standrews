@@ -2028,3 +2028,81 @@ gapminder <- read.table("data/gapminder-FiveYearData.csv", sep=",", header=TRUE)
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: 06. Packages**
+
+----
+
+**SLIDE: Learning Objectives**
+
+* In this short section, we'll learn
+    * **what packages are**
+    * **how to install them**
+    * **how to use them in your code**
+
+----
+
+**SLIDE: Packages**
+
+* Packages are **THE FUNDAMENTAL UNIT OF REUSABLE CODE IN `R`**
+* People write code, and **DISTRIBUTE IT IN PACKAGES**
+* Packages exist for many **SPECIALIST AND USEFUL TOOLS**
+* Over 10,000 packages can be found at CRAN - the Comprehensive R Archive Network
+* When you write your own code, you can distribute it as a package
+
+* **DEMO IN CONSOLE**
+    * You can **SEE INSTALLED PACKAGES** with the function `installed.packages()`
+    * To install a new package, use `install.packages("packagename")` as a string **EXPLAIN DEPENDENCIES**
+    * **DEMO INSTALLATION IN `RStudio`: `Tools` $\rightarrow$ `Install packages...`**
+    * **DEMO PACKAGE UPDATES IN `RStudio`**
+    * You can update your installed packages to the newest version in the console with `update.packages()` **DON'T DO THIS - CAN TAKE TIME!**
+
+```R
+> installed.packages()
+                  Package            
+BiocInstaller     "BiocInstaller"    
+bit               "bit"              
+bit64             "bit64"            
+data.table        "data.table"  
+[...]
+> install.packages("dplyr")
+Installing package into ‘/Users/lpritc/Library/R/3.4/library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘bindrcpp’, ‘glue’, ‘rlang’
+[...]
+> update.packages(ask=FALSE)
+> library(dplyr)
+```
+
+----
+
+**SLIDE: Challenge 14**
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+# 07. Creating Publication-Quality Graphics
+
+----
+
+**SLIDE: Visualisation is Critical**
+
+* Visualisation **HELPS US UNDERSTAND OUR DATA**
+* But **IT'S NOT FOOLPROOF** - people can interpret the same visualisation differently
+* Good visualisation is **MORE THAN JUST USING A PLOTTING TOOL**
+
+----
+
+**SLIDE: Learning Objectives**
+
+* After this section, you should **understand the Grammar of Graphics**
+     * You'll be able to produce **INFORMATIVE, BEAUTIFUL GRAPHS THAT EXPLAIN YOUR DATA**
+* You'll also be able to use `ggplot2` to generate those plots
+
+----
+
+**SLIDE: The Grammar of Graphics**
+
