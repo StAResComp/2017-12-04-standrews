@@ -1093,4 +1093,41 @@ knitr
 
 ## The Grammar of Graphics
 
-* `ggplot2` 
+* `ggplot2` is part of the *Tidyverse*, a collection of packages for data science
+    - `ggplot2` is the graphics package
+    
+<div class="highlight">
+* **Implements the "Grammar of Graphics"**
+    - Separates data from its representation
+    - Helps iteratively update/refine plots
+    - Helps build complex, effective visualisations from simple elements
+</div>
+
+* It also produces very attractive graphics
+
+<div class="references">
+Tidyverse: [https://www.tidyverse.org/](https://www.tidyverse.org/)
+</div>
+
+
+## A Basic Scatterplot
+
+* You can use `ggplot2` like *base graphics*
+    - `qplot()` ≈ `plot()`
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+library(ggplot2)
+plot(gapminder$lifeExp, gapminder$gdpPercap, col=gapminder$continent)
+qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
+```
+
+<center>
+<img src="images/plot_scatterplot.png" width="40%" />
+<img src="images/qplot_scatterplot.png" width="40%" />
+</center>

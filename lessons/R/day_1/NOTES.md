@@ -2106,3 +2106,42 @@ also installing the dependencies ‘bindrcpp’, ‘glue’, ‘rlang’
 
 **SLIDE: The Grammar of Graphics**
 
+* We'll be using the `ggplot2` package, which is part of the **TIDYVERSE**, created initially by Hadley Wickham.
+    * The Tidyverse provides **OTHER USEFUL PACKAGES** but you can use `ggplot2` on its own
+
+* `ggplot2` implements **A SET OF CONCEPTS CALLED THE GRAMMAR OF GRAPHICS**
+    * This **SEPARATES DATA FROM THE WAY IT'S REPRESENTED** and we'll discuss it in detail
+    * It's not the usual way you might have seen to create plots, but it's **highly effective for generating powerful visualisations**
+
+----
+
+**SLIDE: A Basic Scatterplot**
+
+* You can use `ggplot2` in the **SAME WAY YOU'D USE BASE GRAPHICS**
+    * This is not the best way to use all the power of the package
+
+* **DEMO IN CONSOLE**
+    * **IMPORT LIBRARY**
+    * `ggplot2` has **`qplot()` - the equivalent to `plot()` in base graphics**
+    * `plot()` takes `x` and `y` values, and will assign colours to `factor` columns
+    * `qplot()` takes the name of `x` and `y` columns, plus the name of the source `data.frame`, and will assign colours to `factor` columns
+
+```R
+> library(ggplot2)
+> plot(gapminder$lifeExp, gapminder$gdpPercap, col=gapminder$continent)
+> qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
+```
+
+* **COMPARE THE GRAPHS**
+    * Clearly, both graphs **show the same data**
+    * The **FORMATTING IS QUITE DIFFERENT**
+    * Your preference is your preference - **both methods can be heavily restyled**
+    * My view is that **`ggplot2` has nicer default styles**
+    * **`ggplot2` provides gridlines and legends by default, and the labelling is clearer** (no `gapminder$` prefix)
+
+* **THIS ISN'T WHAT'S POWERFUL ABOUT `ggplot2`!**
+
+
+
+
+

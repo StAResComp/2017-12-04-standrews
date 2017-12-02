@@ -1277,8 +1277,57 @@ knitr</pre>
 </article></slide><slide class=""><hgroup><h2>The Grammar of Graphics</h2></hgroup><article  id="the-grammar-of-graphics">
 
 <ul>
-<li><code>ggplot2</code></li>
-</ul></article></slide>
+<li><code>ggplot2</code> is part of the <em>Tidyverse</em>, a collection of packages for data science
+
+<ul>
+<li><code>ggplot2</code> is the graphics package</li>
+</ul></li>
+</ul>
+
+<div class="highlight">
+<ul>
+<li><strong>Implements the &ldquo;Grammar of Graphics&rdquo;</strong>
+
+<ul>
+<li>Separates data from its representation</li>
+<li>Helps iteratively update/refine plots</li>
+<li>Helps build complex, effective visualisations from simple elements</li>
+</ul></li>
+</ul></div>
+
+<ul>
+<li>It also produces very attractive graphics</li>
+</ul>
+
+<div class="references">
+<p>Tidyverse: <a href='https://www.tidyverse.org/' title=''>https://www.tidyverse.org/</a></p></div>
+
+</article></slide><slide class=""><hgroup><h2>A Basic Scatterplot</h2></hgroup><article  id="a-basic-scatterplot">
+
+<ul>
+<li>You can use <code>ggplot2</code> like <em>base graphics</em>
+
+<ul>
+<li><code>qplot()</code> ≈ <code>plot()</code></li>
+</ul></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>library(ggplot2)
+plot(gapminder$lifeExp, gapminder$gdpPercap, col=gapminder$continent)
+qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
+
+<center>
+
+<img src="images/plot_scatterplot.png" width="40%" /> <img src="images/qplot_scatterplot.png" width="40%" />
+
+</center></article></slide>
 
 
   <slide class="backdrop"></slide>
