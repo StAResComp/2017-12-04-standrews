@@ -749,6 +749,37 @@ l_named <- list(a = "SWC", b = 1:4)
 ```
 
 
+## Logical Indexing
+
+* We have used *indexing*, *slicing* and *names* to get data **by 'location'**
+
+```{r, eval=FALSE}
+> animal[c(2,4,6)]
+[1] "o" "k" "y"
+> m2[2:3, 3:4]
+     [,1] [,2]
+[1,]    2    1
+[2,]    1    2
+> l_named$b
+[1] 1 2 3 4
+```
+
+* *Logical indexes* can select data that meets certain criteria
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+mask <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+x[mask]
+x[x > 7]
+```
+
+
 # 05. Dataframes
 
 

@@ -869,7 +869,7 @@ str(f)</pre>
 </article></slide><slide class=""><hgroup><h2>Matrices</h2></hgroup><article  id="matrices">
 
 <ul>
-<li><em>Matrices</em> are arrays of numeric values
+<li><em>Matrices</em> are 2D <em>vectors</em> of atomic values
 
 <ul>
 <li>An extremely important data type in numerical analyses</li>
@@ -929,6 +929,37 @@ m2 &lt;- matrix(c(1, 2), ncol = 4, nrow = 3)</pre>
 <pre class = 'prettyprint lang-r'># create a list
 l &lt;- list(1, &#39;a&#39;, TRUE, matrix(0, nrow = 2, ncol = 2), f)
 l_named &lt;- list(a = &quot;SWC&quot;, b = 1:4)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Logical Indexing</h2></hgroup><article  id="logical-indexing">
+
+<ul>
+<li>We have used <em>indexing</em>, <em>slicing</em> and <em>names</em> to get data <strong>by &lsquo;location&rsquo;</strong></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>&gt; animal[c(2,4,6)]
+[1] &quot;o&quot; &quot;k&quot; &quot;y&quot;
+&gt; m2[2:3, 3:4]
+     [,1] [,2]
+[1,]    2    1
+[2,]    1    2
+&gt; l_named$b
+[1] 1 2 3 4</pre>
+
+<ul>
+<li><em>Logical indexes</em> can select data that meets certain criteria</li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>x &lt;- c(5.4, 6.2, 7.1, 4.8, 7.5)
+mask &lt;- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+x[mask]
+x[x &gt; 7]</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>05. Dataframes</h2></hgroup><article  id="dataframes">
 

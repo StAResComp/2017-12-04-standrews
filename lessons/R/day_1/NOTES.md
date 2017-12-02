@@ -1489,6 +1489,8 @@ Levels: no yes
 * **THE NAMED LIST IS SLIGHTLY DIFFERENT**
     * **CAN STILL INDEX**
     * But can also **NOW USE NAMES** with `$`
+    * **INDICES CAN CHANGE IF DATA IS MODIFIED - NAMES ARE MORE ROBUST**
+    * **NAMES CAN ALSO BE MORE DESCRIPTIVE (HELPS UNDERSTANDING)**
 
 ```R
 > l_named
@@ -1507,6 +1509,58 @@ $b
 [1] 1 2 3 4
 > names(l_named)
 [1] "a" "b"
+```
+
+----
+
+**SLIDE: Logical Indexing**
+
+* We've seen **INDEXING** and **NAMES** as ways to get elements from variables **SO LONG AS WE KNOW WHICH ELEMENTS WE WANT**
+* **LOGICAL INDEXING** allows us to **SPECIFY CONDITIONS FOR THE DATA WE WANT TO RECOVER**
+    * For instance, we might want **ALL VALUES OVER A THRESHOLD** or **ALL NAMES STARTING WITH 'S'**
+
+* **DEMO IN SCRIPT** (`data_structures.R`)
+    * We create a vector of values as an example
+    * We make a **MASK OF TRUE/FALSE (i.e. logical)** values
+    * `Run` the lines
+
+```R
+# Create a vector for logical indexing
+v <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+mask <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+```
+
+* **DEMO IN CONSOLE**
+* Now, when we **USE THE MASK AS AN INDEX** we only get **THE ELEMENTS WHERE THE MASK IS TRUE**
+
+```R
+> v
+[1] 5.4 6.2 7.1 4.8 7.5
+> v[mask]
+[1] 5.4 7.1 7.5
+```
+
+* **COMPARATORS IN `R` RETURN VECTORS OF TRUE/FALSE VALUES**
+    * These can be **USED AS LOGICAL MASKS fOR DATA**
+    * Comparators **CAN BE COMBINED**
+
+```R
+> v
+[1] 5.4 6.2 7.1 4.8 7.5
+> v < 7
+[1]  TRUE  TRUE FALSE  TRUE FALSE
+> v[v < 7]
+[1] 5.4 6.2 4.8
+> v < 7
+[1]  TRUE  TRUE FALSE  TRUE FALSE
+> v > 5 & v < 7
+[1]  TRUE  TRUE FALSE FALSE FALSE
+> v[v > 5 & v < 7]
+[1] 5.4 6.2
+> v > 5 | v < 7
+[1] TRUE TRUE TRUE TRUE TRUE
+> v[v > 5 | v < 7]
+[1] 5.4 6.2 7.1 4.8 7.5
 ```
 
 ----
