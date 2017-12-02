@@ -323,6 +323,43 @@ rm(list=ls())
 
 ----
 
+**SLIDE: Functions**
+
+* You've now used some **functions**. These are like "canned scripts"
+* Functions have **THREE MAIN PURPOSES**
+    * They **ENCAPSULATE COMPLEX TASKS** - you don't need to worry about how a sine is calculated, just that you give the function a value, and it tells you what the sine is.
+    * They **MAKE CODE MORE READABLE** - by dividing code into logical operations, represented by short names, the code is easier to read
+    * They also **MAKE CODE MORE REUSABLE** - you don't need to write the routine for finding a square root every time you want one, you just need to call the `sqrt()` function
+* **ALL THE FUNCTIONS YOU'VE SEEN ARE BUILT-IN**, the so-called `base` functions
+* **OTHER FUNCTIONS FOR SPECIFIC TASKS CAN BE BROUGHT IN, THROUGH `libraries`**
+
+* Functions usually **TAKE ARGUMENTS** (input), e.g. `sqrt(4)` - the `4` is an argument
+* Functions often **RETURN** values (output), e.g. `sqrt(4)` **returns** the value `2`
+
+----
+
+**SLIDE: Getting Help for Functions**
+
+* **DEMO IN CONSOLE**
+
+```R
+> args(lm)
+function (formula, data, subset, weights, na.action, method = "qr", 
+    model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
+    contrasts = NULL, offset, ...) 
+NULL
+> ?sqrt
+> help(sqrt)
+> ??sqrt
+> help.search("sqrt")
+> help.search("categorical")
+> vignette(two-table)
+Error in vignette(two - table) : object 'two' not found
+> vignette("two-table")
+```
+
+----
+
 **SLIDE: Removing Variables**
 
 * To remove **ONE OR MORE SPECIFIED VARIABLES**, use `rm()`
@@ -343,7 +380,20 @@ rm(list=ls())
 character(0)
 ```
 
+----
 
+**SLIDE: Good Variable Names**
+
+* Good variable names **SHOULD HELP YOU DESCRIBE WHAT'S GOING ON**
+    * Helpful **FOR YOU AND FOR OTHERS**
+* It's better to **avoid using names that already exist**
+* Use a **CONSISTENT NAMING STYLE**
+
+* Rules for **VARIABLE NAMES DIFFER BETWEEN LANGUAGES**
+* **IN `R`**
+    * You can only use **LETTERS, NUMBERS, UNDERSCORES, AND PERIODS**
+    * You **can't start variable names with a number**
+    * You **can't use whitespace in a variable name**
 
 ----
 

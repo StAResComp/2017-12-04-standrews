@@ -33,7 +33,7 @@ Please do take notes on the course `etherpad`:
 
 ## Learning Objectives
 
-* Fundamentals of `R`
+* Fundamentals of `R` and `RStudio`
 * Fundamentals of programming
 * Best practices for organising code
 * Best practices for reproducibility
@@ -163,9 +163,40 @@ log(x)
 ```
 
 
+## Functions
+
+* Function (`log()`, `sin()` etc.) ≈ "canned script"
+    * automate complicated tasks
+    * make code more readable and reusable
+* Some functions are built-in (in *base* packages, e.g. `sqrt()`, `lm()`, `plot()`)
+* Some functions are *imported* in *libraries*
+
+<div class="attention">
+* Functions usually take *arguments* (*input*)
+* Functions often *return* values (*output*)
+</div>
+
+## Getting Help For Functions
+
+<center>
+<div class="attention">
+INTERACTIVE DEMO
+</div>
+</center>
+
+```{r, eval=FALSE}
+args(fname)            # arguments for fname
+?fname                 # help page for fname
+help(fname)            # help page for fname
+??fname                # any mention of fname
+help.search("text")    # any mention of "text"
+vignette(fname)        # worked examples for fname
+vignette()             # show all available vignettes
+```
+
 ## Removing Variables
 
-To remove variables from your workspace, use `rm()`
+To remove variables from your workspace, use the `rm()` function
 
 ```{r}
 x <- 1
@@ -179,6 +210,26 @@ To remove all variables use the broom in the `Environment` tab (`Rstudio`), or:
 ```{r}
 rm(list=ls())
 ```
+
+
+## Good Variable Names
+
+* Descriptive (but not *too* long)
+* Avoid existing names (e.g. `mean`, `matrix`, `list`, etc.)
+* Consistent style
+    * `periods.between.words`
+    * `underscores_between_words`
+    * `camelCaseToSeparateWords`
+
+<center>
+<div class="highlight">
+**IN `R`…**
+</div>
+</center>
+
+> * letters, numbers, underscores, and periods (`[a-zA-z0-9_.]`)
+> * cannot start with a number
+> * whitespace is not allowed
 
 
 ## Challenge 02 (5min)

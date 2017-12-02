@@ -112,9 +112,19 @@
 <li><strong>A record/reference for after the course</strong></li>
 </ul></div>
 
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives">
+
+<ul>
+<li>Fundamentals of <code>R</code> and <code>RStudio</code></li>
+<li>Fundamentals of programming</li>
+<li>Best practices for organising code</li>
+<li>Best practices for reproducibility</li>
+<li>Effective data analysis in <code>R</code></li>
+</ul>
+
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>01. Introduction to <br /><code>R</code> and <code>RStudio</code></h2></hgroup><article  id="introduction-to-r-and-rstudio">
 
-</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives">
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-1">
 
 <ul>
 <li>Understand what <code>R</code> is</li>
@@ -201,7 +211,7 @@ Stack Overflow: <a href='https://stackoverflow.com/' title=''>https://stackoverf
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>02. Getting to know <code>RStudio</code></h2></hgroup><article  id="getting-to-know-rstudio">
 
-</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-1">
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-2">
 
 <ul>
 <li>Familiarity with the <code>RStudio</code> IDE</li>
@@ -274,9 +284,45 @@ x</pre>
 
 <pre >## [1] -3.688879</pre>
 
+</article></slide><slide class=""><hgroup><h2>Functions</h2></hgroup><article  id="functions">
+
+<ul>
+<li>Function (<code>log()</code>, <code>sin()</code> etc.) ≈ &ldquo;canned script&rdquo;
+
+<ul>
+<li>automate complicated tasks</li>
+<li>make code more readable and reusable</li>
+</ul></li>
+<li>Some functions are built-in (in <em>base</em> packages, e.g. <code>sqrt()</code>, <code>lm()</code>, <code>plot()</code>)</li>
+<li>Some functions are <em>imported</em> in <em>libraries</em></li>
+</ul>
+
+<div class="attention">
+<ul>
+<li>Functions usually take <em>arguments</em> (<em>input</em>)</li>
+<li>Functions often <em>return</em> values (<em>output</em>)</li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>Getting Help For Functions</h2></hgroup><article  id="getting-help-for-functions">
+
+<center>
+
+<div class="attention">
+<p>INTERACTIVE DEMO</p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>args(fname)            # arguments for fname
+?fname                 # help page for fname
+help(fname)            # help page for fname
+??fname                # any mention of fname
+help.search(&quot;text&quot;)    # any mention of &quot;text&quot;
+vignette(fname)        # worked examples for fname
+vignette()             # show all available vignettes</pre>
+
 </article></slide><slide class=""><hgroup><h2>Removing Variables</h2></hgroup><article  id="removing-variables">
 
-<p>To remove variables from your workspace, use <code>rm()</code></p>
+<p>To remove variables from your workspace, use the <code>rm()</code> function</p>
 
 <pre class = 'prettyprint lang-r'>x &lt;- 1
 ls()</pre>
@@ -291,6 +337,33 @@ ls()</pre>
 <p>To remove all variables use the broom in the <code>Environment</code> tab (<code>Rstudio</code>), or:</p>
 
 <pre class = 'prettyprint lang-r'>rm(list=ls())</pre>
+
+</article></slide><slide class=""><hgroup><h2>Good Variable Names</h2></hgroup><article  id="good-variable-names">
+
+<ul>
+<li>Descriptive (but not <em>too</em> long)</li>
+<li>Avoid existing names (e.g. <code>mean</code>, <code>matrix</code>, <code>list</code>, etc.)</li>
+<li>Consistent style
+
+<ul>
+<li><code>periods.between.words</code></li>
+<li><code>underscores_between_words</code></li>
+<li><code>camelCaseToSeparateWords</code></li>
+</ul></li>
+</ul>
+
+<center>
+
+<div class="highlight">
+<p><strong>IN <code>R</code>…</strong></p></div>
+
+</center>
+
+<ul class = 'build'>
+<li>letters, numbers, underscores, and periods (<code>[a-zA-z0-9_.]</code>)</li>
+<li>cannot start with a number</li>
+<li>whitespace is not allowed</li>
+</ul>
 
 </article></slide><slide class=""><hgroup><h2>Challenge 02 (5min)</h2></hgroup><article  id="challenge-02-5min">
 
@@ -408,7 +481,7 @@ age &lt;- age - 20</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>03. A First Analysis in <code>RStudio</code></h2></hgroup><article  id="a-first-analysis-in-rstudio">
 
-</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-2">
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-3">
 
 <ul>
 <li>Load data into an <code>R</code> project</li>
@@ -603,7 +676,7 @@ plot(apply(dat,2,min))       # 3 functions in one!</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>04. Data Types and <br />Structures in <code>R</code></h2></hgroup><article  id="data-types-and-structures-in-r">
 
-</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-3">
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-4">
 
 <ul>
 <li>Basic data types in <code>R</code></li>
@@ -859,7 +932,7 @@ l_named &lt;- list(a = &quot;SWC&quot;, b = 1:4)</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>05. Dataframes</h2></hgroup><article  id="dataframes">
 
-</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-4">
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-5">
 
 <ul>
 <li>Understand the concept of a <code>data.frame</code></li>
@@ -1038,7 +1111,7 @@ df &lt;- rbind(df, list(4, &#39;mo&#39;, FALSE, 0))</pre>
 
 <p><strong>The link is available on the course Etherpad</strong></p></div>
 
-<pre class = 'prettyprint lang-r'>gm_data &lt;- read.table(&quot;data/gapminder-FiveYearData.csv&quot;, sep=&quot;,&quot;, header=TRUE)</pre>
+<pre class = 'prettyprint lang-r'>gapminder &lt;- read.table(&quot;data/gapminder-FiveYearData.csv&quot;, sep=&quot;,&quot;, header=TRUE)</pre>
 
 <ul>
 <li><code>R</code> can also read data direct from the internet</li>
@@ -1046,7 +1119,7 @@ df &lt;- rbind(df, list(4, &#39;mo&#39;, FALSE, 0))</pre>
 
 <pre class = 'prettyprint lang-r'>url &lt;- paste(&quot;https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/&quot;,
              &quot;master/data/gapminder-FiveYearData.csv&quot;, sep = &#39;&#39;)
-gm_data &lt;- read.table(url, sep=&quot;,&quot;, header=TRUE)</pre></article></slide>
+gapminder &lt;- read.table(url, sep=&quot;,&quot;, header=TRUE)</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
