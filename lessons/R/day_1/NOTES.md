@@ -2204,3 +2204,90 @@ p + geom_line()
 ```
 
 * This looks terrible. **CHANGE IT BACK**
+
+----
+
+**SLIDE: Challenge 15**
+
+```R
+# Plot life expectancy against time
+p <- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent))
+p + geom_point()
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: What is a Scatterplot? *layers* **
+
+* Without knowing it, **WE'VE JUST BEEN USING THE LAYERS CONCEPT**
+    * **all `ggplot2` plots are built as layers**
+
+* **ALL LAYERS HAVE TWO COMPONENTS**
+    * *data* to be shown, and *aesthetics* for showing them
+    * a `geom` defining the type of plot
+
+* **The `ggplot` object describes a *base* layer, and can contain *data* and *aesthetics* **
+    * **THESE ARE INHERITED BY THE OTHER LAYERS IN THE PLOT**
+    * **The values can also be overridden in specified layers**
+
+----
+
+**SLIDE: What is a Scatterplot? *layers* **
+
+* In our first plot we defined a *base* with:
+    * *data* from `gapminder`
+    * *aesthetics* with *x* and *y* coordinates, and colouring by continent
+* We defined a layer that:
+    * had a `geom_point` `geom`
+    * inherited *data* and *aesthetics* from the *base*
+
+**LAYERS ARE ADDED WITH THE `+` OPERATOR**    
+
+----
+
+**SLIDE: What is a Scatterplot? *layers* **
+
+* Now we will **override the base layer *aesthetics* **
+* **DEMO IN SCRIPT**
+    * We'll **change the `geom`** to `geom_line`
+    * We'll extend the *aesthetics* to **group datapoints by country**
+
+```R
+# Generate plot of GDP per capita against life expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_line(aes(group=country))
+```
+
+* **RENDER THE PLOT**
+
+----
+
+**SLIDE: What is a Scatterplot? *layers* **
+
+* We can **BUILD UP LAYERS OF `geom`S** to produce a more complex plot
+* We **ADD A NEW `geom_point()` LAYER WITH `+`**
+    * We use the layer's `alpha` argument to control transparency
+* **DEMO IN SCRIPT**
+
+```R
+# Generate plot of GDP per capita against life expectancy
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_line(aes(group=country)) + geom_point(alpha=0.4)
+```
+
+* **RENDER THE PLOT**
+* **COMMIT THE CHANGES**
+
+----
+
+**SLIDE: Challenge 16**
+
+```R
+# Generate plot of life expectancy against time
+p <- ggplot(data=gapminder, aes(x=year, y=lifeExp, color=continent))
+p + geom_line(aes(group=country)) + geom_point(alpha=0.35)
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

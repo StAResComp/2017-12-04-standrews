@@ -3,3 +3,6 @@
 
 # Exclude files used in building .html
 day_1_slides_files/
+
+# Exclude Illustrator files
+illustrator/

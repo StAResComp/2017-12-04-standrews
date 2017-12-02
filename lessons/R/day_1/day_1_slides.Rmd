@@ -1201,3 +1201,96 @@ p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
 p + geom_point()
 p + geom_line()
 ```
+
+
+## Challenge 15 (5min)
+
+Can you create another figure in your script showing how *life expectancy* changes as a function of *time*, as a scatterplot?
+
+<img src="images/red_green_sticky.png" width="100%" />
+
+
+## What is a Scatterplot? *layers*
+
+* We've just used another "Grammar of Graphics" concept: *layers*
+    - `ggplot2` plots are built as *layers*
+    
+<div class="highlight">
+All *layers* have two components
+
+1. *data* and *aesthetics*
+2. a `geom`
+</div>
+
+* *Data* and *aesthetics* can be defined in a *base* `ggplot` object
+    - values from the *base* are *inherited* by the other layers
+    - the *base* can be overridden in other layers
+
+
+## What is a Scatterplot? *layers*
+
+* *Data* and *aesthetics* can be defined in a *base* `ggplot` object
+    - values from the *base* are *inherited* by the other layers
+    - the *base* can be overridden in other layers
+
+```{r, eval=FALSE}
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, colour=continent))
+p + geom_point()
+```
+
+<center>
+<img src="images/ggplot_layers_1.png" width=80% />
+</center>
+
+## What is a Scatterplot? *layers*
+
+* *Data* and *aesthetics* can be defined in a *base* `ggplot` object
+    - values from the *base* are *inherited* by the other layers
+    - the *base* can be overridden in other layers
+
+```{r, eval=FALSE}
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, colour=continent))
+p + geom_line(aes(group=country))
+```
+
+<center>
+<img src="images/ggplot_layers_2.png" width=80% />
+</center>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+## What is a Scatterplot? *layers*
+
+* We can use several layers of `geom`s to build a plot
+    * `alpha` controls *opacity* for a layer
+
+```{r, eval=FALSE}
+p <- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_line(aes(group=country)) + geom_point(alpha=0.4)
+```
+
+<center>
+<img src="images/ggplot_layers_3.png" width=80% />
+</center>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+## Challenge 16 (5min)
+
+Can you create another figure in your script showing how *life expectancy* changes as a function of *time*, coloured by continent, with two layers:
+
+* a line plot, grouping points by country
+* a scatterplot showing each data point, with 35% opacity
+
+(commit your changes to the `gapminder.R` script)
+
+<img src="images/red_green_sticky.png" width="100%" />

@@ -1404,7 +1404,124 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
 <pre class = 'prettyprint lang-r'># Generate plot of GDP per capita against life Expectancy
 p &lt;- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
 p + geom_point()
-p + geom_line()</pre></article></slide>
+p + geom_line()</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 15 (5min)</h2></hgroup><article  id="challenge-15-5min">
+
+<p>Can you create another figure in your script showing how <em>life expectancy</em> changes as a function of <em>time</em>, as a scatterplot?</p>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers">
+
+<ul>
+<li>We’ve just used another &ldquo;Grammar of Graphics&rdquo; concept: <em>layers</em>
+
+<ul>
+<li><code>ggplot2</code> plots are built as <em>layers</em></li>
+</ul></li>
+</ul>
+
+<div class="highlight">
+<p>All <em>layers</em> have two components</p>
+
+<ol>
+<li><em>data</em> and <em>aesthetics</em></li>
+<li>a <code>geom</code></li>
+</ol></div>
+
+<ul>
+<li><em>Data</em> and <em>aesthetics</em> can be defined in a <em>base</em> <code>ggplot</code> object
+
+<ul>
+<li>values from the <em>base</em> are <em>inherited</em> by the other layers</li>
+<li>the <em>base</em> can be overridden in other layers</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers-1">
+
+<ul>
+<li><em>Data</em> and <em>aesthetics</em> can be defined in a <em>base</em> <code>ggplot</code> object
+
+<ul>
+<li>values from the <em>base</em> are <em>inherited</em> by the other layers</li>
+<li>the <em>base</em> can be overridden in other layers</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent))
+p + geom_point()</pre>
+
+<center>
+
+<img src="images/ggplot_layers_1.png" width=80% />
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers-2">
+
+<ul>
+<li><em>Data</em> and <em>aesthetics</em> can be defined in a <em>base</em> <code>ggplot</code> object
+
+<ul>
+<li>values from the <em>base</em> are <em>inherited</em> by the other layers</li>
+<li>the <em>base</em> can be overridden in other layers</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=year, y=lifeExp, colour=continent))
+p + geom_line(aes(group=country))</pre>
+
+<center>
+
+<img src="images/ggplot_layers_2.png" width=80% />
+
+</center>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers-3">
+
+<ul>
+<li>We can use several layers of <code>geom</code>s to build a plot
+
+<ul>
+<li><code>alpha</code> controls <em>opacity</em> for a layer</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>p &lt;- ggplot(data=gapminder, aes(x=lifeExp, y=gdpPercap, color=continent))
+p + geom_line(aes(group=country)) + geom_point(alpha=0.4)</pre>
+
+<center>
+
+<img src="images/ggplot_layers_3.png" width=80% />
+
+</center>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 16 (5min)</h2></hgroup><article  id="challenge-16-5min">
+
+<p>Can you create another figure in your script showing how <em>life expectancy</em> changes as a function of <em>time</em>, coloured by continent, with two layers:</p>
+
+<ul>
+<li>a line plot, grouping points by country</li>
+<li>a scatterplot showing each data point, with 35% opacity</li>
+</ul>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 
   <slide class="backdrop"></slide>
