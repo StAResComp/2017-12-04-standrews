@@ -2790,3 +2790,113 @@ if(any(gapminder$year == year)){
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: `for()` loops**
+
+* If you want to iterate over a set of values, then `for()` loops can be used
+* `for()` loops are **a very common programming construct**
+* They express the idea: **FOR EACH ITEM IN A GROUP, DO SOMETHING (WITH THAT ITEM)**
+
+* **DEMO IN SCRIPT** (`flow_control.R`)
+    * Say we have a *vector* `c(1,2,3)`, and we want to print each item
+    * We can **loop over all the items** and print them
+* **The loop structure is**
+    * `for()`, where the argument names a variable (`i`) - the *iterator*, and a set of values: **`for(i in c('a', 'b', 'c'))`**
+    * A **CODE BLOCK** defined by curly braces (**note automated completion)
+    * The **contents of the code block are executed for each value of the iterator**
+
+```R
+# Basic for loop
+for(i in c('a', 'b', 'c')){
+  print(i)
+}
+```
+
+* **Loops can (but shouldn't always) be nested**
+* **DEMO IN SCRIPT**
+    * The outer loop is executed and, **for each value in the outer loop, the inner loop is executed to completion**
+
+```R
+# Nested loop example
+for (i in 1:5) {
+  for (j in c('a', 'b', 'c')) {
+    print(paste(i, j))
+  }
+}
+```
+
+* The simplest way to capture output is to add a new item to a vector each iteration of the loop
+* **DEMO IN SCRIPT**
+    * **REMIND:** using `c()` to append to a vector
+
+```R
+# Capture loop output
+output <- c()
+for (i in 1:5) {
+  for (j in c('a', 'b', 'c', 'd', 'e')) {
+    output <- c(output, paste(i, j))
+  }
+}
+(output)
+``` 
+
+* **GROWING OUTPUT FROM LOOPS IS COMPUTATIONALLY VERY EXPENSIVE**
+    * Better to define the empty output container first (**if you know the dimensions**)
+* **MODIFY IN SCRIPT**
+
+```R
+# Capture loop output
+output_matrix <- matrix(nrow=5, ncol=5)
+j_letters <- c('a', 'b', 'c', 'd', 'e')
+for (i in 1:5) {
+  for (j in 1:5) {
+    output_matrix[i, j] <-paste(i, j_letters[j])
+  }
+}
+(output_matrix)
+```
+
+----
+
+**SLIDE: `while()` loops**
+
+* Sometimes you need to perform some action **WHILE A CONDITION IS TRUE**
+    * This isn't as common as a `for()` loop
+    * It's a **general programming construct**
+
+* **DEMO IN SCRIPT**
+    * We'll **generate random numbers until one falls below a threshold**
+    * `runif()` generates random numbers from a uniform distribution
+    * We print random numbers until one is less than 0.1
+* **run a couple of times to show the output is random**
+
+```R
+# Example while loop
+z <- 1
+while(z > 0.1){
+  z <- runif(1)
+  print(z)
+}
+```
+
+* **COMMIT THE SCRIPT**
+
+----
+
+**SLIDE: Challenge 21**
+
+```R
+# Challenge solution
+for (l in letters) {
+  if (l %in% c('a', 'e', 'i', 'o', 'u')) {
+    value <- TRUE
+  } else {
+    value <- FALSE
+  }
+  print(paste(l, value))
+}
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

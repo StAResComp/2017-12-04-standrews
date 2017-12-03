@@ -1601,3 +1601,50 @@ Can you do the same for 2012?
 </div>
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+## `for()` loops
+
+* `for()` loops are a very common construct in programming
+    - `for` each `<item>` in a group, `<do something (with the item)>`
+* Not as useful in `R` as in some other languages
+
+```{r, eval=FALSE}
+for(iterator in set of values){
+  do a thing
+}
+```
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+## `while()` loops
+
+* `while()` loops are useful when you need to *do something* **while** some condition is true
+
+```{r, eval=FALSE}
+while(this condition is true){
+  do a thing
+}
+```
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+## Challenge 21 (5min)
+
+Can you use a `for()` loop and an `if()` statement to print whether each letter in the alphabet is a vowel?
+
+<div class="attention">
+**HINT:** Use `R`'s help for `letters` and `%in%`
+</div>
+
+<img src="images/red_green_sticky.png" width="100%" />

@@ -1803,7 +1803,7 @@ gdp_bycontinents_byyear &lt;- gapminder %&gt;%
               mean_gdp_billion=mean(gdp_billion),
               sd_gdp_billion=sd(gdp_billion))</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>09. Flow Control</h2></hgroup><article  id="flow-control">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>09. Program Flow Control</h2></hgroup><article  id="program-flow-control">
 
 </article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-9">
 
@@ -1812,6 +1812,7 @@ gdp_bycontinents_byyear &lt;- gapminder %&gt;%
 <li>Use <code>if()</code> and <code>else()</code></li>
 <li>Repeat operations in <code>R</code></li>
 <li>Use <code>for()</code> loops</li>
+<li><em>vectorisation</em> to avoid repeating operations</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><code>if()</code> … <code>else</code></h2></hgroup><article  id="if-else">
@@ -1841,7 +1842,66 @@ if (condition is true) {
 <div class="attention">
 <p><strong>INTERACTIVE DEMO</strong></p></div>
 
-</center></article></slide>
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 20 (5min)</h2></hgroup><article  id="challenge-20-5min">
+
+<p>Can you use an <code>if()</code> statement to report whether there are any records from 2002 in the <code>gapminder</code> dataset?</p>
+
+<p>Can you do the same for 2012?</p>
+
+<div class="attention">
+<p><strong>HINT:</strong> Look at the help for the <code>any()</code> function</p></div>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2><code>for()</code> loops</h2></hgroup><article  id="for-loops">
+
+<ul>
+<li><code>for()</code> loops are a very common construct in programming
+
+<ul>
+<li><code>for</code> each <code>&lt;item&gt;</code> in a group, <code>&lt;do something (with the item)&gt;</code></li>
+</ul></li>
+<li>Not as useful in <code>R</code> as in some other languages</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>for(iterator in set of values){
+  do a thing
+}</pre>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2><code>while()</code> loops</h2></hgroup><article  id="while-loops">
+
+<ul>
+<li><code>while()</code> loops are useful when you need to <em>do something</em> <strong>while</strong> some condition is true</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>while(this condition is true){
+  do a thing
+}</pre>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 21 (5min)</h2></hgroup><article  id="challenge-21-5min">
+
+<p>Can you use a <code>for()</code> loop and an <code>if()</code> statement to print whether each letter in the alphabet is a vowel?</p>
+
+<div class="attention">
+<p><strong>HINT:</strong> Use <code>R</code>’s help for <code>letters</code> and <code>%in%</code></p></div>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 
   <slide class="backdrop"></slide>
