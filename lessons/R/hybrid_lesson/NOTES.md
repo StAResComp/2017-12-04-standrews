@@ -2690,3 +2690,103 @@ gdp_bycontinents_byyear <- gapminder %>%
             mean_gdp_billion=mean(gdp_billion),
             sd_gdp_billion=sd(gdp_billion))
 ```
+
+----
+
+# 09. Program Flow Control
+
+----
+
+**SLIDE: Learning Objectives**
+
+* In this short section, you'll learn how to **perform actions depending on values of data** in `R`
+* You'll also learn how to **repeat operations, using `for()` loops**
+* **These are very important general concepts, that recur in many programming languages**
+* Much of the time, you can avoid using them in `R` data analyses, because `dplyr` exists, and because `R` is **vectorised**
+
+----
+
+**SLIDE: `if()` … `else`**
+
+* We **often want to run a piece of code, or take an action, dependent on whether some data has a particular value (is true or false, say**
+* When this is the case, we can use the general `if()` … `else` structure, which is common to most programming languages
+
+* **DEMO IN SCRIPT**
+* **CREATE NEW SCRIPT** (`flow_control.R`)
+    * Let's say that we want to print a message if some value is greater than 10
+    * **NOTE AUTOCOMPLETION/BRACKETS ETC.**
+    * **THE CODE TO BE RUN GOES IN CURLY BRACES**
+    * `Source` the file
+    * **NOTHING HAPPENS** (`x > 10` is `FALSE`)
+    * The `if()` block executes **if the value in the parentheses evaluates to `TRUE`**
+
+```R
+# A data point
+x <- 8
+
+# Example if statement
+if (x > 10) {
+  print("x is greater than 10")
+}
+```
+
+* **MODIFY THE SCRIPT**
+    * Add the `else` block
+    * `Source` the code: **we get a message**
+    * **BUT IS THE MESSAGE TRUE?**
+
+```R
+# Example if statement
+if (x > 10) {
+  print("x is greater than 10")
+} else {
+  print("x is less than 10")
+}
+```
+
+* **SET `x <- 10` AND TRY AGAIN**
+* **MODIFY THE SCRIPT WITH `else if()` STATEMENT**
+    * `Source` the script: **NO OUTPUT**
+
+```R
+# A data point
+x <- 10
+
+# Example if statement
+if (x > 10) {
+  print("x is greater than 10")
+} else if (x < 10) {
+  print("x is less than 10")
+}
+```
+
+* **MODIFY THE SCRIPT WITH A FINAL `else` STATEMENT**
+    * `Source` the script: **EQUALS** output
+
+```R
+# A data point
+x <- 9
+
+# Example if statement
+if (x > 10) {
+  print("x is greater than 10")
+} else if (x < 10) {
+  print("x is less than 10")
+} else {
+  print("x is equal to 10")
+}
+```
+
+----
+
+**SLIDE: Challenge 20**
+
+```R
+# Are there any records for a year
+year <- 2002
+if(any(gapminder$year == year)){
+   print("Record(s) for this year found.")
+}
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

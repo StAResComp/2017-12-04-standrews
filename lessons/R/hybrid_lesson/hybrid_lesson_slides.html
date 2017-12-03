@@ -1801,7 +1801,47 @@ gdp_bycontinents_byyear &lt;- gapminder %&gt;%
     summarize(mean_gdpPercap=mean(gdpPercap),
               sd_gdpPercap=sd(gdpPercap),
               mean_gdp_billion=mean(gdp_billion),
-              sd_gdp_billion=sd(gdp_billion))</pre></article></slide>
+              sd_gdp_billion=sd(gdp_billion))</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>09. Flow Control</h2></hgroup><article  id="flow-control">
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-9">
+
+<ul>
+<li>How to make data-dependent choices in <code>R</code></li>
+<li>Use <code>if()</code> and <code>else()</code></li>
+<li>Repeat operations in <code>R</code></li>
+<li>Use <code>for()</code> loops</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2><code>if()</code> … <code>else</code></h2></hgroup><article  id="if-else">
+
+<ul>
+<li>We often want to perform operations (or not) <em>conditional</em> on a piece of data
+
+<ul>
+<li>The <code>if()</code> and <code>else</code> construct is useful for this</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'># if
+if (condition is true) {
+  PERFORM ACTION
+}
+
+# if ... else
+if (condition is true) {
+  PERFORM ACTION
+} else {  # i.e. if the condition is false,
+  PERFORM ALTERNATIVE ACTION
+}</pre>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center></article></slide>
 
 
   <slide class="backdrop"></slide>

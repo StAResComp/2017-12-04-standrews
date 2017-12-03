@@ -1550,3 +1550,54 @@ gdp_bycontinents_byyear <- gapminder %>%
               mean_gdp_billion=mean(gdp_billion),
               sd_gdp_billion=sd(gdp_billion))
 ```
+
+
+# 09. Program Flow Control
+
+
+## Learning Objectives
+
+* How to make data-dependent choices in `R`
+* Use `if()` and `else()`
+* Repeat operations in `R`
+* Use `for()` loops
+* *vectorisation* to avoid repeating operations
+
+
+## `if()` … `else`
+
+* We often want to perform operations (or not) *conditional* on a piece of data
+    * The `if()` and `else` construct is useful for this
+    
+```R
+# if
+if (condition is true) {
+  PERFORM ACTION
+}
+
+# if ... else
+if (condition is true) {
+  PERFORM ACTION
+} else {  # i.e. if the condition is false,
+  PERFORM ALTERNATIVE ACTION
+}
+```
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+## Challenge 20 (5min)
+
+Can you use an `if()` statement to report whether there are any records from 2002 in the `gapminder` dataset?
+
+Can you do the same for 2012?
+
+<div class="attention">
+**HINT:** Look at the help for the `any()` function
+</div>
+
+<img src="images/red_green_sticky.png" width="100%" />
