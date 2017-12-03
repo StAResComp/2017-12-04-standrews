@@ -2404,3 +2404,132 @@ p + geom_density_2d(alpha=0.5) + facet_wrap(~year)
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+# 08. Working with `data.frame`s in `dplyr`
+
+----
+
+**SLIDE: Learning Objectives**
+
+* You're going to **learn to manipulate `data.frame`s with the six *verbs* of `dplyr`**
+
+* `select()`
+* `filter()`
+* `group_by()`
+* `summarize()`
+* `mutate()`
+* `%>%` (pipe)
+
+----
+
+**SLIDE: What and Why is `dplyr`?**
+
+* `dplyr` is a package in the **TIDYVERSE**; it exists to enable **rapid analysis of data by groups**
+   * For example, if we wanted numerical (rather than graphical) analysis of the `gapminder` data by continent, we'd use `dplyr`
+* So far, we know how to **subset, but repetitive application is tedious**
+   * **WE MIGHT MANAGE TO REPEAT BY CONTINENT, LIKE HERE - BUT *BY COUNTRY*?**
+
+* **AVOIDING REPETITION IMPROVES YOUR CODE**
+    * More **robust**
+    * More **readable**
+    * More **reproducible**
+
+----
+
+**SLIDE: Split-Apply-Combine**
+
+* The **general principle** `dplyr` supports is **SPLIT-APPLY-COMBINE**
+
+* We have a **dataset with several groups** (column `x`)
+* We **want to perform the same operation on each group, independently** - take a mean of `y` for each group, for example
+    * So we **SPLIT** the data into groups, on `x`
+    * Then we **APPLY** the operation (take the mean for each group)
+    * Then we **COMBINE** the results into a new table
+
+----
+
+**SLIDE: `select()` - Interactive Demo**
+
+* **DEMO IN CONSOLE**
+    * Import `dplyr`
+
+```R
+> library(dplyr)
+```
+
+* The `select()` *verb* **SELECTS COLUMNS**
+    * **DEMO IN CONSOLE**
+    * If we wanted to select only year, country and GDP data from `gapminder`
+    * Specify: **data, then columns**
+
+```R
+> head(select(gapminder, year, country, gdpPercap))
+  year     country gdpPercap
+1 1952 Afghanistan  779.4453
+2 1957 Afghanistan  820.8530
+3 1962 Afghanistan  853.1007
+4 1967 Afghanistan  836.1971
+5 1972 Afghanistan  739.9811
+6 1977 Afghanistan  786.1134
+```
+
+* Here, we **applied a function**, but we can also **'PIPE' DATA FROM ONE VERB TO ANOTHER**
+    * These work **like pipes in the shell**
+    * **SPECIAL PIPE SYMBOL: `%>%`**
+    * Specify **only columns**
+
+```R
+> head(gapminder %>% select(year, country, gdpPercap))
+  year     country gdpPercap
+1 1952 Afghanistan  779.4453
+2 1957 Afghanistan  820.8530
+3 1962 Afghanistan  853.1007
+4 1967 Afghanistan  836.1971
+5 1972 Afghanistan  739.9811
+6 1977 Afghanistan  786.1134
+```
+
+----
+
+**SLIDE: `filter()`**
+
+* `filter()` selects rows on the basis of some condition, or combination of conditions
+    * We can **use it as a function, with *pipes* **
+
+* **DEMO IN CONSOLE**
+
+```R
+> head(filter(gapminder, continent=="Europe"))
+  country year     pop continent lifeExp gdpPercap
+1 Albania 1952 1282697    Europe   55.23  1601.056
+2 Albania 1957 1476505    Europe   59.28  1942.284
+3 Albania 1962 1728137    Europe   64.82  2312.889
+4 Albania 1967 1984060    Europe   66.22  2760.197
+5 Albania 1972 2263554    Europe   67.69  3313.422
+6 Albania 1977 2509048    Europe   68.93  3533.004
+```
+
+* **DEMO IN SCRIPT** (`gapminder.R`)
+    * One **advantage of pipes** is that they make chaining *verbs* together **MORE READABLE**
+    * **END THE LINES WITH THE PIPE SYMBOL** so `R` knows that there's a continuation
+    * `Run` the lines and **check the output** in `Environment`
+    * `Commit` the changes
+
+```R
+# Select gdpPercap by country and year, only for Europe
+eurodata <- gapminder %>%
+              filter(continent == "Europe") %>%
+              select(year, country, gdpPercap)
+```
+
+----
+
+**SLIDE: Challenge 18
+
+```R
+
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

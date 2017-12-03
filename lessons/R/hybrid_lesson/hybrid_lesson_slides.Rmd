@@ -1366,3 +1366,101 @@ Can you create a scatterplot and contour densities of GDP per capita against pop
 **ADVANCED:** Transform the *x* axis to better visualise data spread, and use facets to panel density plots by year.
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+# 08. Working with `data.frame`s in `dplyr`
+
+
+## Learning Objectives
+
+* How to manipulate `data.frame`s with the six *verbs* of `dplyr`
+    * a 'grammar of data manipulation'
+
+<div class="highlight">
+* `select()`
+* `filter()`
+* `group_by()`
+* `summarize()`
+* `mutate()`
+* `%>%` (pipe)
+</div>
+
+
+## What and Why is `dplyr`?
+
+* `dplyr` is another package in the *Tidyverse*
+* Facilitates analysis by *groups*
+    * Helps avoid repetition
+    
+```{r, eval=FALSE}
+> mean(gapminder[gapminder$continent == "Africa", "gdpPercap"])
+[1] 2193.755
+> mean(gapminder[gapminder$continent == "Americas", "gdpPercap"])
+[1] 7136.11
+> mean(gapminder[gapminder$continent == "Asia", "gdpPercap"])
+[1] 7902.15
+```
+
+<div class="highlight">
+Avoiding repetition (though automation) makes code
+
+* **robust**
+* **reproducible**
+</div>
+
+
+## Split-Apply-Combine
+
+<center>
+<img src="images/splitapplycombine.png" width="100%"/>
+</center>
+
+
+## `select()` - Interactive Demo
+
+```{r, eval=FALSE}
+library(dplyr)
+```
+
+<center>
+<img src="images/dplyr_select.png" width="50%"/>
+</center>
+
+```{r, eval=FALSE}
+select(gapminder, year, country, gdpPercap)
+gapminder %>% select(year, country, gdpPercap)
+```
+
+
+## `filter()`
+
+* `filter()` selects rows on the basis of some condition
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+
+```{r, eval=FALSE}
+filter(gapminder, continent=="Europe")
+
+# Select gdpPercap by country and year, only for Europe
+eurodata <- gapminder %>%
+              filter(continent == "Europe") %>%
+              select(year, country, gdpPercap)
+```
+
+
+## Challenge 18 (5min)
+
+Can you write a single line (which may span multiple lines and include pipes) that produces a dataframe containing:
+
+* life expectancy, country, and year data
+* only for African nations
+
+How many rows does the dataframe have?
+
+<img src="images/red_green_sticky.png" width="100%" />
+

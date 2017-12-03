@@ -1333,7 +1333,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>aesthetics</em></h2></hgroup><article  id="what-is-a-scatterplot-aesthetics">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <em>aesthetics</em></h2></hgroup><article  id="what-is-a-plot-aesthetics">
 
 <ul>
 <li>Each observation in the <em>data</em> is a point</li>
@@ -1352,7 +1352,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>aesthetics</em></h2></hgroup><article  id="what-is-a-scatterplot-aesthetics-1">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <em>aesthetics</em></h2></hgroup><article  id="what-is-a-plot-aesthetics-1">
 
 <ul>
 <li><em>aesthetics</em> define datapoint representations as a <em>new dataset</em></li>
@@ -1367,7 +1367,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
 <div class="highlight">
 <p><strong>This should remind you of a <code>data.frame</code></strong></p></div>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <code>geom</code>s</h2></hgroup><article  id="what-is-a-scatterplot-geoms">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <code>geom</code>s</h2></hgroup><article  id="what-is-a-plot-geoms">
 
 <div class="highlight">
 <p><code>geom</code> (short for <em>geometry</em>) defines the &ldquo;type&rdquo; of representation</p></div>
@@ -1389,7 +1389,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)</pre>
 <li><strong><code>ggplot2</code> provides several <code>geom</code> types</strong></li>
 </ul></div>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <code>geom</code>s</h2></hgroup><article  id="what-is-a-scatterplot-geoms-1">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <code>geom</code>s</h2></hgroup><article  id="what-is-a-plot-geoms-1">
 
 <div class="highlight">
 <p><strong>The same <em>data</em> and <em>aesthetics</em> can be shown with different <code>geom</code></strong></p></div>
@@ -1412,7 +1412,7 @@ p + geom_line()</pre>
 
 <p><img src="images/red_green_sticky.png" width="100%" /></p>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <em>layers</em></h2></hgroup><article  id="what-is-a-plot-layers">
 
 <ul>
 <li>We’ve just used another &ldquo;Grammar of Graphics&rdquo; concept: <em>layers</em>
@@ -1439,7 +1439,7 @@ p + geom_line()</pre>
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers-1">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <em>layers</em></h2></hgroup><article  id="what-is-a-plot-layers-1">
 
 <ul>
 <li><em>Data</em> and <em>aesthetics</em> can be defined in a <em>base</em> <code>ggplot</code> object
@@ -1459,7 +1459,7 @@ p + geom_point()</pre>
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers-2">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <em>layers</em></h2></hgroup><article  id="what-is-a-plot-layers-2">
 
 <ul>
 <li><em>Data</em> and <em>aesthetics</em> can be defined in a <em>base</em> <code>ggplot</code> object
@@ -1486,7 +1486,7 @@ p + geom_line(aes(group=country))</pre>
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>What is a Scatterplot? <em>layers</em></h2></hgroup><article  id="what-is-a-scatterplot-layers-3">
+</article></slide><slide class=""><hgroup><h2>What is a Plot? <em>layers</em></h2></hgroup><article  id="what-is-a-plot-layers-3">
 
 <ul>
 <li>We can use several layers of <code>geom</code>s to build a plot
@@ -1610,6 +1610,108 @@ p + facet_wrap(~continent)</pre>
 <p>Can you create a scatterplot and contour densities of GDP per capita against population size, with colour filled by continent?</p>
 
 <p><strong>ADVANCED:</strong> Transform the <em>x</em> axis to better visualise data spread, and use facets to panel density plots by year.</p>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>08. Working with <code>data.frame</code>s in <code>dplyr</code></h2></hgroup><article  id="working-with-data.frames-in-dplyr">
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-8">
+
+<ul>
+<li>How to manipulate <code>data.frame</code>s with the six <em>verbs</em> of <code>dplyr</code>
+
+<ul>
+<li>a &lsquo;grammar of data manipulation&rsquo;</li>
+</ul></li>
+</ul>
+
+<div class="highlight">
+<ul>
+<li><code>select()</code></li>
+<li><code>filter()</code></li>
+<li><code>group_by()</code></li>
+<li><code>summarize()</code></li>
+<li><code>mutate()</code></li>
+<li><code>%&gt;%</code> (pipe)</li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>What and Why is <code>dplyr</code>?</h2></hgroup><article  id="what-and-why-is-dplyr">
+
+<ul>
+<li><code>dplyr</code> is another package in the <em>Tidyverse</em></li>
+<li>Facilitates analysis by <em>groups</em>
+
+<ul>
+<li>Helps avoid repetition</li>
+</ul></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>&gt; mean(gapminder[gapminder$continent == &quot;Africa&quot;, &quot;gdpPercap&quot;])
+[1] 2193.755
+&gt; mean(gapminder[gapminder$continent == &quot;Americas&quot;, &quot;gdpPercap&quot;])
+[1] 7136.11
+&gt; mean(gapminder[gapminder$continent == &quot;Asia&quot;, &quot;gdpPercap&quot;])
+[1] 7902.15</pre>
+
+<div class="highlight">
+<p>Avoiding repetition (though automation) makes code</p>
+
+<ul>
+<li><strong>robust</strong></li>
+<li><strong>reproducible</strong></li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>Split-Apply-Combine</h2></hgroup><article  id="split-apply-combine">
+
+<center>
+
+<img src="images/splitapplycombine.png" width="100%"/>
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2><code>select()</code> - Interactive Demo</h2></hgroup><article  id="select---interactive-demo">
+
+<pre class = 'prettyprint lang-r'>library(dplyr)</pre>
+
+<center>
+
+<img src="images/dplyr_select.png" width="50%"/>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>select(gapminder, year, country, gdpPercap)
+gapminder %&gt;% select(year, country, gdpPercap)</pre>
+
+</article></slide><slide class=""><hgroup><h2><code>filter()</code></h2></hgroup><article  id="filter">
+
+<ul>
+<li><code>filter()</code> selects rows on the basis of some condition</li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>filter(gapminder, continent==&quot;Europe&quot;)
+
+# Select gdpPercap by country and year, only for Europe
+eurodata &lt;- gapminder %&gt;%
+              filter(continent == &quot;Europe&quot;) %&gt;%
+              select(year, country, gdpPercap)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 18 (5min)</h2></hgroup><article  id="challenge-18-5min">
+
+<p>Can you write a single line (which may span multiple lines and include pipes) that produces a dataframe containing:</p>
+
+<ul>
+<li>life expectancy, country, and year data</li>
+<li>only for African nations</li>
+</ul>
+
+<p>How many rows does the dataframe have?</p>
 
 <p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
