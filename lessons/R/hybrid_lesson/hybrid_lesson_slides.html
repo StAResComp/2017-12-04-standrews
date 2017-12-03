@@ -1746,7 +1746,62 @@ gapminder %&gt;%
 <li>Which nation has longest life expectancy, and which the shortest?</li>
 </ul>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2><code>count()</code> and <code>n()</code></h2></hgroup><article  id="count-and-n">
+
+<ul>
+<li>Two useful functions related to <code>summarize()</code>
+
+<ul>
+<li><code>count()</code>/<code>tally()</code>: a function that reports a table of counts by group</li>
+<li><code>n()</code>: a function used <em>within</em> <code>summarize()</code>, <code>filter()</code> or <code>mutate()</code> to represent count by group</li>
+</ul></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>gapminder %&gt;%
+  filter(year == 2002) %&gt;%
+  count(continent, sort = TRUE)
+
+gapminder %&gt;%
+  group_by(continent) %&gt;%
+  summarize(se_lifeExp = sd(lifeExp)/sqrt(n()))</pre>
+
+</article></slide><slide class=""><hgroup><h2><code>mutate()</code></h2></hgroup><article  id="mutate">
+
+<ul>
+<li><code>mutate()</code> is a function allowing creation of new variables</li>
+</ul>
+
+<div class="highlight">
+<p>several <code>dplyr</code> <em>verbs</em> can be chained in a single operation</p></div>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Calculate GDP in $billion
+gdp_bill &lt;- gapminder %&gt;%
+  mutate(gdp_billion=gdpPercap*pop/10^9)
+
+# Create several summary columns
+gdp_bycontinents_byyear &lt;- gapminder %&gt;%
+    mutate(gdp_billion=gdpPercap*pop/10^9) %&gt;%
+    group_by(continent,year) %&gt;%
+    summarize(mean_gdpPercap=mean(gdpPercap),
+              sd_gdpPercap=sd(gdpPercap),
+              mean_gdp_billion=mean(gdp_billion),
+              sd_gdp_billion=sd(gdp_billion))</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

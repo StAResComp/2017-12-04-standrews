@@ -1442,7 +1442,6 @@ gapminder %>% select(year, country, gdpPercap)
 </div>
 </center>
 
-
 ```{r, eval=FALSE}
 filter(gapminder, continent=="Europe")
 
@@ -1498,3 +1497,56 @@ gapminder %>%
 * Which nation has longest life expectancy, and which the shortest?
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+## `count()` and `n()`
+
+* Two useful functions related to `summarize()`
+    - `count()`/`tally()`: a function that reports a table of counts by group
+    - `n()`: a function used *within* `summarize()`, `filter()` or `mutate()` to represent count by group
+    
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+gapminder %>%
+  filter(year == 2002) %>%
+  count(continent, sort = TRUE)
+
+gapminder %>%
+  group_by(continent) %>%
+  summarize(se_lifeExp = sd(lifeExp)/sqrt(n()))
+```
+
+
+## `mutate()`
+
+* `mutate()` is a function allowing creation of new variables
+
+<div class="highlight">
+several `dplyr` *verbs* can be chained in a single operation
+</div>
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+# Calculate GDP in $billion
+gdp_bill <- gapminder %>%
+  mutate(gdp_billion = gdpPercap * pop / 10^9)
+
+# Calculate total/sd of GDP by continent and year
+gdp_bycontinents_byyear <- gapminder %>%
+    mutate(gdp_billion=gdpPercap*pop/10^9) %>%
+    group_by(continent,year) %>%
+    summarize(mean_gdpPercap=mean(gdpPercap),
+              sd_gdpPercap=sd(gdpPercap),
+              mean_gdp_billion=mean(gdp_billion),
+              sd_gdp_billion=sd(gdp_billion))
+```

@@ -2619,3 +2619,74 @@ avg_lifexp_country <- gapminder %>%
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: `count()` and `n()`**
+
+* Two other useful functions are related to `summarize()`
+    * **`count()` reports a new table of counts by group**
+    * **`n()` is used to represent the count of rows, when calculating new values in `summarize()`**
+
+**DEMO IN CONSOLE**
+    * **NOTE:** standard error is (std dev)/sqrt(n)
+
+```R
+> gapminder %>% filter(year == 2002) %>% count(continent, sort = TRUE)
+# A tibble: 5 x 2
+  continent     n
+     <fctr> <int>
+1    Africa    52
+2      Asia    33
+3    Europe    30
+4  Americas    25
+5   Oceania     2
+> gapminder %>% group_by(continent) %>% summarize(se_lifeExp = sd(lifeExp)/sqrt(n()))
+# A tibble: 5 x 2
+  continent se_lifeExp
+     <fctr>      <dbl>
+1    Africa  0.3663016
+2  Americas  0.5395389
+3      Asia  0.5962151
+4    Europe  0.2863536
+5   Oceania  0.7747759
+```
+
+----
+
+**SLIDE: `mutate()`**
+
+* **`mutate()` CALCULATES NEW VARIABLES (COLUMNS) ON THE BASIS OF EXISTING COLUMNS**
+* **DEMO IN SCRIPT**
+    * Say we want to calculate the **total GDP of each nation, each year, in $bn**
+    * We'd multiply the GDP per capita by the total population, and divide by 1bn
+* **INSPECT THE OUTPUT**
+    * We have a new data table, which is the `gapminder` data, plus an extra column
+
+```R
+# Calculate GDP in $billion
+gdp_bill <- gapminder %>%
+  mutate(gdp_billion = gdpPercap * pop / 10^9)
+```
+
+* **WE CAN CHAIN ALL THESE OPERATIONS TOGETHER WITH PIPES**
+* **We can calculate several summaries in a single `summarize()` command**
+* We can use the output of `mutate()` in the `summarize()` command
+* **DEMO IN SCRIPT**
+    * We're going to calculate the **total (and standard deviation) of GDP per continent, per year**
+    * Calculate total GDP first
+    * Group by continent and year
+    * Summarise mean and sd of GDP per capita, and total GDP
+ * **INSPECT THE OUTPUT**
+ * `Commit` the changes
+
+```R
+# Calculate total/sd of GDP by continent and year
+gdp_bycontinents_byyear <- gapminder %>%
+  mutate(gdp_billion=gdpPercap*pop/10^9) %>%
+  group_by(continent,year) %>%
+  summarize(mean_gdpPercap=mean(gdpPercap),
+            sd_gdpPercap=sd(gdpPercap),
+            mean_gdp_billion=mean(gdp_billion),
+            sd_gdp_billion=sd(gdp_billion))
+```
