@@ -2143,7 +2143,7 @@ also installing the dependencies ‘bindrcpp’, ‘glue’, ‘rlang’
 
 ----
 
-**SLIDE: What is a Scatterplot? *aesthetics* **
+**SLIDE: What is a Plot? *aesthetics* **
 
 * **TALK THROUGH THE POINTS**
 * Each observation in the data is a *point*
@@ -2159,14 +2159,14 @@ also installing the dependencies ‘bindrcpp’, ‘glue’, ‘rlang’
 
 ----
 
-**SLIDE: What is a Scatterplot? *aesthetics* **
+**SLIDE: What is a Plot? *aesthetics* **
 
 * The *aesthetics* of a plot **define a new dataset** for each point
 * **THIS SHOULD REMIND YOU STRONGLY OF A `data.frame`**
 
 ----
 
-**SLIDE: What is a Scatterplot? `geom`s**
+**SLIDE: What is a Plot? `geom`s**
 
 * So far **we've only defined the data and aesthetics**
     * **THIS ONLY TELLS US HOW DATA POINTS ARE REPRESENTED, NOT THE TYPE OF PLOT**
@@ -2178,7 +2178,7 @@ also installing the dependencies ‘bindrcpp’, ‘glue’, ‘rlang’
 
 ----
 
-**SLIDE: What is a Scatterplot? `geom`s**
+**SLIDE: What is a Plot? `geom`s**
 
 * **DEMO IN SCRIPT** (`gapminder.R`)
     * We **create a plot with the `ggplot()` function**.
@@ -2219,7 +2219,7 @@ p + geom_point()
 
 ----
 
-**SLIDE: What is a Scatterplot? *layers* **
+**SLIDE: What is a Plot? *layers* **
 
 * Without knowing it, **WE'VE JUST BEEN USING THE LAYERS CONCEPT**
     * **all `ggplot2` plots are built as layers**
@@ -2234,7 +2234,7 @@ p + geom_point()
 
 ----
 
-**SLIDE: What is a Scatterplot? *layers* **
+**SLIDE: What is a Plot? *layers* **
 
 * In our first plot we defined a *base* with:
     * *data* from `gapminder`
@@ -2247,7 +2247,7 @@ p + geom_point()
 
 ----
 
-**SLIDE: What is a Scatterplot? *layers* **
+**SLIDE: What is a Plot? *layers* **
 
 * Now we will **override the base layer *aesthetics* **
 * **DEMO IN SCRIPT**
@@ -2264,7 +2264,7 @@ p + geom_line(aes(group=country))
 
 ----
 
-**SLIDE: What is a Scatterplot? *layers* **
+**SLIDE: What is a Plot? *layers* **
 
 * We can **BUILD UP LAYERS OF `geom`S** to produce a more complex plot
 * We **ADD A NEW `geom_point()` LAYER WITH `+`**

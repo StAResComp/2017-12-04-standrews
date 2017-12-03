@@ -1138,7 +1138,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
 </center>
 
 
-## What is a Scatterplot? *aesthetics*
+## What is a Plot? *aesthetics*
 
 * Each observation in the *data* is a point
 * A point's *aesthetics* determine how it is rendered
@@ -1151,7 +1151,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
 </center>
 
 
-## What is a Scatterplot? *aesthetics*
+## What is a Plot? *aesthetics*
 
 * *aesthetics* define datapoint representations as a *new dataset*
 
@@ -1164,7 +1164,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
 </div>
 
 
-## What is a Scatterplot? `geom`s
+## What is a Plot? `geom`s
 
 <div class="highlight">
 `geom` (short for *geometry*) defines the "type" of representation
@@ -1183,7 +1183,7 @@ qplot(lifeExp, gdpPercap, data=gapminder, colour=continent)
 </div>
 
 
-## What is a Scatterplot? `geom`s
+## What is a Plot? `geom`s
 
 <div class="highlight">
 **The same *data* and *aesthetics* can be shown with different `geom`**
@@ -1210,7 +1210,7 @@ Can you create another figure in your script showing how *life expectancy* chang
 <img src="images/red_green_sticky.png" width="100%" />
 
 
-## What is a Scatterplot? *layers*
+## What is a Plot? *layers*
 
 * We've just used another "Grammar of Graphics" concept: *layers*
     - `ggplot2` plots are built as *layers*
@@ -1227,7 +1227,7 @@ All *layers* have two components
     - the *base* can be overridden in other layers
 
 
-## What is a Scatterplot? *layers*
+## What is a Plot? *layers*
 
 * *Data* and *aesthetics* can be defined in a *base* `ggplot` object
     - values from the *base* are *inherited* by the other layers
@@ -1242,7 +1242,7 @@ p + geom_point()
 <img src="images/ggplot_layers_1.png" width=80% />
 </center>
 
-## What is a Scatterplot? *layers*
+## What is a Plot? *layers*
 
 * *Data* and *aesthetics* can be defined in a *base* `ggplot` object
     - values from the *base* are *inherited* by the other layers
@@ -1263,7 +1263,7 @@ p + geom_line(aes(group=country))
 </div>
 </center>
 
-## What is a Scatterplot? *layers*
+## What is a Plot? *layers*
 
 * We can use several layers of `geom`s to build a plot
     * `alpha` controls *opacity* for a layer
