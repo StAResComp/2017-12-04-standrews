@@ -1713,6 +1713,39 @@ eurodata &lt;- gapminder %&gt;%
 
 <p>How many rows does the dataframe have?</p>
 
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2><code>group_by()</code> - Interactive Demo</h2></hgroup><article  id="group_by---interactive-demo">
+
+<center>
+
+<img src="images/dplyr_group_by.png" width="50%"/>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>group_by(gapminder, continent)
+gapminder %&gt;% group_by(continent)</pre>
+
+</article></slide><slide class=""><hgroup><h2><code>summarize()</code> - Interactive Demo</h2></hgroup><article  id="summarize---interactive-demo">
+
+<center>
+
+<img src="images/dplyr_summarize.png" width="50%"/>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Produce table of mean GDP by continent
+gapminder %&gt;%
+    group_by(continent) %&gt;%
+    summarize(meangdpPercap=mean(gdpPercap))</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 19 (5min)</h2></hgroup><article  id="challenge-19-5min">
+
+<ul>
+<li>Can you calculate the average life expectancy per <em>country</em> in the <code>gapminder</code> data?</li>
+<li>Which nation has longest life expectancy, and which the shortest?</li>
+</ul>
+
 <p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 

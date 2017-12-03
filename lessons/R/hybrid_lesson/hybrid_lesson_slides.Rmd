@@ -1464,3 +1464,37 @@ How many rows does the dataframe have?
 
 <img src="images/red_green_sticky.png" width="100%" />
 
+
+## `group_by()` - Interactive Demo
+
+<center>
+<img src="images/dplyr_group_by.png" width="50%"/>
+</center>
+
+```{r, eval=FALSE}
+group_by(gapminder, continent)
+gapminder %>% group_by(continent)
+```
+
+
+## `summarize()` - Interactive Demo
+
+<center>
+<img src="images/dplyr_summarize.png" width="50%"/>
+</center>
+
+```{r, eval=FALSE}
+# Produce table of mean GDP by continent
+gapminder %>%
+    group_by(continent) %>%
+    summarize(meangdpPercap=mean(gdpPercap))
+
+```
+
+
+## Challenge 19 (5min)
+
+* Can you calculate the average life expectancy per *country* in the `gapminder` data?
+* Which nation has longest life expectancy, and which the shortest?
+
+<img src="images/red_green_sticky.png" width="100%" />

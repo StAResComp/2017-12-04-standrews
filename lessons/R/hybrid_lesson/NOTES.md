@@ -2529,7 +2529,93 @@ eurodata <- gapminder %>%
 **SLIDE: Challenge 18
 
 ```R
+# Select life expectancy by country and year, only for Africa
+afrodata <- gapminder %>%
+  filter(continent == "Africa") %>%
+  select(year, country, lifeExp)
+```
 
+![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: `group_by()`**
+
+* The `group_by()` *verb* **SPLITS `data.frame`s INTO GROUPS ON A COLUMN PROPERTY**
+* **DEMO IN CONSOLE**
+    * It returns a **`tibble`** - a table with extra metadata describing the groups in the table
+
+```
+> group_by(gapminder, continent)
+# A tibble: 1,704 x 6
+# Groups:   continent [5]
+       country  year      pop continent lifeExp gdpPercap
+        <fctr> <int>    <dbl>    <fctr>   <dbl>     <dbl>
+ 1 Afghanistan  1952  8425333      Asia  28.801  779.4453
+ 2 Afghanistan  1957  9240934      Asia  30.332  820.8530
+ 3 Afghanistan  1962 10267083      Asia  31.997  853.1007
+ 4 Afghanistan  1967 11537966      Asia  34.020  836.1971
+ 5 Afghanistan  1972 13079460      Asia  36.088  739.9811
+ 6 Afghanistan  1977 14880372      Asia  38.438  786.1134
+ 7 Afghanistan  1982 12881816      Asia  39.854  978.0114
+ 8 Afghanistan  1987 13867957      Asia  40.822  852.3959
+ 9 Afghanistan  1992 16317921      Asia  41.674  649.3414
+10 Afghanistan  1997 22227415      Asia  41.763  635.3414
+# ... with 1,694 more rows
+```
+
+----
+
+**SLIDE: `summarize()`
+
+* The **combination of `group_by()` and `summarize()` is very powerful**
+    * We can **CREATE NEW VARIABLES** using functions that repeat for each group
+* Here, we've split the original table into three groups, and now **CREATE A NEW VARIABLE `mean_b` THAT IS FILLED BY CALCULATING THE MEAN OF `b`**
+
+* **DEMO IN SCRIPT**
+    * We use the same principle to **calculate mean GDP per continent**
+
+```R
+> # Produce table of mean GDP by continent
+> gapminder %>%
++     group_by(continent) %>%
++     summarize(meangdpPercap=mean(gdpPercap))
+# A tibble: 5 x 2
+  continent meangdpPercap
+     <fctr>         <dbl>
+1    Africa      2193.755
+2  Americas      7136.110
+3      Asia      7902.150
+4    Europe     14469.476
+5   Oceania     18621.609
+```
+
+----
+
+**SLIDE: challenge 19**
+
+* **IN THE SCRIPT**
+
+```R
+# Find average life expectancy by nation
+avg_lifexp_country <- gapminder %>%
+  group_by(country) %>%
+  summarize(meanlifeExp=mean(lifeExp))
+```
+
+* **IN THE CONSOLE**
+
+```
+> avg_lifexp_country[avg_lifexp_country$meanlifeExp == max(avg_lifexp_country$meanlifeExp),]
+# A tibble: 1 x 2
+  country meanlifeExp
+   <fctr>       <dbl>
+1 Iceland    76.51142
+> avg_lifexp_country[avg_lifexp_country$meanlifeExp == min(avg_lifexp_country$meanlifeExp),]
+# A tibble: 1 x 2
+       country meanlifeExp
+        <fctr>       <dbl>
+1 Sierra Leone    36.76917 
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
