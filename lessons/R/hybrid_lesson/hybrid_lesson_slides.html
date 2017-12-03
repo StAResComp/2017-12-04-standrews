@@ -1792,9 +1792,9 @@ gapminder %&gt;%
 
 <pre class = 'prettyprint lang-r'># Calculate GDP in $billion
 gdp_bill &lt;- gapminder %&gt;%
-  mutate(gdp_billion=gdpPercap*pop/10^9)
+  mutate(gdp_billion = gdpPercap * pop / 10^9)
 
-# Create several summary columns
+# Calculate total/sd of GDP by continent and year
 gdp_bycontinents_byyear &lt;- gapminder %&gt;%
     mutate(gdp_billion=gdpPercap*pop/10^9) %&gt;%
     group_by(continent,year) %&gt;%
