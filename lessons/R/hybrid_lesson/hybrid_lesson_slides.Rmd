@@ -228,6 +228,8 @@ age <- age - 20
 * `mass = 47.5, age = 122`
 * `mass = 109.25, age = 122`
 
+<img src="images/red_green_sticky.png" width="100%" />
+
 
 ## Good Variable Names
 
@@ -1368,7 +1370,7 @@ Can you create a scatterplot and contour densities of GDP per capita against pop
 <img src="images/red_green_sticky.png" width="100%" />
 
 
-# 08. Working with `data.frame`s in `dplyr`
+# 08. Working with<br />`data.frame`s in `dplyr`
 
 
 ## Learning Objectives
@@ -1383,6 +1385,13 @@ Can you create a scatterplot and contour densities of GDP per capita against pop
 * `summarize()`
 * `mutate()`
 * `%>%` (pipe)
+</div>
+
+<div class="references">
+* `R` for Data Science: <http://r4ds.had.co.nz/>
+* Data Wrangling cheat sheet: <https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf>
+* Introduction to `dplyr`: <https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html>
+* Data Wrangling with `R` and `RStudio`: <https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/>
 </div>
 
 
