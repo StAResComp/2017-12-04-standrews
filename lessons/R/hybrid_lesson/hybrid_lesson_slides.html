@@ -1901,6 +1901,48 @@ if (condition is true) {
 <div class="attention">
 <p><strong>HINT:</strong> Use <code>R</code>’s help for <code>letters</code> and <code>%in%</code></p></div>
 
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Vectorisation</h2></hgroup><article  id="vectorisation">
+
+<ul>
+<li><code>for()</code> and <code>while()</code> loops can be useful, but are not <em>efficient</em></li>
+<li>Most functions in <code>R</code> are <em>vectorised</em>
+
+<ul>
+<li>When applied to a <em>vector</em>, apply to all elements in that <em>vector</em></li>
+<li><strong>No need to loop</strong></li>
+</ul></li>
+</ul>
+
+<div class="highlight">
+<p>You’ve already seen and used much of this behaviour</p></div>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>x &lt; 1:4
+x * 2
+y &lt;- 6:9
+x + y
+m &lt;- matrix(1:12, nrow = 3, ncol = 4)
+m * m
+m %*% m</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 22 (5min)</h2></hgroup><article  id="challenge-22-5min">
+
+<p>We want to sum the following series of fractions</p>
+
+<p>\(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \ldots + \frac{1}{n^2}\)</p>
+
+<p>for large values of \(n\)</p>
+
+<p>Can you do this using vectorisation for \(n = 10,000\)?</p>
+
 <p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 

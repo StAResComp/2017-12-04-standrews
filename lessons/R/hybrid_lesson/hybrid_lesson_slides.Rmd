@@ -1648,3 +1648,44 @@ Can you use a `for()` loop and an `if()` statement to print whether each letter 
 </div>
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+## Vectorisation
+
+* `for()` and `while()` loops can be useful, but are not *efficient*
+* Most functions in `R` are *vectorised*
+    - When applied to a *vector*, apply to all elements in that *vector*
+    - **No need to loop**
+    
+<div class="highlight">
+You've already seen and used much of this behaviour
+</div>
+    
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+x < 1:4
+x * 2
+y <- 6:9
+x + y
+m <- matrix(1:12, nrow = 3, ncol = 4)
+m * m
+m %*% m
+```
+
+
+## Challenge 22 (5min)
+
+We want to sum the following series of fractions
+
+$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \ldots + \frac{1}{n^2}$
+
+for large values of $n$
+
+Can you do this using vectorisation for $n = 10,000$?
+
+<img src="images/red_green_sticky.png" width="100%" />

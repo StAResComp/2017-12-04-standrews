@@ -2900,3 +2900,92 @@ for (l in letters) {
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+**SLIDE: Vectorisation**
+
+* Although `for()` and `while()` loops can be useful, they are **rarely the most efficient way to work in `R`**
+* **MOST FUNCTIONS IN `R` ARE VECTORISED**
+    * **When applied to a vector, they work on all elements in the vector**
+    * So no need to use a loop.
+
+* **DEMO IN CONSOLE**
+    * **Operators** are vectorised
+
+```R
+> x <- 1:4
+> x
+[1] 1 2 3 4
+> x * 2
+[1] 2 4 6 8
+```
+
+* **You can operate on vectors together**
+
+```R
+> y <- 6:9
+> y
+[1] 6 7 8 9
+> x + y
+[1]  7  9 11 13
+> x * y
+[1]  6 14 24 36
+```
+
+* **Comparison operators are vectorised**
+
+```R
+> x > 2
+[1] FALSE FALSE  TRUE  TRUE
+> y < 7
+[1]  TRUE FALSE FALSE FALSE
+> any(y < 7)
+[1] TRUE
+> all(y < 7)
+[1] FALSE
+```
+
+* **Functions working on vectors**
+
+```R
+> log(x)
+[1] 0.0000000 0.6931472 1.0986123 1.3862944
+> x^2
+[1]  1  4  9 16
+> sin(x)
+[1]  0.8414710  0.9092974  0.1411200 -0.7568025
+```
+
+* **MATRICES**
+    * The `*` multiplication operator is a vectorised/elementwise multiplication
+    * **To perform the matrix multiplication you might expect, use the `%*%` operator**
+
+```R
+> m <- matrix(1:4, nrow = 2, ncol = 2)
+> m
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> m * m
+     [,1] [,2]
+[1,]    1    9
+[2,]    4   16
+> m %*% m
+     [,1] [,2]
+[1,]    7   15
+[2,]   10   22
+```
+
+----
+
+**SLIDE: Challenge 21**
+
+```R
+> v = 1:10000
+> v <- 1/(v^2)
+> sum(v)
+[1] 1.644834
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)
