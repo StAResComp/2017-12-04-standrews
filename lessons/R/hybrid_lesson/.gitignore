@@ -6,3 +6,7 @@ hybrid_lesson_slides_files/
 
 # Exclude Illustrator files
 illustrator/
+
+# Exclude NOTES output
+NOTES.html
+NOTES.pdf
