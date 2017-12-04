@@ -3196,5 +3196,229 @@ function(temp) {
   celsius <- kelvin_to_celsius(fahr_to_kelvin(temp))
   return(celsius)
 }
-
 ```
+
+----
+
+* **SLIDE: Function Arguments**
+
+* **DEMO IN SCRIPT** (`functions.R`)
+    * `Source` script
+
+```R
+# Calculate total GDP in gapminder data
+calcGDP <- function(data) {
+  # Returns the gapminder data with additional column of total GDP
+  #
+  # data            - gapminder dataframe
+  #
+  # Example:
+  # gapminderGDP <- calcGDP(gapminder)
+  gdp <- gapminder %>% mutate(gdp=pop * gdpPercap)
+  return(gdp)
+}
+```
+
+* **DEMO IN CONSOLE**
+
+```R
+> calcGDP(gapminder)
+Error in gapminder %>% mutate(gdp = pop * gdpPercap) : 
+  could not find function "%>%"
+```
+
+* **WHAT HAPPENED?**
+    * **The code in the `functions.R` file doesn't know about `dplyr`**
+    * We need to **import the module in our script**
+    * Use the `require()` function
+
+* **DEMO IN SCRIPT** (`functions.R`)
+    * Place `require()` calls at the top of your script
+    * `Source` script
+
+```R
+require(dplyr)
+```
+
+* **DEMO IN CONSOLE**
+    * The new column has been added
+
+```R
+> head(calcGDP(gapminder))
+      country year      pop continent lifeExp gdpPercap         gdp
+1 Afghanistan 1952  8425333      Asia  28.801  779.4453  6567086330
+2 Afghanistan 1957  9240934      Asia  30.332  820.8530  7585448670
+3 Afghanistan 1962 10267083      Asia  31.997  853.1007  8758855797
+4 Afghanistan 1967 11537966      Asia  34.020  836.1971  9648014150
+5 Afghanistan 1972 13079460      Asia  36.088  739.9811  9678553274
+6 Afghanistan 1977 14880372      Asia  38.438  786.1134 11697659231
+```
+
+* **So, that's *all* the `gapminder` data - but what if we want to get the data by year?**
+* **DEMO IN SCRIPT** (`functions.R`)
+   * `Source` script
+
+```R
+> source('~/Desktop/swc-r-lesson/scripts/functions.R')
+> head(calcGDP(gapminder, 2002))
+      country year      pop continent lifeExp  gdpPercap          gdp
+1 Afghanistan 2002 25268405      Asia  42.129   726.7341  18363410424
+2     Albania 2002  3508512    Europe  75.651  4604.2117  16153932130
+3     Algeria 2002 31287142    Africa  70.994  5288.0404 165447670333
+4      Angola 2002 10866106    Africa  41.003  2773.2873  30134833901
+5   Argentina 2002 38331121  Americas  74.340  8797.6407 337223430800
+6   Australia 2002 19546792   Oceania  80.370 30687.7547 599847158654
+> head(calcGDP(gapminder, c(1997, 2002)))
+      country year      pop continent lifeExp gdpPercap          gdp
+1 Afghanistan 1997 22227415      Asia  41.763  635.3414  14121995875
+2 Afghanistan 2002 25268405      Asia  42.129  726.7341  18363410424
+3     Albania 1997  3428038    Europe  72.950 3193.0546  10945912519
+4     Albania 2002  3508512    Europe  75.651 4604.2117  16153932130
+5     Algeria 1997 29072015    Africa  69.152 4797.2951 139467033682
+6     Algeria 2002 31287142    Africa  70.994 5288.0404 165447670333
+> head(calcGDP(gapminder))
+ Show Traceback
+ 
+ Rerun with Debug
+ Error in filter_impl(.data, quo) : 
+  Evaluation error: argument "year_in" is missing, with no default. 
+```
+
+* **Now we have an issue - NO YEAR PROVIDED MEANS NO OUTPUT**
+    * We need to handle this
+    * 1 - **PROVIDE A DEFAULT VALUE** (`NULL`)
+    * 2 - **TEST FOR VALUE AND TAKE ALTERNATIVE ACTIONS**
+* **DEMO IN SCRIPT**
+    * `Source` script
+
+```R
+# Calculate total GDP in gapminder data
+calcGDP <- function(data, year_in=NULL) {
+  # Returns the gapminder data with additional column of total GDP
+  #
+  # data            - gapminder dataframe
+  # year_in         - year(s) to report data
+  #
+  # Example:
+  # gapminderGDP <- calcGDP(gapminder)
+  gdp <- gapminder %>% mutate(gdp=(pop * gdpPercap))
+  if (!is.null(year_in)) {
+    gdp <- gdp %>% filter(year %in% year_in)
+  }
+  return(gdp)
+}
+``` 
+    
+* **DEMO IN CONSOLE**
+
+```R
+> source('~/Desktop/swc-r-lesson/scripts/functions.R')
+> head(calcGDP(gapminder))
+[1] country   year      pop       continent lifeExp   gdpPercap gdp      
+<0 rows> (or 0-length row.names)
+> head(calcGDP(gapminder))
+      country year      pop continent lifeExp gdpPercap         gdp
+1 Afghanistan 1952  8425333      Asia  28.801  779.4453  6567086330
+2 Afghanistan 1957  9240934      Asia  30.332  820.8530  7585448670
+3 Afghanistan 1962 10267083      Asia  31.997  853.1007  8758855797
+4 Afghanistan 1967 11537966      Asia  34.020  836.1971  9648014150
+5 Afghanistan 1972 13079460      Asia  36.088  739.9811  9678553274
+6 Afghanistan 1977 14880372      Asia  38.438  786.1134 11697659231
+> head(calcGDP(gapminder, year_in=2002))
+      country year      pop continent lifeExp  gdpPercap          gdp
+1 Afghanistan 2002 25268405      Asia  42.129   726.7341  18363410424
+2     Albania 2002  3508512    Europe  75.651  4604.2117  16153932130
+3     Algeria 2002 31287142    Africa  70.994  5288.0404 165447670333
+4      Angola 2002 10866106    Africa  41.003  2773.2873  30134833901
+5   Argentina 2002 38331121  Americas  74.340  8797.6407 337223430800
+6   Australia 2002 19546792   Oceania  80.370 30687.7547 599847158654
+```
+
+* **Now let's do the same for country**
+* **DEMO IN SCRIPT**
+    * `Source` script
+
+```R
+# Calculate total GDP in gapminder data
+calcGDP <- function(data, year_in=NULL, country_in=NULL) {
+  # Returns the gapminder data with additional column of total GDP
+  #
+  # data            - gapminder dataframe
+  # year_in         - year(s) to report data
+  #
+  # Example:
+  # gapminderGDP <- calcGDP(gapminder)
+  gdp <- gapminder %>% mutate(gdp=(pop * gdpPercap))
+  if (!is.null(year_in)) {
+    gdp <- gdp %>% filter(year %in% year_in)
+  }
+  if (!is.null(country_in)) {
+    gdp <- gdp %>% filter(country %in% country_in)
+  }
+  return(gdp)
+}
+```
+
+* **DEMO IN CONSOLE** 
+
+```R
+> source('~/Desktop/swc-r-lesson/scripts/functions.R')
+> head(calcGDP(gapminder))
+      country year      pop continent lifeExp gdpPercap         gdp
+1 Afghanistan 1952  8425333      Asia  28.801  779.4453  6567086330
+2 Afghanistan 1957  9240934      Asia  30.332  820.8530  7585448670
+3 Afghanistan 1962 10267083      Asia  31.997  853.1007  8758855797
+4 Afghanistan 1967 11537966      Asia  34.020  836.1971  9648014150
+5 Afghanistan 1972 13079460      Asia  36.088  739.9811  9678553274
+6 Afghanistan 1977 14880372      Asia  38.438  786.1134 11697659231
+> head(calcGDP(gapminder, 1957))
+      country year      pop continent lifeExp gdpPercap          gdp
+1 Afghanistan 1957  9240934      Asia  30.332   820.853   7585448670
+2     Albania 1957  1476505    Europe  59.280  1942.284   2867792398
+3     Algeria 1957 10270856    Africa  45.685  3013.976  30956113720
+4      Angola 1957  4561361    Africa  31.999  3827.940  17460618347
+5   Argentina 1957 19610538  Americas  64.399  6856.856 134466639306
+6   Australia 1957  9712569   Oceania  70.330 10949.650 106349227169
+> head(calcGDP(gapminder, 1957, "Egypt"))
+  country year      pop continent lifeExp gdpPercap         gdp
+1   Egypt 1957 25009741    Africa  44.444  1458.915 36487093094
+> head(calcGDP(gapminder, "Egypt"))
+[1] country   year      pop       continent lifeExp   gdpPercap gdp      
+<0 rows> (or 0-length row.names)
+> head(calcGDP(gapminder, country_in="Egypt"))
+  country year      pop continent lifeExp gdpPercap          gdp
+1   Egypt 1952 22223309    Africa  41.893  1418.822  31530929611
+2   Egypt 1957 25009741    Africa  44.444  1458.915  36487093094
+3   Egypt 1962 28173309    Africa  46.992  1693.336  47706874227
+4   Egypt 1967 31681188    Africa  49.293  1814.881  57497577541
+5   Egypt 1972 34807417    Africa  51.137  2024.008  70450495584
+6   Egypt 1977 38783863    Africa  53.319  2785.494 108032201472
+```
+
+----
+
+* **SLIDE: Challenge 23**
+
+```R
+# Plot grid of country life expectancy
+plotLifeExp <- function(data, letter=letters, wrap=FALSE) {
+  # Return ggplot2 chart of life expectancy against year
+  #
+  # data          - gapminder dataframe
+  # letter        - start letters for countries
+  # wrap          - logical: wrap graphs by country
+  #
+  # Example:
+  # > plotLifeExp(gapminder, c('A', 'Z'), wrap=TRUE)
+  starts.with <- substr(data$country, start = 1, stop = 1)
+  az.countries <- data[starts.with %in% letter, ]
+  p <- ggplot(az.countries, aes(x=year, y=lifeExp, colour=country))
+  p <- p + geom_line()
+  if (wrap) {
+    p <- p + facet_wrap(~country)
+  }
+  return(p)
+}
+```
+
+![images/red_green_sticky.png](images/red_green_sticky.png)

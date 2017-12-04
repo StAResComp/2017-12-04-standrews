@@ -412,6 +412,7 @@ age &lt;- age - 20</pre>
 </ul>
 
 <div class="references">
+
 <p>Good Enough Practices in Scientific Computing (2017) Wilson <em>et al.</em> <a href='http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510' title=''>http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510</a> </class></p>
 
 </article></slide><slide class=""><hgroup><h2>Example Directory Structure</h2></hgroup><article  id="example-directory-structure">
@@ -2032,7 +2033,52 @@ m %*% m</pre>
 <div class="attention">
 <p><strong>INTERACTIVE DEMO</strong></p></div>
 
-</center></div></article></slide>
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Function Arguments</h2></hgroup><article  id="function-arguments">
+
+<ul>
+<li>We can define functions that take multiple arguments</li>
+<li>We can also define default values for arguments</li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'># Calculate total GDP in gapminder data
+calcGDP &lt;- function(data, year_in=NULL, country_in=NULL) {
+  gdp &lt;- gapminder %&gt;% mutate(gdp=(pop * gdpPercap))
+  if (!is.null(year_in)) {
+    gdp &lt;- gdp %&gt;% filter(year %in% year_in)
+  }
+  if (!is.null(country_in)) {
+    gdp &lt;- gdp %&gt;% filter(country %in% country_in)
+  }
+  return(gdp)
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>Challenge 23 (10min)</h2></hgroup><article  id="challenge-23-10min">
+
+<p>Can you write a function that takes an optional argument called <code>letter</code>, which:</p>
+
+<ul>
+<li>Plots the life expectancy per year for each country</li>
+<li>Only for countries whose name starts with a letter in <code>letter</code></li>
+<li><p>Uses <code>facet_wrap()</code> to produce a grid of output graphs</p></li>
+<li><p><strong>ADVANCED:</strong> Make the facet wrapping optional</p></li>
+</ul>
+
+<div class="highlight">
+<p><strong>HINT:</strong> The following code may be useful</p>
+
+<pre class = 'prettyprint lang-r'>starts.with &lt;- substr(gapminder$country, start = 1, stop = 1)
+az.countries &lt;- gapminder[starts.with %in% c(&quot;A&quot;, &quot;Z&quot;), ]</pre></div>
+
+<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
 
 
   <slide class="backdrop"></slide>

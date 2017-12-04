@@ -1767,4 +1767,52 @@ my_sum <- function(a, b) {
 **INTERACTIVE DEMO**
 </div>
 </center>
+
+
+
+## Function Arguments
+
+* We can define functions that take multiple arguments
+* We can also define default values for arguments
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
 </div>
+</center>
+
+```{r, eval=FALSE}
+# Calculate total GDP in gapminder data
+calcGDP <- function(data, year_in=NULL, country_in=NULL) {
+  gdp <- gapminder %>% mutate(gdp=(pop * gdpPercap))
+  if (!is.null(year_in)) {
+    gdp <- gdp %>% filter(year %in% year_in)
+  }
+  if (!is.null(country_in)) {
+    gdp <- gdp %>% filter(country %in% country_in)
+  }
+  return(gdp)
+}
+```
+
+
+## Challenge 23 (10min)
+
+Can you write a function that takes an optional argument called `letter`, which:
+
+* Plots the life expectancy per year for each country
+* Only for countries whose name starts with a letter in `letter`
+* Uses `facet_wrap()` to produce a grid of output graphs
+
+* **ADVANCED:** Make the facet wrapping optional
+
+<div class="highlight">
+**HINT:** The following code may be useful
+
+```{r, eval=FALSE}
+starts.with <- substr(gapminder$country, start = 1, stop = 1)
+az.countries <- gapminder[starts.with %in% c("A", "Z"), ]
+```
+</div>
+
+<img src="images/red_green_sticky.png" width="100%" />
