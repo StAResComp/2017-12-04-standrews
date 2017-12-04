@@ -3422,3 +3422,163 @@ plotLifeExp <- function(data, letter=letters, wrap=FALSE) {
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+# 11. Dynamic Reports
+
+----
+
+**SLIDE: Learning Objectives**
+
+* In this final section, we'll be learning how to **create reproducible, attractive, dynamic reports**
+* To do so, we'll learn some **markdown syntax**, and how to put **working R code** into a document
+* We'll also look at **generating the report in a number of file formats**, for sharing.
+
+----
+
+**SLIDE: Literate Programming**
+
+* What we're about to do is an example of **Literate Programming**, a concept introduced by Donald Knuth
+* The idea of Literate Programming is that
+    * **The program or analysis is explained in natural language**
+    * **The code needed to run the program/analysis is embedded in the document**
+    * **The whole document is executable**
+
+* We can produce these documents in `RStudio`
+
+----
+
+**SLIDE: Create an `R Markdown` file**
+
+* In `R`, literate programming is **implemented in `R Markdown` files
+* To create one: **`File` $\rightarrow$ `New File` $\rightarrow$ `R Markdown`**
+    * There is a dialog box - **enter a title** (`Literate Programming`)
+    * Save the file (`Ctrl-S`) - **create new subdirectory (`markdown`)** - `literate_programming.Rmd`
+* The file **gets the extension `.Rmd`**
+    * The **file is autopopulated with example text**
+
+----
+
+**SLIDE: Components of an `R Markdown` file**
+
+* The **HEADER REGION IS FENCED BY `---`**
+    * **Metadata** (author, title, date)
+    * Requested **output format**
+
+```R
+---
+title: "Literate Programming"
+author: "Leighton Pritchard"
+date: "04/12/2017"
+output: html_document
+---
+```
+
+* Natural language is written as plain text, **with some extra characters to define formatting**
+    * **NOTE THE HASHES `#`, ASTERISKS `*` AND ANGLED BRACKETS `<>`**
+* `R` code runs in the document, and is **fenced by backticks**
+
+* **CLICK ON `KNIT`**
+    * A new (pretty) document is produced in a new window
+* **CROSS REFERENCE MARKDOWN TO DOCUMENT**
+    * **Title, Author, Date**
+    * **Header**
+    * **Link**
+    * **Bold**
+    * **`R` code and output**
+    * **Plots**
+
+* **CLICK ON `KNIT TO PDF`**
+    * A new `.pdf` document opens in a new window
+* **CROSS REFERENCE MARKDOWN TO DOCUMENT**
+    * **NOTE:** The formatting isn't identical
+
+* **CLICK ON `KNIT TO WORD`**
+    * A new `Word` document opens up
+* **CROSS REFERENCE MARKDOWN TO DOCUMENT**
+    * **NOTE:** The formatting isn't identical
+
+* **NOTE THE LOCATION OF THE OUTPUT FILES - ALL IN THE SOURCE DIRECTORY**
+    * **CLOSE THE OUTPUT**
+
+----
+
+**SLIDE: Creating a Report**
+
+* We'll **create a report on the `gapminder` data**
+
+* **DELETE THE EXISTING TEXT/CODE CHUNKS** (`literate_programming.Rmd`)
+    * **Change the title** (`Life Expectancies`)
+    * **Define the input data location in the `setup` section**
+        * Code in the `setup` section is run, but not shown (**knit to demo**)
+        * `include = FALSE`
+    * **Write introduction and KNIT**
+        * Header notation with the hash `#`
+        * Inline `R` to name the data used
+        * **We can define the location of the data in one place, and reuse the variable/have it propagate when we update the data**
+        * Import the data in `setup`
+    * **Write next section** (`Life expectancy in countries`)
+        * `Source` the `functions.R` file to get our solution to Challenge 23 (`plotLifeExp`)
+        * Use the imported function
+        * `{r echo=FALSE}` shows output but not the code
+    * **Change the letters**
+        * Change the letters to something else
+        * Re-run the document
+    * **Add Numbered Table of Contents (where possible)**
+        * Make the required changes in the header
+
+```R
+---
+title: "Life Expectancies"
+author: "Leighton Pritchard"
+date: "04/12/2017"
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+  word_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Path to gapminder data
+datapath <- "../data/gapminder-FiveYearData.csv"
+
+# Letters to report on
+az <- c('G', 'Y', 'R')
+
+# Load gapminder data
+gapminder <- read.csv(datapath, sep=",", header=TRUE)
+
+# Source functions from earlier lesson
+source("../scripts/functions.R")
+```
+
+# Introduction
+
+We will present the life expectancies over time in a set of countries, using the gapminder data in the file `r datapath`.
+
+We will specifically focus on countries beginning with the letters: `r az`.
+
+# Life expectancy in `r az` countries
+
+In countries starting with these letters, the life expectancy is as plotted below.
+
+We use the code from our earlier challenge solution
+
+```{r plot_function}
+plotLifeExp
+```
+
+```{r echo=FALSE}
+plotLifeExp(gapminder, az, wrap=TRUE)
+```
+
+```

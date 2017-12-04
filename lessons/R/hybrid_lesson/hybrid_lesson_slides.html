@@ -2078,7 +2078,81 @@ calcGDP &lt;- function(data, year_in=NULL, country_in=NULL) {
 <pre class = 'prettyprint lang-r'>starts.with &lt;- substr(gapminder$country, start = 1, stop = 1)
 az.countries &lt;- gapminder[starts.with %in% c(&quot;A&quot;, &quot;Z&quot;), ]</pre></div>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>11. Dynamic Reports</h2></hgroup><article  id="dynamic-reports">
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-11">
+
+<ul>
+<li>Create dynamic, reproducible reports</li>
+<li>Markdown syntax</li>
+<li>Inline <code>R</code> code in documents</li>
+<li>Producing documents in <code>.pdf</code>, <code>.html</code>, etc.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Literate Programming</h2></hgroup><article  id="literate-programming">
+
+<ul>
+<li>A <em>programming paradigm</em> introduced by Donald Knuth</li>
+<li>The program (or analysis) is explained in natural language
+
+<ul>
+<li>The <em>source code</em> is interspersed</li>
+</ul></li>
+<li>The whole document is <em>executable</em></li>
+</ul>
+
+<div class="highlight">
+<p><strong>We can produce these documents in <code>RStudio</code></strong></p></div>
+
+<div class="references">
+<p>Literate Programming, by Donald Knuth: <a href='http://www.literateprogramming.com/knuthweb.pdf' title=''>http://www.literateprogramming.com/knuthweb.pdf</a></p></div>
+
+</article></slide><slide class=""><hgroup><h2>Create an <code>R Markdown</code> file</h2></hgroup><article  id="create-an-r-markdown-file">
+
+<ul>
+<li><code>R Markdown</code> files embody Literate Programming in <code>R</code></li>
+<li><code>File</code> \(\rightarrow\) <code>New File</code> \(\rightarrow\) <code>R Markdown</code></li>
+<li>Enter a title</li>
+<li>Save the file (gets the extension <code>.Rmd</code>)</li>
+</ul>
+
+<center>
+
+<img src="images/rmarkdown_dialog.png" width="40%" /> <img src="images/rmarkdown_start.png" width="47%" />
+
+</center>
+
+</article></slide><slide class=""><hgroup><h2>Components of an <code>R Markdown</code> file</h2></hgroup><article  id="components-of-an-r-markdown-file">
+
+<ul>
+<li>Header information is <em>fenced</em> by <code>---</code></li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>---
+title: &quot;Literate Programming&quot;
+author: &quot;Leighton Pritchard&quot;
+date: &quot;04/12/2017&quot;
+output: html_document
+---</pre>
+
+<ul>
+<li>Natural language is written as plain text</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>This is an R Markdown document. Markdown is a simple formatting syntax</pre>
+
+<ul>
+<li><code>R</code> code (which is executable) is <em>fenced</em> by <em>backticks</em></li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>Click on <code>Knit</code></strong></p></div>
+
+</center></article></slide>
 
 
   <slide class="backdrop"></slide>
