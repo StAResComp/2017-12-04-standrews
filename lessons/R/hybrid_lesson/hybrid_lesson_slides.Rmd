@@ -1689,3 +1689,82 @@ for large values of $n$
 Can you do this using vectorisation for $n = 10,000$?
 
 <img src="images/red_green_sticky.png" width="100%" />
+
+
+# 10. Functions
+
+
+## Learning Objectives
+
+* Why functions are important
+* How to write a new function
+* Defining a function that takes arguments
+* Returning a value from a function
+* Set default values for function arguments
+
+
+## Why Functions?
+
+* Functions let us run a complex series of commands in one go
+    - under a memorable/descriptive name
+    - invoked with that name
+    - with a defined set of inputs and outputs
+    - to perform a logically coherent task
+    
+<div class="highlight">    
+Functions are the building blocks of programming
+</div>
+
+* Small functions with one obvious, clearly-defined task are good
+
+## Defining a Function
+
+* You will often need to write your own functions
+* They take a standard form
+
+```{r, eval=FALSE}
+<function_name> <- function(<arg1>, <arg2>) {
+  <do something>
+  return(<result>)
+}
+```
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+
+```{r, eval=FALSE}
+my_sum <- function(a, b) {
+  the_sum <- a + b
+  return(the_sum)
+}
+```
+
+
+## Documentation
+
+* So far, you've been able to use `R`'s built-in help to see function documentation
+    - This isn't available for your functions unless you write it
+
+<center>    
+<div class="highlight">
+**Your future self will thank you!**
+
+(and so will your colleagues)
+
+*Write programs for people, not for computers*
+</div>
+</center>
+
+* State what the code does (and why)
+* Define inputs and outputs
+* Give an example
+
+<center>
+<div class="attention">
+**INTERACTIVE DEMO**
+</div>
+</center>
+</div>

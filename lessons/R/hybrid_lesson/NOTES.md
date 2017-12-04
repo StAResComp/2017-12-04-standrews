@@ -2989,3 +2989,212 @@ for (l in letters) {
 ```
 
 ![images/red_green_sticky.png](images/red_green_sticky.png)
+
+----
+
+# 10. Functions
+
+----
+
+* **SLIDE: Learning objectives**
+
+* **YOU'VE ALREADY BEEN USING FUNCTIONS (e.g. `log()`)** and, I hope, have found them useful
+* Functions let us run a complex series of commands in one go
+    * **You wouldn't want to have to repeat the calculations for `log()` each time**
+    * They keep the operation under a memorable or descriptive name, **which makes the code readable and understandable**, and they are invoked with that name
+    * There are a **defined set of inputs and outputs** for a function, so **WE KNOW WHAT BEHAVIOUR TO EXPECT**
+
+----
+
+* **SLIDE: Why Functions?**
+
+* Functions let us **run a complex series of logically- or functionally-RELATED commands in one go**
+* It helps when functions have **descriptive and memorable names**, as this makes code **READABLE AND UNDERSTANDABLE**
+* We invoke functions with their name
+* We **expect functions to have A DEFINED SET OF INPUTS AND OUTPUTS** - aids clarity and understanding
+
+* **FUNCTIONS ARE THE BUILDING BLOCKS OF PROGRAMMING**
+
+* As a **rule of thumb** it is good to write small functions with one obvious, clearly-defined task.
+    * As you will see **we can chain smaller functions together to manage complexity**
+
+----
+
+* **SLIDE: Defining a Function**
+
+* Functions have a **STANDARD FORM**
+    * We **declare a `<function_name>`**
+    * We use the `function` *function*/keyword to assign the function to `<function_name>`
+    * Inputs (*arguments*) to a function are defined in parentheses: **These are defined as variables for use within the function AND DO NOT EXIST OUTSIDE THE FUNCTION**
+    * The code block (**curly braces**) encloses the function code, the *function body*.
+    * **NOTE THE INDENTATION** - *Easier to read, but does not affect execution*
+    * The code `<does_something>`
+    * The `return()` function returns the value, when the function is called
+
+* **DEMO IN SCRIPT**
+    * **Create new script `functions.R`**
+    * Write and `Source`
+
+```R
+# Example function
+my_sum <- function(a, b) {
+  the_sum <- a + b
+  return(the_sum)
+}
+```
+
+* **DEMO IN CONSOLE**
+
+```R
+> my_sum(3, 7)
+[1] 10
+> a
+Error: object 'a' not found
+> b
+Error: object 'b' not found
+```
+
+* **DEMO IN SCRIPT**
+    * Let's define another function: convert temperature from fahrenheit to Kelvin
+
+```R
+# Fahrenheit to Kelvin
+fahr_to_kelvin <- function(temp) {
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+```
+
+* **DEMO IN SCRIPT**
+
+```R
+> fahr_to_kelvin(32)
+[1] 273.15
+> fahr_to_kelvin(-40)
+[1] 233.15
+> fahr_to_kelvin(212)
+[1] 373.15
+> temp
+Error: object 'temp' not found
+```
+
+* **LET'S MAKE ANOTHER FUNCTION CONVERTING KELVIN TO CELSIUS**
+* **DEMO IN SCRIPT**
+    * `Source` the script
+
+```R
+# Kelvin to Celsius
+kelvin_to_celsius <- function(temp) {
+  celsius <- temp - 273.15
+  return(celsius)
+}
+```
+
+* **DEMO IN CONSOLE**
+
+```R
+> kelvin_to_celsius(273.15)
+[1] 0
+> kelvin_to_celsius(233.15)
+[1] -40
+> kelvin_to_celsius(373.15)
+[1] 100
+```
+
+* **WE COULD DEFINE A NEW FUNCTION TO CONVERT FAHRENHEIT TO CELSIUS**
+    * **But it's easier to combine the two functions we've already written**
+
+* **DEMO IN CONSOLE**
+
+```R
+> fahr_to_kelvin(212)
+[1] 373.15
+> kelvin_to_celsius(fahr_to_kelvin(212))
+[1] 100
+```
+
+* **DEMO IN SCRIPT**
+
+```R
+# Fahrenheit to Celsius
+fahr_to_celsius <- function(temp) {
+  celsius <- kelvin_to_celsius(fahr_to_kelvin(temp))
+  return(celsius)
+}
+```
+
+* **DEMO IN CONSOLE**
+    * **NOTE: AUTOMATICALLY TAKES ADVANTAGE OF `R`'s VECTORISATION**
+
+```R
+> fahr_to_celsius(212)
+[1] 100
+> fahr_to_celsius(32)
+[1] 0
+> fahr_to_celsius(-40)
+[1] -40
+> fahr_to_celsius(c(-40, 32, 212))
+[1] -40   0 100
+```
+
+----
+
+**SLIDE: Documentation**
+
+* It's important to have well-named functions (this is itself a form of documentation)
+* But it's **not a detailed explanation**
+
+* You've found `R`'s help useful, but it doesn't exist for your functions until you write it
+* **YOUR FUTURE SELF WILL THANK YOU FOR DOING IT!**
+
+* **SOME GOOD PRINCIPLES TO FOLLOW WHEN WRITING DOCUMENTATION ARE:**
+    * Say what the code does (and why) - *more important than **how** *
+    * Define your inputs and outputs
+    * Provide an example
+
+* **DEMO IN CONSOLE**
+
+```R
+> ?fahr_to_celsius
+No documentation for ‘fahr_to_celsius’ in specified packages and libraries:
+you could try ‘??fahr_to_celsius’
+> ??fahr_to_celsius
+```
+
+* **DEMO IN SCRIPT**
+    * We add documentation as comment strings in the function
+    * **SOURCE** the script
+
+```R
+# Fahrenheit to Celsius
+fahr_to_celsius <- function(temp) {
+  # Convert input temperature from fahrenheit to celsius scale
+  #
+  # temp        - numeric 
+  #
+  # Example:
+  # > fahr_to_celsius(c(-40, 32, 212))
+  # [1] -40   0 100
+  celsius <- kelvin_to_celsius(fahr_to_kelvin(temp))
+  return(celsius)
+}
+```
+
+* **DEMO IN CONSOLE**
+    * We read the documentation by providing the function name **only**
+
+```R
+> fahr_to_celsius
+function(temp) {
+  # Convert input temperature from fahrenheit to celsius scale
+  #
+  # temp        - numeric 
+  #
+  # Example:
+  # > fahr_to_celsius(c(-40, 32, 212))
+  # [1] -40   0 100
+  celsius <- kelvin_to_celsius(fahr_to_kelvin(temp))
+  return(celsius)
+}
+
+```

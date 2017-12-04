@@ -412,7 +412,6 @@ age &lt;- age - 20</pre>
 </ul>
 
 <div class="references">
-
 <p>Good Enough Practices in Scientific Computing (2017) Wilson <em>et al.</em> <a href='http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510' title=''>http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510</a> </class></p>
 
 </article></slide><slide class=""><hgroup><h2>Example Directory Structure</h2></hgroup><article  id="example-directory-structure">
@@ -1943,7 +1942,97 @@ m %*% m</pre>
 
 <p>Can you do this using vectorisation for \(n = 10,000\)?</p>
 
-<p><img src="images/red_green_sticky.png" width="100%" /></p></article></slide>
+<p><img src="images/red_green_sticky.png" width="100%" /></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>10. Functions</h2></hgroup><article  id="functions-1">
+
+</article></slide><slide class=""><hgroup><h2>Learning Objectives</h2></hgroup><article  id="learning-objectives-10">
+
+<ul>
+<li>Why functions are important</li>
+<li>How to write a new function</li>
+<li>Defining a function that takes arguments</li>
+<li>Returning a value from a function</li>
+<li>Set default values for function arguments</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Why Functions?</h2></hgroup><article  id="why-functions">
+
+<ul>
+<li>Functions let us run a complex series of commands in one go
+
+<ul>
+<li>under a memorable/descriptive name</li>
+<li>invoked with that name</li>
+<li>with a defined set of inputs and outputs</li>
+<li>to perform a logically coherent task</li>
+</ul></li>
+</ul>
+
+<div class="highlight">
+<p>Functions are the building blocks of programming</p></div>
+
+<ul>
+<li>Small functions with one obvious, clearly-defined task are good</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Defining a Function</h2></hgroup><article  id="defining-a-function">
+
+<ul>
+<li>You will often need to write your own functions</li>
+<li>They take a standard form</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>&lt;function_name&gt; &lt;- function(&lt;arg1&gt;, &lt;arg2&gt;) {
+  &lt;do something&gt;
+  return(&lt;result&gt;)
+}</pre>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center>
+
+<pre class = 'prettyprint lang-r'>my_sum &lt;- function(a, b) {
+  the_sum &lt;- a + b
+  return(the_sum)
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>Documentation</h2></hgroup><article  id="documentation">
+
+<ul>
+<li>So far, you’ve been able to use <code>R</code>’s built-in help to see function documentation
+
+<ul>
+<li>This isn’t available for your functions unless you write it</li>
+</ul></li>
+</ul>
+
+<center>
+
+<div class="highlight">
+<p><strong>Your future self will thank you!</strong></p>
+
+<p>(and so will your colleagues)</p>
+
+<p><em>Write programs for people, not for computers</em></p></div>
+
+</center>
+
+<ul>
+<li>State what the code does (and why)</li>
+<li>Define inputs and outputs</li>
+<li>Give an example</li>
+</ul>
+
+<center>
+
+<div class="attention">
+<p><strong>INTERACTIVE DEMO</strong></p></div>
+
+</center></div></article></slide>
 
 
   <slide class="backdrop"></slide>
