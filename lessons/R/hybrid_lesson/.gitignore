@@ -1,0 +1,12 @@
+# Exclude R history
+.Rhistory
+
+# Exclude files used in building .html
+hybrid_lesson_slides_files/
+
+# Exclude Illustrator files
+illustrator/
+
+# Exclude NOTES output
+NOTES.html
+NOTES.pdf
