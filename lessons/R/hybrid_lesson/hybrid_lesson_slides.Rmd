@@ -6,7 +6,6 @@ output:
   ioslides_presentation:
     css: ./includes/custom.css
     font-family: 'Helvetica'
-    widescreen: True
     self_contained: true
 # runtime: shiny
 ---
